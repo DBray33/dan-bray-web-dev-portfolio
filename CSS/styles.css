@@ -9,9 +9,8 @@
 
 :root {
   --primary-color: #9b8671;
-  --secondary-color: black;
   --tertiary-color: #d8b893;
-  --video-color: #f1e5ca;
+  --secondary-color: #f1e5ca;
   --dark-color: #8d6d4d;
   --off-white: #faf9f6;
 }
@@ -23,7 +22,7 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
   scroll-padding-top: 80px;
-  background-color: green;
+  background-color: var(--secondary-color);
 }
 
 a {
@@ -173,7 +172,7 @@ img {
 
 .main-menu-list a {
   text-decoration: none;
-  color: var(--secondary-color); /* Adjust the color as needed */
+  color: black;
   font-family: 'Lato', sans-serif; /* Ensure the font is applied to the links */
   font-weight: 700; /* Thicker font weight */
   transition: all 0.4s ease-in-out; /* Smooth transition for font size and padding */
@@ -291,7 +290,7 @@ img {
 /* INTRO SECTION */
 /* Hero and Parallax Layers */
 
-.hero {
+/* .hero {
   position: relative;
   width: 100%;
   height: 80vh;
@@ -299,17 +298,7 @@ img {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-}
-
-.background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
+} */
 
 /* Carousel Content Positioning */
 .carousel-content {
@@ -408,16 +397,16 @@ img {
 }
 
 /* Hill Parallax Layers */
-/* .parallax-container {
+.parallax-container {
   position: relative;
   width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
   overflow: hidden;
-} */
+}
 
-/* .layer {
+.layer {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -425,10 +414,10 @@ img {
   left: 0;
   object-fit: cover;
   transform: translateY(0);
-} */
+}
 
 /* Layer Parallax Effect */
-/* .layer1 {
+.layer1 {
   transform: translateY(0px);
 }
 .layer2 {
@@ -451,13 +440,13 @@ img {
 }
 .layer8 {
   transform: translateY(0px);
-}  */
+}
 /* END INTRO SECTION */
 
 /* ABOUT SECTION */
 .about-section {
-  background: url('../images/about-bg-2.png') center center/cover no-repeat;
-  /* background-color: var(--video-color); */
+  /* background: url('../images/about-bg-2.png') center center/cover no-repeat; */
+  background-color: var(--secondary-color);
   padding: 60px 0;
   position: relative;
 }
@@ -526,7 +515,7 @@ img {
 }
 
 .accordion-button {
-  color: var(--video-color);
+  color: var(--secondary-color);
   font-size: 1.2rem;
   font-weight: 700;
   padding: 1rem;
@@ -554,7 +543,7 @@ img {
 }
 
 .accordion-header .accordion-button:not(.collapsed) {
-  background-color: var(--secondary-color);
+  background-color: black;
   color: white;
 }
 
@@ -698,7 +687,7 @@ img {
 
 .social a {
   padding: 1rem;
-  color: var(--secondary-color);
+  color: black;
 }
 
 .social a:hover {
