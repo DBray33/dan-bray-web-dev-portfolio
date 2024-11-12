@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dan Bray's Web Development Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
+      rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+
+    <!-- Photo Lightbox Effect -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+      rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" />
+
+    <meta
+      name="description"
+      content="Explore the portfolio of Dan Bray, a self-taught freelance web developer specializing in creating responsive websites, intuitive UI/UX designs, and e-commerce solutions. Discover projects showcasing expertise in HTML, CSS, JavaScript, and more." />
+  </head>
+
+  <body>
+    <!-- Logo -->
+    <a href="index.html" class="logo-link">
+      <img src="images/db-logo.png" alt="DB Logo" class="logo-img" />
+    </a>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+      <div class="navbar-flex container">
+        <!-- Main Menu Items (Desktop) -->
+        <div id="main-menu-items" class="desktop-menu">
+          <ul class="main-menu-list">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#gallery">GALLERY</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/stanielbray/"
+                aria-label="Follow me on LinkedIn">
+                <i class="fa-brands fa-linkedin fa-2x" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/DBray33"
+                aria-label="View my GitHub projects">
+                <i class="fa-brands fa-github fa-2x" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Hamburger Icon for Mobile Menu -->
+        <div
+          class="mobile-menu-toggle"
+          role="button"
+          aria-label="Toggle mobile menu">
+          <i class="fas fa-bars fa-2x"></i>
+        </div>
+
+        <!-- Mobile Menu (Dropdown) -->
+        <div id="mobile-menu" class="mobile-menu-items">
+          <ul class="mobile-menu-list">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#gallery">GALLERY</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/stanielbray/"
+                aria-label="Follow me on LinkedIn">
+                <i class="fa-brands fa-linkedin fa-2x"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/DBray33"
+                aria-label="View my GitHub projects">
+                <i class="fa-brands fa-github fa-2x"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section-->
+    <section class="hero">
+      <!-- Carousel Content -->
+      <div class="carousel-content">
+        <div class="container">
+          <div class="caption text-center">
+            <div id="carousel-items">
+              <div class="carousel-item active">
+                <h1>Hi, I'm Dan</h1>
+                <p>Brief Description Here</p>
+                <a class="btn btn-blank" href="#about" role="button"
+                  >View More</a
+                >
+              </div>
+              <div class="carousel-item">
+                <h1>This is an endless work in progress</h1>
+                <p>Section elaboration</p>
+                <a class="btn btn-blank" href="#" role="button">View More</a>
+              </div>
+              <div class="carousel-item">
+                <h1>Plenty to come soon</h1>
+                <p>Another brief subject elaboration</p>
+                <a class="btn btn-blank" href="#" role="button">View More</a>
+              </div>
+            </div>
+            <div class="carousel-navigation">
+              <button class="carousel-btn" data-index="0"></button>
+              <button class="carousel-btn" data-index="1"></button>
+              <button class="carousel-btn" data-index="2"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi-Layered Parallax with Carousel Content -->
+    <!-- <section class="hero"> -->
+    <!-- Carousel Content -->
+    <!-- <div class="carousel-content">
+        <div class="container">
+          <div class="caption text-center">
+            <div id="carousel-items">
+              <div class="carousel-item active">
+                <h1>Hi, I'm Dan</h1>
+                <p>Brief Description Here</p>
+                <a class="btn btn-blank" href="#about" role="button"
+                  >View More</a
+                >
+              </div>
+              <div class="carousel-item">
+                <h1>This is an endless work in progress</h1>
+                <p>Section elaboration</p>
+                <a class="btn btn-blank" href="#" role="button">View More</a>
+              </div>
+              <div class="carousel-item">
+                <h1>Plenty to come soon</h1>
+                <p>Another brief subject elaboration</p>
+                <a class="btn btn-blank" href="#" role="button">View More</a>
+              </div>
+            </div>
+            <div class="carousel-navigation">
+              <button class="carousel-btn" data-index="0"></button>
+              <button class="carousel-btn" data-index="1"></button>
+              <button class="carousel-btn" data-index="2"></button>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    <!-- Parallax Layers -->
+    <!-- <div class="parallax-container"> -->
+    <!-- <img src="images/png-layers/Layer8.png" alt="Background Layer" class="layer layer8" /> -->
+    <!-- <img
+          src="images/png-layers/Layer7.png"
+          alt="Layer 7"
+          class="layer layer7" />
+        <img
+          src="images/png-layers/Layer6.png"
+          alt="Layer 6"
+          class="layer layer6" />
+        <img
+          src="images/png-layers/Layer5.png"
+          alt="Layer 5"
+          class="layer layer5" />
+        <img
+          src="images/png-layers/Layer4.png"
+          alt="Layer 4"
+          class="layer layer4" />
+        <img
+          src="images/png-layers/Layer3.png"
+          alt="Layer 3"
+          class="layer layer3" />
+        <img
+          src="images/png-layers/Layer2.png"
+          alt="Layer 2"
+          class="layer layer2" />
+        <img
+          src="images/png-layers/Layer1.png"
+          alt="Foreground Layer"
+          class="layer layer1" />
+      </div>
+    </section> -->
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <!-- Video Background -->
+      <!-- <video class="background-video" autoplay muted playsinline>
+        <source src="images/about-bg.mov" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video> -->
+
+      <div class="container">
+        <!-- Header and Image Container -->
+        <div class="header-image-container">
+          <!-- Section Header -->
+          <div class="section-header">
+            <h1>AUTHENTICITY, CREATIVITY, SPECIFICITY</h1>
+            <h2>MY WEB DEVELOPMENT JOURNEY</h2>
+            <div class="heading-border"></div>
+            <p>
+              From early explorations in coding while running a brewery, to
+              mastering the art of creating seamless user experiences, this is
+              the story behind my growth as a web developer. Discover the
+              skills, projects, and personal insights that drive my passion for
+              crafting impactful digital solutions.
+            </p>
+          </div>
+
+          <!-- Headshot Image -->
+          <div class="about-image">
+            <img
+              src="images/headshot.jpeg"
+              alt="Your Headshot"
+              class="img-fluid" />
+          </div>
+        </div>
+
+        <!-- Accordion Menu Container -->
+        <div class="accordion-container">
+          <div class="accordion" id="aboutAccordion">
+            <!-- Accordion Item 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="false"
+                  aria-controls="collapseOne">
+                  Who Am I?
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingOne"
+                data-bs-parent="#aboutAccordion">
+                <div class="accordion-body">
+                  A section to introduce yourself, your background, and why
+                  you’re passionate about web development.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo">
+                  My Skills & Expertise
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#aboutAccordion">
+                <div class="accordion-body">
+                  Highlight your technical proficiencies (HTML, CSS, JavaScript,
+                  frameworks, etc.) as well as any soft skills like
+                  problem-solving and collaboration.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree">
+                  Projects I’ve Worked On
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#aboutAccordion">
+                <div class="accordion-body">
+                  Showcase key projects that demonstrate your abilities. Include
+                  links or visuals to provide context and impact.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 4 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour">
+                  My Approach to Development
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFour"
+                data-bs-parent="#aboutAccordion">
+                <div class="accordion-body">
+                  Explain your process and approach to problem-solving, coding
+                  practices, or design philosophies.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 5 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive"
+                  aria-expanded="false"
+                  aria-controls="collapseFive">
+                  Let’s Connect
+                </button>
+              </h2>
+              <div
+                id="collapseFive"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFive"
+                data-bs-parent="#aboutAccordion">
+                <div class="accordion-body">
+                  An invitation for potential clients or collaborators to reach
+                  out, ideally with links to social media or contact forms.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="contact-form container">
+        <div class="section-header">
+          <h2>Get in touch</h2>
+          <div class="heading-border"></div>
+          <p>
+            Have a question or inquiry? Leave your information below and I'll
+            get back to you as soon as possible.
+          </p>
+          <form action="https://formspree.io/f/meoqayky" method="POST">
+            <!-- Name -->
+            <input type="text" name="name" placeholder="Name" />
+            <!-- Email -->
+            <input type="email" name="email" placeholder="Email" />
+            <!-- Phone Number Section -->
+            <input type="tel" name="phone" placeholder="Phone Number" />
+            <!-- Message -->
+            <textarea name="message" placeholder="Message"></textarea>
+            <button type="submit" class="btn-blank">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section class="location">
+      <div class="location-container">
+        <div class="section-header"></div>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12165.575929722758!2d-75.945585!3d40.33360534999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6795f44b306f3%3A0xe44b408d5d3cf28e!2sWest%20Reading%2C%20PA%2019611!5e0!3m2!1sen!2sus!4v1730753361033!5m2!1sen!2sus"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social footer -->
+    <section class="social section">
+      <div class="container">
+        <p>
+          <!-- Thanks for checking out all the works I have completed so far! There's
+          always something new to learn, and I will always be working on a new
+          project, so stay tuned for frequent updates and additions. -->
+        </p>
+        <div class="social-icons">
+          <a
+            href="https://www.linkedin.com/in/stanielbray/"
+            target="_blank"
+            aria-label="Check me out on LinkedIn">
+            <i class="fa-brands fa-linkedin fa-2x"></i>
+          </a>
+          <a
+            href="https://github.com/DBray33"
+            target="_blank"
+            aria-label="Check out my repositories on Github">
+            <i class="fa-brands fa-github fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-flex">
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p>&copy;2024 - 2025 Dan Bray. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Back to top arrow -->
+    <a href="#" id="back-to-top" title="Back to Top">&uarr;</a>
+
+    <!-- Lightbox gallery effect -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery.stellar -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.min.js"></script>
+
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
