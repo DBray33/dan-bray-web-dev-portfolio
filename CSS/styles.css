@@ -23,7 +23,7 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
   scroll-padding-top: 80px;
-  background-color: var(--video-color);
+  background-color: green;
 }
 
 a {
