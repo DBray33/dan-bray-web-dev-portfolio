@@ -23,7 +23,7 @@ body {
   overflow-x: hidden;
   scroll-padding-top: 80px;
   background-color: var(--secondary-color);
-  background-color: green;
+  /* background-color: green; */
   margin: 0; /* Ensure no margin on body */
   padding: 0; /* Ensure no padding on body */
 }
@@ -777,14 +777,22 @@ img {
   position: relative;
 }
 
+/* Gradient Icon Styling */
 .icon {
   font-size: 3rem;
-  color: #f1e5ca;
+  background: linear-gradient(
+    to bottom,
+    #f1e5ca,
+    #9b8671
+  ); /* Light to dark gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   position: relative;
   z-index: 1;
 }
 
-/* Icon Interactivity */
+/* Icon Background and Shadow */
 .icon-link::before {
   content: '';
   position: absolute;
@@ -797,14 +805,12 @@ img {
   z-index: 0;
   border-radius: 5px;
   border: 6px solid var(--primary-color);
-
-  /* Shadow effect */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adds a shadow behind the icons */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Hover effect */
 .icon-link:hover .icon {
-  color: white;
+  color: white; /* Change to solid color on hover */
   transition: color 0.3s ease;
 }
 
