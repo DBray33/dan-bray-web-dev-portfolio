@@ -141,8 +141,7 @@
   }
 
   #about .section-header,
-  .about-image,
-  .accordion-container {
+  .about-image {
     width: 100%;
     text-align: center;
   }

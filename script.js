@@ -158,16 +158,23 @@ if (logoLink) {
 }
 
 // /////////////////////////////////////////////
-document.addEventListener('DOMContentLoaded', function () {
-  const video = document.querySelector('.background-video');
+function toggleAccordion(sectionId) {
+  const content = document.getElementById(sectionId);
+  const item = content.parentElement;
 
-  if (video) {
-    video.playbackRate = 0.8; // Set playback speed if desired
+  // Close other active items if desired
+  document.querySelectorAll('.accordion-item').forEach((accItem) => {
+    if (accItem !== item) {
+      accItem.classList.remove('active');
+      accItem.querySelector('.accordion-content').style.maxHeight = 0;
+    }
+  });
 
-    // Apply parallax effect on scroll
-    window.addEventListener('scroll', function () {
-      const scrollPosition = window.scrollY;
-      video.style.transform = `translateY(${scrollPosition * 0.8}px)`; // Adjust parallax factor as needed
-    });
+  item.classList.toggle('active');
+
+  if (item.classList.contains('active')) {
+    content.style.maxHeight = content.scrollHeight + 'px';
+  } else {
+    content.style.maxHeight = 0;
   }
-});
+}
