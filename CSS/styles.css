@@ -732,31 +732,42 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
   height: 100vh;
 }
-
-/* Icon Background */
-/* .icon-background {
-  width: 100%;
-  height: 200px;
-  background-color: green;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-} */
 
 /* Icon Container */
 .icon-container {
   display: flex;
-  justify-content: center;
-  gap: 10rem;
-  list-style: none;
-  padding: 1rem;
+  justify-content: space-evenly; /* Ensures even spacing between all items */
+  flex-direction: row;
+  gap: 0; /* Remove additional gap here */
+  padding: 0;
   margin: 0 auto;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  /* Center the icon and h1 horizontally */
+  align-items: center;
+  /* Center-align text below the icon */
+  text-align: center;
+  /* Space between icon and h1 */
+  gap: 3rem;
+}
+
+/* Additional Styling for Icon Text */
+.icon-item h1 {
+  font-family: 'Oswald';
+  font-size: 1.2rem; /* Adjust font size as needed */
+  color: var(--primary-color);
+  margin: 0; /* Remove extra margin */
+  z-index: 5;
+  max-width: 5rem;
+  text-align: center; /* Keeps text centered within its container */
+  word-wrap: normal; /* Ensures words break onto the next line if necessary */
 }
 
 /* Individual Icon Link */
@@ -766,7 +777,6 @@ img {
   position: relative;
 }
 
-/* Icon Styling */
 .icon {
   font-size: 3rem;
   color: #f1e5ca;
@@ -774,7 +784,7 @@ img {
   z-index: 1;
 }
 
-/* Icon Background Square */
+/* Icon Interactivity */
 .icon-link::before {
   content: '';
   position: absolute;
@@ -786,6 +796,10 @@ img {
   transform: translate(-50%, -50%) rotate(45deg);
   z-index: 0;
   border-radius: 5px;
+  border: 6px solid var(--primary-color);
+
+  /* Shadow effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adds a shadow behind the icons */
 }
 
 /* Hover effect */

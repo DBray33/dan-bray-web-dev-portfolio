@@ -185,8 +185,8 @@
   }
 }
 /* Media query for smaller screens */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .logo-link img {
-    height: 35px; /* Reduced height on small screens */
+    height: 35px; 
   }
-}
+} */
