@@ -158,23 +158,3 @@ if (logoLink) {
 }
 
 // /////////////////////////////////////////////
-function toggleAccordion(sectionId) {
-  const content = document.getElementById(sectionId);
-  const item = content.parentElement;
-
-  // Close other active items if desired
-  document.querySelectorAll('.accordion-item').forEach((accItem) => {
-    if (accItem !== item) {
-      accItem.classList.remove('active');
-      accItem.querySelector('.accordion-content').style.maxHeight = 0;
-    }
-  });
-
-  item.classList.toggle('active');
-
-  if (item.classList.contains('active')) {
-    content.style.maxHeight = content.scrollHeight + 'px';
-  } else {
-    content.style.maxHeight = 0;
-  }
-}
