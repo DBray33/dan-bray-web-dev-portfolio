@@ -23,6 +23,8 @@ body {
   overflow-x: hidden;
   scroll-padding-top: 80px;
   background-color: var(--secondary-color);
+  margin: 0; /* Ensure no margin on body */
+  padding: 0; /* Ensure no padding on body */
 }
 
 a {
@@ -70,7 +72,7 @@ img {
 
 /* UTILITY CLASSES */
 .container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -117,20 +119,20 @@ img {
 }
 
 /* Section Header */
-.section-header {
+/* .section-header {
   max-width: 750px;
   padding-top: 1rem;
   margin: 0 auto;
   text-align: center;
   margin-bottom: 3rem;
-}
+} */
 
-.section-header h2 {
+/* .section-header h2 {
   font-size: 2rem;
   font-weight: 700;
   color: black;
   margin-bottom: 0.5rem;
-}
+} */
 
 .heading-border {
   width: 64px;
@@ -290,25 +292,15 @@ img {
 /* INTRO SECTION */
 /* Hero and Parallax Layers */
 
-/* .hero {
-  position: relative;
-  width: 100%;
-  height: 80vh;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-} */
-
 /* Carousel Content Positioning */
 .carousel-content {
   font-size: 1.5rem;
   position: absolute;
   min-width: 100%;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 999;
+  z-index: 2; /* Slightly higher so it doesn't disappear */
   text-align: center;
 }
 
@@ -400,7 +392,7 @@ img {
 .parallax-container {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   top: 0;
   left: 0;
   overflow: hidden;
@@ -442,125 +434,6 @@ img {
   transform: translateY(0px);
 }
 /* END INTRO SECTION */
-
-/* ABOUT SECTION */
-.about-section {
-  /* background: url('../images/about-bg-2.png') center center/cover no-repeat; */
-  background-color: var(--secondary-color);
-  padding: 60px 0;
-  position: relative;
-}
-
-#about .header-image-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-#about .section-header {
-  flex: 1;
-  text-align: left;
-  margin-bottom: 40px;
-}
-
-#about p {
-  font-size: 1.5rem;
-}
-
-#about h1 {
-  font-size: clamp(1.5rem, 2vw + 1rem, 1.5rem);
-  font-weight: bold;
-  color: black;
-}
-
-#about .section-header h2 {
-  font-weight: 700;
-  font-size: 3rem;
-}
-
-.heading-border {
-  width: 120px;
-  height: 3px;
-  background: #333;
-  margin: 20px 0;
-}
-
-.about-image {
-  margin-top: 2rem;
-  flex: 0 0 auto;
-  width: 300px;
-  text-align: right;
-}
-
-.about-image img {
-  width: 100%;
-  height: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
-  border-radius: 16px;
-}
-
-/* Accordion container */
-.accordion-container {
-  width: 70%;
-  margin-top: 2rem;
-}
-
-/* Accordion Item */
-.accordion-item {
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
-
-.accordion-button {
-  color: var(--secondary-color);
-  font-size: 1.2rem;
-  font-weight: 700;
-  padding: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: 8px;
-}
-
-.accordion-button:hover {
-  background-color: white;
-}
-
-.accordion-header .accordion-button:hover {
-  color: white;
-}
-
-.accordion-header .accordion-button.collapsed {
-  background-color: black;
-}
-
-.accordion-header .accordion-button.collapsed:hover {
-  background-color: white;
-  color: black;
-  border-color: black;
-}
-
-.accordion-header .accordion-button:not(.collapsed) {
-  background-color: black;
-  color: white;
-}
-
-/* Accordion Body */
-.accordion-body {
-  background-color: var(--off-white);
-  padding: 1rem;
-  border: 1px solid var(--primary-color);
-  border-top: none;
-  transition: max-height 0.3s ease;
-  border-radius: 0 0 8px 8px;
-}
-
-.accordion-body p {
-  margin: 0;
-}
-/* END ABOUT SECTION */
 
 /* GALLERY */
 
@@ -749,3 +622,130 @@ img {
   margin: 0.5rem 0;
   text-align: center;
 }
+
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+
+/* ABOUT SECTION */
+.about-section {
+  scroll-margin-top: -80px; /* Adjust this to match your navbar height */
+  background-color: var(--secondary-color);
+  position: relative;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure the section takes up the full viewport height */
+  padding: 0; /* Remove any padding */
+}
+
+#about .section-header {
+  font-family: 'Oswald';
+  background-color: black;
+  width: 100vw;
+  text-align: center;
+  padding: 6rem 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#about h1 {
+  color: white;
+  font-size: clamp(1.5rem, 2vw + 1rem, 1.5rem);
+  font-weight: bold;
+}
+
+#about h2 {
+  color: white;
+  font-weight: 700;
+  font-size: 4rem;
+  padding: 0 2rem;
+}
+
+#about p {
+  font-family: 'Playfair';
+
+  color: white;
+  font-size: 1.5rem;
+  padding: 0 8rem;
+}
+
+.about-image {
+  margin-top: 2rem;
+  flex: 0 0 auto;
+  width: 300px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+  border-radius: 16px;
+}
+
+/* Accordion container */
+.accordion-container {
+  width: 70%;
+  margin-top: 2rem;
+}
+
+/* Accordion Item */
+.accordion-item {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.accordion-button {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 8px;
+}
+
+.accordion-button:hover {
+  background-color: white;
+}
+
+.accordion-header .accordion-button:hover {
+  color: white;
+}
+
+.accordion-header .accordion-button.collapsed {
+  background-color: black;
+}
+
+.accordion-header .accordion-button.collapsed:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+.accordion-header .accordion-button:not(.collapsed) {
+  background-color: black;
+  color: white;
+}
+
+/* Accordion Body */
+.accordion-body {
+  background-color: var(--off-white);
+  padding: 1rem;
+  border: 1px solid var(--primary-color);
+  border-top: none;
+  transition: max-height 0.3s ease;
+  border-radius: 0 0 8px 8px;
+}
+
+.accordion-body p {
+  margin: 0;
+}
+/* END ABOUT SECTION */

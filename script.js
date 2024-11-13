@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (carouselContent) {
     window.addEventListener('scroll', function () {
       const scrollPosition = window.scrollY;
-      const parallaxOffset = scrollPosition * 0.5; // Adjust this factor for speed
+      const parallaxOffset = scrollPosition * 0.5; // Adjust factor for effect speed
 
       // Apply translateY to move it down based on scroll
       carouselContent.style.transform = `translate(-50%, calc(-50% + ${parallaxOffset}px))`;

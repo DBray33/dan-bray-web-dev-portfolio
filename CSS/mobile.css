@@ -177,11 +177,10 @@
   }
 
   #about .section-header h2 {
-    padding: 0 1rem; /* Adds padding to the h2 inside section-header within the #about section */
-    color: black;
+    padding: 0 1rem;
   }
   .about-section {
-    /* background: var(--video-color); */
+    background: var(--video-color);
     padding: 2rem; /* Adds 2rem padding around all content */
     position: relative;
   }
