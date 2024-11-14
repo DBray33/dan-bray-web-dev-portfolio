@@ -741,7 +741,7 @@ img {
   justify-content: space-evenly; /* Ensures even spacing between all items */
   flex-direction: row;
   gap: 0; /* Remove additional gap here */
-  padding: 0;
+  padding: 0 1rem;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
@@ -789,7 +789,7 @@ img {
   -webkit-text-fill-color: transparent;
   color: transparent;
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 /* Icon Background and Shadow */
