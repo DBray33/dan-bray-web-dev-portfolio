@@ -206,24 +206,64 @@ document.addEventListener('scroll', function () {
     }
   });
 });
-// /////////////////////////////////////////////
-function toggleTextBox(event, boxId) {
-  event.stopPropagation(); // Prevent click from bubbling to document
-  const textBox = document.getElementById(boxId);
-  const isVisible = textBox.style.display === 'block';
 
-  // Hide all other text boxes
-  document
-    .querySelectorAll('.text-box')
-    .forEach((box) => (box.style.display = 'none'));
+// ////////////////////////////////
+// Icon Content hide/display
+function showContent(contentId) {
+  // Hide all content sections
+  document.querySelectorAll('.content-section').forEach((section) => {
+    section.classList.remove('active');
+  });
 
-  // Toggle the clicked text box
-  textBox.style.display = isVisible ? 'none' : 'block';
+  // Show the selected content section
+  const selectedContent = document.getElementById(contentId);
+  if (selectedContent) {
+    selectedContent.classList.add('active');
+  }
 }
 
-// Close the text box when clicking outside
-document.addEventListener('click', function () {
-  document
-    .querySelectorAll('.text-box')
-    .forEach((box) => (box.style.display = 'none'));
-});
+// DROP DOWN TEXT BOX FOR ICONS ///////////////////
+// DROP DOWN TEXT BOX FOR ICONS ///////////////////
+// function toggleTextBox(event, boxId) {
+//   event.stopPropagation();
+//   const textBox = document.getElementById(boxId);
+//   const isVisible = textBox.style.display === 'block';
+
+//   document.querySelectorAll('.text-box').forEach((box) => {
+//     box.style.display = 'none';
+//     box.style.left = '50%';
+//     box.style.right = 'auto';
+//     box.style.transform = 'translateX(-50%)';
+//   });
+
+//   if (!isVisible) {
+//     textBox.style.display = 'block';
+
+//     const rect = textBox.getBoundingClientRect();
+//     const margin = 10;
+
+//     if (rect.left < margin) {
+//       textBox.style.left = `${margin}px`;
+//       textBox.style.transform = 'none';
+//     } else if (rect.right > window.innerWidth - margin) {
+//       textBox.style.left = 'auto';
+//       textBox.style.right = `${margin}px`;
+//       textBox.style.transform = 'none';
+//     } else {
+//       textBox.style.left = '50%';
+//       textBox.style.transform = 'translateX(-50%)';
+//     }
+//   } else {
+//     textBox.style.display = 'none';
+//   }
+// }
+
+// document.addEventListener('click', function () {
+//   document.querySelectorAll('.text-box').forEach((box) => {
+//     box.style.display = 'none';
+//     box.style.left = '50%';
+//     box.style.right = 'auto';
+//     box.style.transform = 'translateX(-50%)';
+//   });
+// });
+// /////////////////////////////////////////////

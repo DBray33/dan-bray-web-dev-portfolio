@@ -231,32 +231,6 @@
       </div>
     </section>
 
-    <!-- <div class="ph-caption">
-      <h1 class="ph-caption-title ph-appear max-width-1000" style="">
-        <div class="ph-title-parallax">Tank</div>
-      </h1>
-      <div class="ph-caption-title-ghost ph-appear" style="">
-        <div class="ph-ghost-parallax">Website</div>
-      </div>
-      <div class="ph-caption-subtitle ph-appear max-width-650" style="">
-        <div class="ph-subt-parallax">
-          Tank is a powerful and creative
-          <em>Portfolio Showcase HTML Website Template</em>. Designed and
-          handcrafted with care to highlight your creativity and promote your
-          services in a unique way.
-        </div>
-      </div>
-      <div class="tt-btn tt-btn-primary ph-appear margin-top-60" style="">
-        <a
-          href="https://1.envato.market/tank"
-          target="_blank"
-          rel="noopener"
-          data-hover="Download Here!"
-          >Download Here!</a
-        >
-      </div>
-    </div> -->
-
     <!-- About Section -->
     <section id="about" class="about-section">
       <div class="container">
@@ -296,75 +270,169 @@
       <div class="container">
         <div class="icon-background"></div>
         <ul class="icon-container">
-          <!-- Person -->
-          <li class="icon-item">
-            <span
-              class="icon-link"
-              onclick="toggleTextBox(event, 'personText')">
+          <!-- Person Icon -->
+          <li class="icon-item" onclick="showContent('personContent')">
+            <span class="icon-link">
               <i class="fas fa-user icon"></i>
             </span>
-            <h2 onclick="toggleTextBox(event, 'personText')">Who Am I?</h2>
-            <div id="personText" class="text-box">
-              This is custom text about me.
-            </div>
+            <h2>Who Am I?</h2>
           </li>
 
-          <!-- Brain -->
-          <li class="icon-item">
-            <span
-              class="icon-link"
-              onclick="toggleTextBox(event, 'skillsText')">
+          <!-- Brain Icon -->
+          <li class="icon-item" onclick="showContent('skillsContent')">
+            <span class="icon-link">
               <i class="fas fa-brain icon"></i>
             </span>
-            <h2 onclick="toggleTextBox(event, 'skillsText')">My Skills</h2>
-            <div id="skillsText" class="text-box">
-              This is custom text about my skills.
-            </div>
+            <h2>My Skills</h2>
           </li>
 
-          <!-- Project -->
-          <li class="icon-item">
-            <span
-              class="icon-link"
-              onclick="toggleTextBox(event, 'projectsText')">
+          <!-- Project Icon -->
+          <li class="icon-item" onclick="showContent('projectsContent')">
+            <span class="icon-link">
               <i class="fas fa-tools icon"></i>
             </span>
-            <h2 onclick="toggleTextBox(event, 'projectsText')">Projects</h2>
-            <div id="projectsText" class="text-box">
-              This is custom text about my projects.
-            </div>
+            <h2>Projects</h2>
           </li>
 
-          <!-- Web Development -->
-          <li class="icon-item">
-            <span
-              class="icon-link"
-              onclick="toggleTextBox(event, 'developmentText')">
+          <!-- Web Development Icon -->
+          <li class="icon-item" onclick="showContent('developmentContent')">
+            <span class="icon-link">
               <i class="fas fa-laptop-code icon"></i>
             </span>
-            <h2 onclick="toggleTextBox(event, 'developmentText')">
-              Development Approach
-            </h2>
-            <div id="developmentText" class="text-box">
-              This is custom text about my development approach.
-            </div>
+            <h2>Development Approach</h2>
           </li>
 
-          <!-- Communication -->
-          <li class="icon-item">
-            <span
-              class="icon-link"
-              onclick="toggleTextBox(event, 'connectText')">
+          <!-- Communication Icon -->
+          <li class="icon-item" onclick="showContent('connectContent')">
+            <span class="icon-link">
               <i class="fas fa-phone icon"></i>
             </span>
-            <h2 onclick="toggleTextBox(event, 'connectText')">
-              Let's Connect!
-            </h2>
-            <div id="connectText" class="text-box">
-              This is custom text about connecting with me.
-            </div>
+            <h2>Let's Connect!</h2>
           </li>
         </ul>
+
+        <!-- Content Sections for Each Icon -->
+        <div id="personContent" class="content-section">
+          <h3>About Me</h3>
+          <p>
+            Custom text about the person, image, or other content. Lorem ipsum
+            dolor sit amet consectetur, adipisicing elit. Culpa omnis totam
+            temporibus animi nobis autem beatae excepturi sed delectus. Sunt
+            harum veritatis aliquid provident ab mollitia quam consequuntur nam,
+            natus magni commodi pariatur, itaque necessitatibus, assumenda modi.
+            Cupiditate quibusdam quae nostrum temporibus ad aspernatur vitae
+            facere! Vero cumque rem esse, enim, nobis, doloribus reiciendis at
+            nisi blanditiis delectus totam consectetur. Deleniti est amet dicta
+            soluta assumenda nobis magni asperiores, sapiente quos vel maiores
+            dolorum harum nulla adipisci doloribus tempore perferendis atque,
+            sit rerum ea repudiandae consequuntur nostrum vitae placeat. Numquam
+            cum rerum dolorum ducimus odio, voluptate illum corrupti delectus
+            inventore quos illo, labore sint nisi error facilis dolorem facere
+            aperiam, enim amet repellat. Unde, explicabo laboriosam possimus
+            excepturi quam odit eligendi obcaecati et voluptates blanditiis
+            nostrum velit cumque doloribus, quaerat ratione ut! Rem, delectus
+            similique. Quod eligendi iusto odio voluptatem qui nemo sequi ex
+            obcaecati dolores repudiandae, quas itaque? Libero neque dicta at
+            qui adipisci quo earum incidunt quibusdam ullam! Alias maiores enim
+            asperiores veritatis, assumenda modi sapiente aut? Tenetur ipsam cum
+            soluta reprehenderit nesciunt at ad harum ipsa incidunt saepe quae
+            vero animi est mollitia nobis consequuntur adipisci expedita ea
+            neque, quia aspernatur dolores explicabo illo! Similique, quas quae!
+          </p>
+        </div>
+
+        <div id="skillsContent" class="content-section">
+          <h3>My Skills</h3>
+          <p>
+            Custom text about skills, maybe a skills chart or other visual.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+            facilis alias amet dolore inventore, sit eaque, cupiditate accusamus
+            illo aliquam veniam enim dolor incidunt nihil placeat esse?
+            Laudantium, odio quaerat? Voluptas amet ipsum facere architecto
+            aspernatur perferendis obcaecati at, impedit consequatur praesentium
+            possimus consequuntur, dolore officiis ratione perspiciatis velit
+            quod nam! Repudiandae aperiam alias officiis repellat veniam nam
+            expedita provident ex atque id doloremque odit blanditiis non
+            dolorum repellendus reprehenderit, necessitatibus sequi animi
+            laborum ducimus. Consequuntur voluptatibus soluta tempore nam
+            officia ratione quibusdam neque deleniti fugiat itaque! Rem corporis
+            quam dolorum eaque non. Nihil ullam provident, distinctio temporibus
+            sit sint?
+          </p>
+        </div>
+
+        <div id="projectsContent" class="content-section">
+          <h3>Projects</h3>
+          <p>
+            Showcase of projects, images, and links to work. Lorem ipsum dolor
+            sit amet consectetur, adipisicing elit. Quae voluptate perspiciatis
+            magni aut assumenda, recusandae ipsam deleniti dicta dolorum
+            temporibus aspernatur sequi, blanditiis cumque sapiente, nam
+            deserunt. Consectetur facilis sed rem et eum illum, temporibus totam
+            exercitationem ipsam expedita aspernatur dignissimos ipsum molestias
+            minima dolorum incidunt eius optio. Accusantium, numquam similique.
+            Quasi veniam accusantium veritatis aperiam itaque placeat quas? Non
+            voluptatibus tempore temporibus. Facere harum ab, nemo
+            exercitationem delectus obcaecati quaerat, soluta aut aspernatur
+            accusantium eaque laborum fugiat repellendus, cupiditate distinctio
+            voluptatum? Voluptas dolores temporibus non autem id eius neque
+            perspiciatis doloribus odio quidem nemo, sapiente sequi aliquam
+            recusandae voluptatibus eligendi quae sed quisquam optio mollitia.
+            Voluptates ratione tempore soluta esse libero, hic rerum earum
+            voluptas autem eaque ullam, sequi quisquam dolorem nam odit sapiente
+            laborum id voluptatum minima ad at totam! Unde ea praesentium libero
+            excepturi, reprehenderit fugiat qui quos veniam natus corporis
+            provident distinctio rerum, fuga ad aliquid.
+          </p>
+        </div>
+
+        <div id="developmentContent" class="content-section">
+          <h3>Development Approach</h3>
+          <p>
+            Overview of development philosophy, tools used, etc. Lorem ipsum
+            dolor, sit amet consectetur adipisicing elit. Cumque ipsam quod ex
+            voluptates consequuntur, eligendi ab perferendis reiciendis.
+            Ducimus, consectetur ipsam autem tempora eos esse sequi reiciendis
+            tempore ea nisi deleniti excepturi ullam fugiat eaque quaerat
+            voluptas qui suscipit repellendus temporibus eveniet enim iure earum
+            nam. Laudantium nostrum eum maiores animi libero delectus autem unde
+            sapiente magni sed minima, vel omnis asperiores rerum, architecto ut
+            quam praesentium deleniti, voluptatum ipsum. Nihil molestias ipsum
+            animi saepe, mollitia placeat recusandae assumenda hic quos nulla
+            consequuntur suscipit error eos id maxime, accusantium perferendis
+            cum ex est quidem deleniti. Esse iusto cum quis eius qui odio beatae
+            nemo quae nam, vero officiis eveniet repudiandae quos consequuntur,
+            vel quasi adipisci reiciendis! Reiciendis minus tempore culpa quae
+            amet officiis pariatur, earum, sunt molestias doloremque esse hic
+            dolorem exercitationem quos cum ipsam! Recusandae ipsam ab fuga, sit
+            id eos a? Quis adipisci illo perspiciatis ex laudantium quod
+            reprehenderit inventore atque, aperiam delectus omnis enim
+            aspernatur, officia nobis voluptates ipsam nisi. Illum, nobis ipsam
+            omnis quod, id reprehenderit, nihil architecto molestiae veritatis
+            natus itaque a iste assumenda sunt. Tenetur dolorem numquam vel
+            provident totam consequuntur labore minima est, debitis nemo neque
+            quam ab corporis libero earum in non!
+          </p>
+        </div>
+
+        <div id="connectContent" class="content-section">
+          <h3>Let's Connect!</h3>
+          <p>
+            Contact information, social media links, or a contact form. Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Facilis sunt
+            culpa similique officiis doloribus, corporis repellat assumenda
+            animi, expedita quasi molestias veritatis quo natus dolor placeat
+            nesciunt! Quasi maiores facere iusto quisquam placeat. Voluptates
+            excepturi modi blanditiis saepe perferendis explicabo molestias
+            dolore ad animi, dolorem debitis ratione deserunt repudiandae cum,
+            quae doloremque nulla nam vero pariatur unde. Alias a facilis ad rem
+            doloribus aperiam cum delectus sapiente accusamus perferendis
+            veritatis suscipit, nobis velit tempore quisquam? Nobis dignissimos,
+            omnis non laborum placeat tempora id provident deleniti sapiente
+            laboriosam tempore unde, perferendis eveniet nisi veniam, at ut enim
+            nesciunt nostrum cumque architecto.
+          </p>
+        </div>
       </div>
     </section>
 

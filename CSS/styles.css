@@ -824,50 +824,90 @@ img {
 }
 
 /* Hover effect */
-
 .icon-link:hover::before {
   background-color: #555;
   transform: translate(-50%, -50%) rotate(90deg);
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Icon Swoop Down Animation */
 /* Remove initial opacity from .icon-item */
 .icon-item {
-  opacity: 0; /* Start hidden */
-  transform: translateY(-100px); /* Start position is above */
+  /* Start hidden */
+  opacity: 0;
+  /* Start position is above */
+  transform: translateY(-100px);
   cursor: pointer;
 }
 
 .icon-item.animate {
-  animation: swoopDown 0.5s ease-out forwards;
-  animation-delay: calc(0.1s * var(--icon-index)); /* Stagger each icon */
+  animation: swoopDown 0.25s ease-out forwards;
+  /* Stagger each icon */
+  animation-delay: calc(0.1s * var(--icon-index));
 }
 
 @keyframes swoopDown {
   from {
     opacity: 0;
-    transform: translateY(-100px); /* Start from above */
+    transform: translateY(-100px);
+    /* Start from above */
   }
   to {
     opacity: 1;
-    transform: translateY(0); /* End at the original position */
+    /* End at the original position */
+    transform: translateY(0);
   }
 }
 
-/* Icon Text Box */
-.text-box {
+/* Content for icons */
+.content-section {
+  display: none;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-top: 2rem;
+  transition: opacity 0.3s ease-in-out;
+  max-height: 90vh; /* Limits height to half of the viewport */
+  overflow-y: auto; /* Adds scroll if content exceeds max height */
+  width: 90%; /* Makes it responsive */
+  max-width: 800px; /* Optional: limits the width */
+}
+
+/* Active class to display the content */
+.content-section.active {
+  display: block;
+  opacity: 1;
+}
+
+.icon-link.active .icon {
+  color: #ffb902; /* Highlight color for active icon */
+  transform: rotate(45deg); /* Adjust the rotation as desired */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .content-section {
+    max-height: 40vh; /* Decrease max height on smaller screens */
+    width: 100%; /* Make the content fill the container */
+  }
+}
+/* Icon Text Box (use different approach) */
+/* .text-box {
   display: none;
   position: absolute;
-  top: 4rem;
+  top: 8rem;
   left: 50%;
   transform: translateX(-50%);
   padding: 1rem;
   background-color: #333;
   color: #fff;
   border-radius: 5px;
-  width: 200px;
+  min-width: 400px; 
+  max-width: 90vw; 
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
   z-index: 10;
-}
+  overflow-wrap: break-word; 
+} */
+
 /* END ABOUT SECTION */
