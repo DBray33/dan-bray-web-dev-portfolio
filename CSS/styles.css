@@ -867,7 +867,7 @@ img {
   border-radius: 10px;
   margin-top: 2rem;
   transition: opacity 0.3s ease-in-out;
-  max-height: 90vh; /* Limits height to half of the viewport */
+  max-height: 100vh; /* Limits height to half of the viewport */
   overflow-y: auto; /* Adds scroll if content exceeds max height */
   width: 90%; /* Makes it responsive */
   max-width: 800px; /* Optional: limits the width */
