@@ -673,8 +673,7 @@ img {
   background-color: black;
   width: 100vw; /* Ensure the section header takes up the full viewport width */
   text-align: center;
-  padding: 12rem 0 2rem;
-  margin: 0; /* Remove any margin */
+  padding: 3rem 0 2rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
@@ -685,14 +684,30 @@ img {
   right: 0; /* Align to the right */
 }
 
-#about h1 {
-  color: var(--primary-color);
-  font-size: clamp(1.5rem, 2vw + 1rem, 1.5rem);
-  font-weight: bold;
-  letter-spacing: 1rem;
+.ghost {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10rem;
+  color: white;
+  opacity: 0.1;
+}
+
+.me {
+  padding-bottom: 4rem;
+  color: white;
 }
 
 #about h2 {
+  color: var(--primary-color);
+  font-size: large;
+  /* font-size: clamp(1.5rem, 2vw + 1rem, 1.5rem); */
+  font-weight: bold;
+  letter-spacing: 0.8rem;
+}
+
+#about .journey {
   color: white;
   font-weight: 700;
   font-size: 4rem;
@@ -738,11 +753,8 @@ img {
 /* Icon Container */
 .icon-container {
   display: flex;
-  justify-content: space-evenly; /* Ensures even spacing between all items */
-  flex-direction: row;
-  gap: 0; /* Remove additional gap here */
+  justify-content: space-evenly;
   padding: 0 1rem;
-  margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 }
@@ -750,47 +762,36 @@ img {
 .icon-item {
   display: flex;
   flex-direction: column;
-  /* Center the icon and h1 horizontally */
   align-items: center;
-  /* Center-align text below the icon */
   text-align: center;
-  /* Space between icon and h1 */
-  gap: 3rem;
+  gap: 1rem;
+  width: 8rem; /* Set a fixed width to standardize spacing */
 }
 
-/* Additional Styling for Icon Text */
-.icon-item h1 {
+.icon-item h2 {
   font-family: 'Oswald';
-  font-size: 1.2rem; /* Adjust font size as needed */
+  font-size: 1.2rem;
   font-weight: 300;
   color: var(--primary-color);
-  margin: 0; /* Remove extra margin */
-  z-index: 5;
-  max-width: 6rem;
-  text-align: center; /* Keeps text centered within its container */
-  word-wrap: normal; /* Ensures words break onto the next line if necessary */
+  margin: 2rem 0;
+  text-align: center;
+  word-wrap: normal;
+  max-width: 5.5rem;
 }
 
-/* Individual Icon Link */
 .icon-link {
   display: inline-block;
   text-decoration: none;
   position: relative;
 }
 
-/* Gradient Icon Styling */
 .icon {
   font-size: 3rem;
-  background: linear-gradient(
-    to bottom,
-    #f1e5ca,
-    #9b8671
-  ); /* Light to dark gradient */
+  background: linear-gradient(to bottom, #f1e5ca, #9b8671);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   position: relative;
-  /* z-index: 1; */
 }
 
 /* Icon Background and Shadow */
@@ -810,10 +811,6 @@ img {
 }
 
 /* Hover effect */
-.icon-link:hover .icon {
-  color: white; /* Change to solid color on hover */
-  transition: color 0.3s ease;
-}
 
 .icon-link:hover::before {
   background-color: #555;
@@ -824,27 +821,22 @@ img {
 /* Remove initial opacity from .icon-item */
 .icon-item {
   opacity: 0; /* Start hidden */
-  transform: translateX(100px) rotate(10deg); /* Initial transform state */
+  transform: translateY(-100px); /* Start position is above */
 }
 
 .icon-item.animate {
-  animation: swoopIn 1s ease-out forwards;
-  animation-delay: calc(0.2s * var(--icon-index));
+  animation: swoopDown 0.5s ease-out forwards;
+  animation-delay: calc(0.1s * var(--icon-index)); /* Stagger each icon */
 }
 
-/* New Animation for swooping in from the right */
-@keyframes swoopIn {
-  0% {
-    transform: translateX(100px) rotate(10deg);
+@keyframes swoopDown {
+  from {
     opacity: 0;
+    transform: translateY(-100px); /* Start from above */
   }
-  75% {
-    transform: translateX(-10px) rotate(-2deg);
+  to {
     opacity: 1;
-  }
-  100% {
-    transform: translateX(0) rotate(0);
-    opacity: 1; /* Ensure opacity stays at 1 */
+    transform: translateY(0); /* End at the original position */
   }
 }
 /* END ABOUT SECTION */

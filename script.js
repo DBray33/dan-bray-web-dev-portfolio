@@ -158,6 +158,7 @@ if (logoLink) {
 }
 
 // /////////////////////////////////////////////
+// about-icon slide in animation
 document.addEventListener('DOMContentLoaded', () => {
   const iconItems = document.querySelectorAll('.icon-item');
   const section = document.querySelector('.about-icons-section');
