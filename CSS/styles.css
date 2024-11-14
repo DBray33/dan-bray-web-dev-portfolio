@@ -762,10 +762,11 @@ img {
 .icon-item h1 {
   font-family: 'Oswald';
   font-size: 1.2rem; /* Adjust font size as needed */
+  font-weight: 300;
   color: var(--primary-color);
   margin: 0; /* Remove extra margin */
   z-index: 5;
-  max-width: 5rem;
+  max-width: 6rem;
   text-align: center; /* Keeps text centered within its container */
   word-wrap: normal; /* Ensures words break onto the next line if necessary */
 }
@@ -818,5 +819,32 @@ img {
   background-color: #555;
   transform: translate(-50%, -50%) rotate(90deg);
   transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Remove initial opacity from .icon-item */
+.icon-item {
+  opacity: 0; /* Start hidden */
+  transform: translateX(100px) rotate(10deg); /* Initial transform state */
+}
+
+.icon-item.animate {
+  animation: swoopIn 1s ease-out forwards;
+  animation-delay: calc(0.2s * var(--icon-index));
+}
+
+/* New Animation for swooping in from the right */
+@keyframes swoopIn {
+  0% {
+    transform: translateX(100px) rotate(10deg);
+    opacity: 0;
+  }
+  75% {
+    transform: translateX(-10px) rotate(-2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+    opacity: 1; /* Ensure opacity stays at 1 */
+  }
 }
 /* END ABOUT SECTION */

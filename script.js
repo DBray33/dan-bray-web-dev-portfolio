@@ -158,3 +158,22 @@ if (logoLink) {
 }
 
 // /////////////////////////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const iconItems = document.querySelectorAll('.icon-item');
+  const section = document.querySelector('.about-icons-section');
+
+  function handleScroll() {
+    const sectionPosition = section.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.2; // Adjust as needed for when to trigger
+
+    if (sectionPosition < screenPosition) {
+      iconItems.forEach((item, index) => {
+        item.style.setProperty('--icon-index', index); // Set custom delay for each icon
+        item.classList.add('animate'); // Add animate class when section is in view
+      });
+      window.removeEventListener('scroll', handleScroll); // Remove scroll listener once triggered
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+});
