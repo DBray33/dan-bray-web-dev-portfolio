@@ -171,6 +171,7 @@ img {
   color: black;
   font-family: 'Lato', sans-serif; /* Ensure the font is applied to the links */
   font-weight: 700; /* Thicker font weight */
+  font-family: 'Oswald';
   transition: all 0.4s ease-in-out; /* Smooth transition for font size and padding */
 }
 
@@ -243,17 +244,22 @@ img {
   top: 0;
   left: 0;
   padding: 1rem;
-  z-index: 1001; /* Ensure it is above other elements */
-  overflow: hidden; /* Ensure the pseudo-element is contained within the logo */
+  z-index: 1001;
+  overflow: hidden;
 }
 
+/* Transition defined only once */
 .logo-link img {
-  height: 50px; /* Adjust the height as needed */
-  width: auto; /* Maintain aspect ratio */
-  transition: filter 0.3s ease; /* Smooth transition for filter */
-  position: relative; /* Position relative for pseudo-element */
+  height: 50px; /* Default height */
+  width: auto;
+  transition: height 0.3s ease, filter 0.3s ease; /* One transition for all changes */
+  position: relative;
   display: block;
-  z-index: 2; /* Ensure the image is above the pseudo-element */
+  z-index: 2;
+}
+
+.logo-link-small img {
+  height: 30px; /* Smaller size when scrolled */
 }
 
 .logo-link::before {
@@ -265,8 +271,8 @@ img {
   height: 0;
   background: black;
   transition: height 0.3s ease;
-  z-index: 0; /* Ensure the pseudo-element is below the image */
-  mix-blend-mode: difference; /* Blend the pseudo-element with the image */
+  z-index: 0;
+  mix-blend-mode: difference;
 }
 
 .logo-link:hover::before {
@@ -274,7 +280,7 @@ img {
 }
 
 .logo-link:hover img {
-  filter: brightness(0) invert(1); /* Turn the image white on hover */
+  filter: brightness(0) invert(1);
 }
 
 /* Apply the spin animation on click */
@@ -289,6 +295,7 @@ img {
 /* Carousel Content Positioning */
 .carousel-content {
   font-size: 1.5rem;
+  font-family: 'Oswald';
   position: absolute;
   min-width: 100%;
   top: 40%;
@@ -307,6 +314,8 @@ img {
 }
 
 .carousel-item h1 {
+  font-family: 'Oswald';
+  font-size: 3rem;
   font-weight: 700;
 }
 
@@ -686,7 +695,7 @@ img {
 
 .ghost {
   position: absolute;
-  top: 0;
+  top: 1rem;
   left: 50%;
   transform: translateX(-50%);
   font-size: 10rem;
@@ -695,23 +704,27 @@ img {
 }
 
 .me {
-  padding-bottom: 4rem;
+  position: absolute;
+  top: 9rem; /* Move it down by 4rem */
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
+  z-index: 2; /* Ensure it stays on top of .ghost */
 }
 
 #about h2 {
   color: var(--primary-color);
   font-size: large;
-  /* font-size: clamp(1.5rem, 2vw + 1rem, 1.5rem); */
   font-weight: bold;
   letter-spacing: 0.8rem;
+  margin-top: 10rem; /* Adjust this value to move it down */
 }
 
 #about .journey {
   color: white;
   font-weight: 700;
   font-size: 4rem;
-  padding: 0 2rem;
+  padding: 0.5rem 2rem 0;
 }
 
 #about p {
@@ -822,6 +835,7 @@ img {
 .icon-item {
   opacity: 0; /* Start hidden */
   transform: translateY(-100px); /* Start position is above */
+  cursor: pointer;
 }
 
 .icon-item.animate {
@@ -838,5 +852,22 @@ img {
     opacity: 1;
     transform: translateY(0); /* End at the original position */
   }
+}
+
+/* Icon Text Box */
+.text-box {
+  display: none;
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  width: 200px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 10;
 }
 /* END ABOUT SECTION */

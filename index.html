@@ -265,8 +265,8 @@
           <!-- Section Header -->
           <div class="section-header">
             <div class="text-overlay">
-              <h1 class="me">ABOUT ME</h1>
-              <h1 class="ghost">ABOUT</h1>
+              <h1 class="ghost" data-speed="0.2">ABOUT</h1>
+              <h1 class="me" data-speed="0.5">ABOUT ME</h1>
             </div>
             <h2>AUTHENTICITY CREATIVITY SPECIFICITY</h2>
             <h1 class="journey">MY WEB DEVELOPMENT JOURNEY</h1>
@@ -298,38 +298,71 @@
         <ul class="icon-container">
           <!-- Person -->
           <li class="icon-item">
-            <a href="#about" class="icon-link">
+            <span
+              class="icon-link"
+              onclick="toggleTextBox(event, 'personText')">
               <i class="fas fa-user icon"></i>
-            </a>
-            <h2>Who Am I?</h2>
+            </span>
+            <h2 onclick="toggleTextBox(event, 'personText')">Who Am I?</h2>
+            <div id="personText" class="text-box">
+              This is custom text about me.
+            </div>
           </li>
+
           <!-- Brain -->
           <li class="icon-item">
-            <a href="#about" class="icon-link">
+            <span
+              class="icon-link"
+              onclick="toggleTextBox(event, 'skillsText')">
               <i class="fas fa-brain icon"></i>
-            </a>
-            <h2>My Skills</h2>
+            </span>
+            <h2 onclick="toggleTextBox(event, 'skillsText')">My Skills</h2>
+            <div id="skillsText" class="text-box">
+              This is custom text about my skills.
+            </div>
           </li>
+
           <!-- Project -->
           <li class="icon-item">
-            <a href="#about" class="icon-link">
+            <span
+              class="icon-link"
+              onclick="toggleTextBox(event, 'projectsText')">
               <i class="fas fa-tools icon"></i>
-            </a>
-            <h2>Projects</h2>
+            </span>
+            <h2 onclick="toggleTextBox(event, 'projectsText')">Projects</h2>
+            <div id="projectsText" class="text-box">
+              This is custom text about my projects.
+            </div>
           </li>
+
           <!-- Web Development -->
           <li class="icon-item">
-            <a href="#about" class="icon-link">
+            <span
+              class="icon-link"
+              onclick="toggleTextBox(event, 'developmentText')">
               <i class="fas fa-laptop-code icon"></i>
-            </a>
-            <h2>Development Approach</h2>
+            </span>
+            <h2 onclick="toggleTextBox(event, 'developmentText')">
+              Development Approach
+            </h2>
+            <div id="developmentText" class="text-box">
+              This is custom text about my development approach.
+            </div>
           </li>
+
           <!-- Communication -->
           <li class="icon-item">
-            <a href="#about" class="icon-link">
+            <span
+              class="icon-link"
+              onclick="toggleTextBox(event, 'connectText')">
               <i class="fas fa-phone icon"></i>
-            </a>
-            <h2>Let's Connect!</h2>
+            </span>
+            <h2 onclick="toggleTextBox(event, 'connectText')">
+              Let's Connect!
+            </h2>
+            <div id="connectText" class="text-box">
+              This is custom text about connecting with me.
+            </div>
           </li>
         </ul>
       </div>

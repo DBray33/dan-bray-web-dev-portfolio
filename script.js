@@ -143,8 +143,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-
-// TOP LEFT LOGO SPIN ANIMATION
+// LOGO LINK //////////////////
+// Logo spin animation:
 const logoLink = document.querySelector('.logo-link');
 if (logoLink) {
   logoLink.addEventListener('click', function (event) {
@@ -156,8 +156,17 @@ if (logoLink) {
     }, 500);
   });
 }
+// Logo shrink on scroll
+window.addEventListener('scroll', function () {
+  const logo = document.querySelector('.logo-link');
+  if (window.scrollY > 50) {
+    // Adjust threshold as needed
+    logo.classList.add('logo-link-small');
+  } else {
+    logo.classList.remove('logo-link-small');
+  }
+});
 
-// /////////////////////////////////////////////
 // about-icon slide in animation
 document.addEventListener('DOMContentLoaded', () => {
   const iconItems = document.querySelectorAll('.icon-item');
@@ -177,4 +186,44 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', handleScroll);
+});
+
+// About Section header parallax
+document.addEventListener('scroll', function () {
+  const section = document.querySelector('#about'); // Replace with the class or ID of your section
+  const elements = document.querySelectorAll('[data-speed]');
+  const sectionStart = window.innerHeight * 0.6; // Adjusts for the initial 80vh section height
+
+  elements.forEach((element) => {
+    const speed = parseFloat(element.getAttribute('data-speed'));
+    const offset = (window.scrollY - sectionStart) * speed;
+
+    // Only apply the effect after scrolling past the 80vh mark
+    if (window.scrollY > sectionStart) {
+      element.style.transform = `translate(-50%, -${offset}px)`; // Moves up as you scroll down
+    } else {
+      element.style.transform = `translate(-50%, 0)`; // Reset position
+    }
+  });
+});
+// /////////////////////////////////////////////
+function toggleTextBox(event, boxId) {
+  event.stopPropagation(); // Prevent click from bubbling to document
+  const textBox = document.getElementById(boxId);
+  const isVisible = textBox.style.display === 'block';
+
+  // Hide all other text boxes
+  document
+    .querySelectorAll('.text-box')
+    .forEach((box) => (box.style.display = 'none'));
+
+  // Toggle the clicked text box
+  textBox.style.display = isVisible ? 'none' : 'block';
+}
+
+// Close the text box when clicking outside
+document.addEventListener('click', function () {
+  document
+    .querySelectorAll('.text-box')
+    .forEach((box) => (box.style.display = 'none'));
 });
