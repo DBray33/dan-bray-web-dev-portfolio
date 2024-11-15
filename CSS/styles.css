@@ -755,12 +755,12 @@ img {
 /* ICON MENU SECTION */
 .about-icons-section {
   position: relative;
-  padding-top: 4rem;
+  padding: 4rem 0;
   background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 25vh;
+  height: 35vh;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Bottom shadow */
 }
 
@@ -906,9 +906,9 @@ img {
   border-radius: 10px;
   margin: -2rem auto 0;
   transition: opacity 0.3s ease-in-out;
-  max-height: 100vh;
+  max-height: 65vh;
+  width: 100%;
   overflow-y: auto;
-  width: 90%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Bottom shadow */
 }
 
@@ -924,11 +924,6 @@ img {
 .content-section.active {
   display: block;
   opacity: 1;
-}
-
-.content-section {
-  max-height: 65vh;
-  width: 100%;
 }
 
 /* Icon Text Box (use different approach) */

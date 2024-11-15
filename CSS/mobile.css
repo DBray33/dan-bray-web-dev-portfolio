@@ -180,6 +180,10 @@
     align-items: center;
   }
 
+  #about {
+    scroll-margin-top: -39px; /* Adjust this to match your navbar height */
+  }
+
   #about,
   .about-image {
     text-align: center;
