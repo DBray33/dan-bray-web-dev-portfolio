@@ -186,7 +186,7 @@ document.addEventListener('scroll', function () {
   });
 });
 
-// about-icon slide in animation
+// About-icon slide in animation
 document.addEventListener('DOMContentLoaded', () => {
   const iconItems = document.querySelectorAll('.icon-item');
   const section = document.querySelector('.about-icons-section');
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', handleScroll);
 });
-// ////////////////////////////////
+
 // Icon Content hide/display
 function showContent(contentId) {
   // Hide all content sections
@@ -232,6 +232,19 @@ function showContent(contentId) {
   if (activeIcon) {
     activeIcon.classList.add('active');
   }
+
+  // Close active content and icon when clicking outside
+  document.addEventListener('click', function handleClickOutside(event) {
+    // Check if the click happened outside the active content or icon
+    if (
+      !selectedContent.contains(event.target) &&
+      !activeIcon.contains(event.target)
+    ) {
+      selectedContent.classList.remove('active');
+      activeIcon.classList.remove('active');
+      document.removeEventListener('click', handleClickOutside); // Remove listener to avoid duplicates
+    }
+  });
 }
 
 // DROP DOWN TEXT BOX FOR ICONS ///////////////////
