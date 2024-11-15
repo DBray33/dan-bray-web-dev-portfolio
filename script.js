@@ -167,6 +167,25 @@ window.addEventListener('scroll', function () {
   }
 });
 
+// About Section header parallax
+document.addEventListener('scroll', function () {
+  const section = document.querySelector('#about'); // Replace with the class or ID of your section
+  const elements = document.querySelectorAll('[data-speed]');
+  const sectionStart = window.innerHeight * 0.6; // Adjusts for the initial 80vh section height
+
+  elements.forEach((element) => {
+    const speed = parseFloat(element.getAttribute('data-speed'));
+    const offset = (window.scrollY - sectionStart) * speed;
+
+    // Only apply the effect after scrolling past the 80vh mark
+    if (window.scrollY > sectionStart) {
+      element.style.transform = `translate(-50%, -${offset}px)`; // Moves up as you scroll down
+    } else {
+      element.style.transform = `translate(-50%, 0)`; // Reset position
+    }
+  });
+});
+
 // about-icon slide in animation
 document.addEventListener('DOMContentLoaded', () => {
   const iconItems = document.querySelectorAll('.icon-item');
@@ -187,26 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', handleScroll);
 });
-
-// About Section header parallax
-document.addEventListener('scroll', function () {
-  const section = document.querySelector('#about'); // Replace with the class or ID of your section
-  const elements = document.querySelectorAll('[data-speed]');
-  const sectionStart = window.innerHeight * 0.6; // Adjusts for the initial 80vh section height
-
-  elements.forEach((element) => {
-    const speed = parseFloat(element.getAttribute('data-speed'));
-    const offset = (window.scrollY - sectionStart) * speed;
-
-    // Only apply the effect after scrolling past the 80vh mark
-    if (window.scrollY > sectionStart) {
-      element.style.transform = `translate(-50%, -${offset}px)`; // Moves up as you scroll down
-    } else {
-      element.style.transform = `translate(-50%, 0)`; // Reset position
-    }
-  });
-});
-
 // ////////////////////////////////
 // Icon Content hide/display
 function showContent(contentId) {
@@ -215,10 +214,23 @@ function showContent(contentId) {
     section.classList.remove('active');
   });
 
+  // Remove active class from all icons
+  document.querySelectorAll('.icon-item').forEach((item) => {
+    item.classList.remove('active');
+  });
+
   // Show the selected content section
   const selectedContent = document.getElementById(contentId);
   if (selectedContent) {
     selectedContent.classList.add('active');
+  }
+
+  // Add active class to the corresponding icon-item
+  const activeIcon = document.querySelector(
+    `.icon-item[onclick="showContent('${contentId}')"]`
+  );
+  if (activeIcon) {
+    activeIcon.classList.add('active');
   }
 }
 

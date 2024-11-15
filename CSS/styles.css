@@ -830,6 +830,37 @@ img {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+.icon-link.active .icon {
+  color: #ffb902;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for icon and h2 */
+.icon-item:hover .icon {
+  color: #ffb902; /* Highlight color for the icon */
+  transform: rotate(45deg); /* Rotate the icon */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-item:hover .icon-link::before {
+  background-color: #555;
+  transform: translate(-50%, -50%) rotate(90deg); /* Rotate the background */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.icon-item.active .icon {
+  color: #ffb902; /* Keep highlight color */
+  transform: rotate(45deg); /* Keep rotated state */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-item.active .icon-link::before {
+  background-color: #555; /* Keep rotated background color */
+  transform: translate(-50%, -50%) rotate(90deg);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
 /* Icon Swoop Down Animation */
 /* Remove initial opacity from .icon-item */
 .icon-item {
@@ -865,7 +896,7 @@ img {
   padding: 2rem;
   background-color: #f9f9f9;
   border-radius: 10px;
-  margin: 2rem auto 0; /* Centers content horizontally */
+  margin: 0 auto; /* Centers content horizontally */
   transition: opacity 0.3s ease-in-out;
   max-height: 100vh; /* Limits height to viewport */
   overflow-y: auto; /* Adds scroll if content exceeds max height */
@@ -885,12 +916,6 @@ img {
 .content-section.active {
   display: block;
   opacity: 1;
-}
-
-.icon-link.active .icon {
-  color: #ffb902; /* Highlight color for active icon */
-  transform: rotate(45deg); /* Adjust the rotation as desired */
-  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .content-section {
