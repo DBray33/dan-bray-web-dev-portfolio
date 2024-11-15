@@ -145,32 +145,32 @@
     padding: 0 2rem;
   }
 
-  #about .header-image-container {
+  /* #about .header-image-container {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-  }
+  } */
 
-  #about .section-header,
+  /* #about .section-header,
   .about-image {
     width: 100%;
     text-align: center;
-  }
+  } */
 
   .heading-border {
     margin: 1rem auto;
   }
 
-  .about-image {
+  /* .about-image {
     margin-top: -1rem;
     display: flex;
     justify-content: center;
-  }
+  } */
 
-  .about-image img {
+  /* .about-image img {
     width: 100%;
     max-width: 300px;
-  }
+  } */
 }
 
 /* Responsive: Stack header, image, and accordion vertically on small screens */

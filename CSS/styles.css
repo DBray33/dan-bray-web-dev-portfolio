@@ -870,7 +870,15 @@ img {
   max-height: 100vh; /* Limits height to viewport */
   overflow-y: auto; /* Adds scroll if content exceeds max height */
   width: 90%; /* Responsive width */
-  max-width: 800px; /* Maximum width for larger screens */
+  /* max-width: 800px; */
+}
+
+.about-image img {
+  float: left; /* Position the image to the left of the text */
+  margin-right: 1rem; /* Add space between the image and the text */
+  margin-bottom: 1rem; /* Add space below the image */
+  width: 150px; /* Set the image width */
+  border-radius: 10px; /* Optional: round the corners */
 }
 
 /* Active class to display the content */
@@ -885,12 +893,11 @@ img {
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .content-section {
-    max-height: 40vh; /* Decrease max height on smaller screens */
-    width: 100%; /* Make the content fill the container */
-  }
+.content-section {
+  max-height: 65vh;
+  width: 100%;
 }
+
 /* Icon Text Box (use different approach) */
 /* .text-box {
   display: none;
