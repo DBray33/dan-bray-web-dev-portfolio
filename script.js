@@ -247,6 +247,31 @@ function showContent(contentId) {
   });
 }
 
+// /////////////////////////////////////////
+// /////////////////////////////////////////
+// /////////////////////////////////////////
+// /////////////////////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const elementsToAnimate = document.querySelectorAll(
+    '.animate-from-left, .animate-from-right'
+  );
+
+  function handleScroll() {
+    elementsToAnimate.forEach((element) => {
+      const position = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (position < windowHeight * 0.8) {
+        element.classList.add('animate-visible');
+      } else {
+        element.classList.remove('animate-visible'); // Remove to allow re-trigger on scroll
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Initial check in case elements are already in view
+});
 // DROP DOWN TEXT BOX FOR ICONS ///////////////////
 // DROP DOWN TEXT BOX FOR ICONS ///////////////////
 // function toggleTextBox(event, boxId) {
