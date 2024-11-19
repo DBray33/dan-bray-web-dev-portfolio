@@ -2,28 +2,22 @@
 document.addEventListener('DOMContentLoaded', function () {
   const toggleButton = document.querySelector('.mobile-menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu-items');
-  const menuLinks = document.querySelectorAll('.mobile-menu-list a');
 
-  // Toggle mobile menu on hamburger icon click
+  // Toggle mobile menu and icon rotation
   toggleButton.addEventListener('click', function (event) {
     event.stopPropagation();
     mobileMenu.classList.toggle('active');
+    toggleButton.classList.toggle('menu-active'); // Add a class to indicate active state
   });
 
-  // Close mobile menu when a link is clicked
-  menuLinks.forEach((link) => {
-    link.addEventListener('click', function () {
-      mobileMenu.classList.remove('active');
-    });
-  });
-
-  // Close the mobile menu when clicking outside
+  // Close mobile menu when clicking outside
   document.addEventListener('click', function (event) {
     if (
       !mobileMenu.contains(event.target) &&
       !toggleButton.contains(event.target)
     ) {
       mobileMenu.classList.remove('active');
+      toggleButton.classList.remove('menu-active'); // Reset icon state
     }
   });
 });
@@ -96,7 +90,7 @@ window.addEventListener('scroll', function () {
   }px)`;
 });
 
-// CAROUSEL FUNCTIONALITY
+// HERO CAROUSEL FUNCTIONALITY
 const carouselItems = document.querySelectorAll('.carousel-item');
 const carouselButtons = document.querySelectorAll('.carousel-btn');
 let currentIndex = 0;
@@ -129,7 +123,7 @@ carouselButtons.forEach((btn, index) => {
   btn.addEventListener('click', () => showCarouselItem(index));
 });
 
-// Carousel Parallax
+// HERO Carousel Parallax
 document.addEventListener('DOMContentLoaded', function () {
   const carouselContent = document.querySelector('.carousel-content');
 
@@ -167,25 +161,31 @@ window.addEventListener('scroll', function () {
   }
 });
 
-// About Section header parallax
-document.addEventListener('scroll', function () {
-  const section = document.querySelector('#about'); // Replace with the class or ID of your section
-  const elements = document.querySelectorAll('[data-speed]');
-  const sectionStart = window.innerHeight * 0.6; // Adjusts for the initial 80vh section height
+// Animation for About Intro section
+document.addEventListener('DOMContentLoaded', function () {
+  const animatedElements = document.querySelectorAll(
+    '.animate-from-left, .animate-from-right'
+  );
 
-  elements.forEach((element) => {
-    const speed = parseFloat(element.getAttribute('data-speed'));
-    const offset = (window.scrollY - sectionStart) * speed;
+  function handleScroll() {
+    animatedElements.forEach((element) => {
+      const position = element.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
 
-    // Only apply the effect after scrolling past the 80vh mark
-    if (window.scrollY > sectionStart) {
-      element.style.transform = `translate(-50%, -${offset}px)`; // Moves up as you scroll down
-    } else {
-      element.style.transform = `translate(-50%, 0)`; // Reset position
-    }
-  });
+      // Check if element is in view
+      if (position.top < windowHeight * 0.8 && position.bottom > 0) {
+        element.classList.add('animate-visible');
+      } else {
+        element.classList.remove('animate-visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Initial check in case elements are already in view
 });
 
+// ICONS
 // About-icon slide in animation
 document.addEventListener('DOMContentLoaded', () => {
   const iconItems = document.querySelectorAll('.icon-item');
@@ -206,7 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', handleScroll);
 });
-
 // Icon Content hide/display
 function showContent(contentId) {
   // Hide all content sections
@@ -247,30 +246,37 @@ function showContent(contentId) {
   });
 }
 
-// /////////////////////////////////////////
-// /////////////////////////////////////////
-// /////////////////////////////////////////
-// /////////////////////////////////////////
+// ///////////////////////////////
+// ///////////////////////////////
+// ///////////////////////////////
+// ///////////////////////////////
+// PROJECTS SECTION
+
+// Projects Navigation
 document.addEventListener('DOMContentLoaded', () => {
-  const elementsToAnimate = document.querySelectorAll(
-    '.animate-from-left, .animate-from-right'
-  );
+  const navItems = document.querySelectorAll('.projects-nav-item');
+  const projectItems = document.querySelectorAll('.project-item');
 
-  function handleScroll() {
-    elementsToAnimate.forEach((element) => {
-      const position = element.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
+  navItems.forEach((navItem) => {
+    navItem.addEventListener('click', () => {
+      // Remove active class from all nav items
+      navItems.forEach((item) => item.classList.remove('active'));
+      // Add active class to clicked nav item
+      navItem.classList.add('active');
 
-      if (position < windowHeight * 0.8) {
-        element.classList.add('animate-visible');
-      } else {
-        element.classList.remove('animate-visible'); // Remove to allow re-trigger on scroll
-      }
+      // Get filter category
+      const filter = navItem.getAttribute('data-filter');
+
+      // Show/Hide projects based on filter
+      projectItems.forEach((project) => {
+        if (filter === 'all' || project.classList.contains(filter)) {
+          project.style.display = 'block';
+        } else {
+          project.style.display = 'none';
+        }
+      });
     });
-  }
-
-  window.addEventListener('scroll', handleScroll);
-  handleScroll(); // Initial check in case elements are already in view
+  });
 });
 // DROP DOWN TEXT BOX FOR ICONS ///////////////////
 // DROP DOWN TEXT BOX FOR ICONS ///////////////////

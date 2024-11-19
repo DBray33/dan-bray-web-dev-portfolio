@@ -17,7 +17,7 @@
 
 html,
 body {
-  font-family: 'Lato', sans-serif; /* Apply the font to the entire body */
+  font-family: 'Oswald', sans-serif; /* Apply the font to the entire body */
   line-height: 1.6;
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -71,7 +71,59 @@ img {
   visibility: visible;
 }
 
+/* //////////////////////////// */
 /* UTILITY CLASSES */
+/* Utility Classes for Text Overlay */
+.text-overlay {
+  position: relative; /* Keep it relative to its section */
+  text-align: center; /* Center align text */
+  width: 100%; /* Take full width */
+  margin-bottom: 10rem; /* Space below the overlay */
+  z-index: 10; /* Ensure it is above other elements in the section */
+}
+
+.text-overlay .ghost {
+  opacity: 0.15;
+  font-size: 12rem; /* Larger text size for the ghost text */
+  font-family: 'Oswald', sans-serif; /* Custom font */
+  font-weight: bold; /* Bold weight for better visibility */
+  position: relative; /* Position relative for proper stacking */
+}
+
+.text-overlay .me {
+  font-size: 2.4rem; /* 30% of the size of the ghost text */
+  color: green;
+  font-family: 'Oswald', sans-serif; /* Same font for consistency */
+  font-weight: bold; /* Bold for emphasis */
+  position: absolute; /* Positioned on top of ghost text */
+  top: 50%; /* Align vertically centered */
+  left: 50%; /* Align horizontally centered */
+  transform: translate(-50%, -50%); /* Adjust centering precisely */
+  z-index: 15; /* Ensure it appears above the ghost text */
+}
+
+/* Section-specific adjustments */
+.about-section .text-overlay {
+  margin-top: -2rem;
+}
+
+.projects-section .text-overlay {
+  margin-top: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .text-overlay .ghost {
+    font-size: 6rem; /* Adjust ghost text size for smaller screens */
+  }
+
+  .text-overlay .me {
+    font-size: 1.8rem; /* Adjust overlay text size for smaller screens */
+  }
+}
+/* ///////////////////////// */
+/* ///////////////////////// */
+
 /* Base styles for the button */
 .btn-blank {
   background: transparent;
@@ -625,12 +677,6 @@ img {
   text-align: center;
 }
 
-/* ////////////////////////////////////////////// */
-/* ////////////////////////////////////////////// */
-/* ////////////////////////////////////////////// */
-/* ////////////////////////////////////////////// */
-/* ////////////////////////////////////////////// */
-
 /* ABOUT SECTION */
 /* About Section */
 .about-section {
@@ -659,6 +705,14 @@ img {
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
   pointer-events: none;
   z-index: -1; /* Ensure it stays behind other content */
+}
+
+#about .text-overlay .ghost {
+  color: white;
+}
+
+#about .text-overlay .me {
+  color: white;
 }
 
 /* Bottom shadow */
@@ -693,31 +747,38 @@ img {
   right: 0; /* Align to the right */
 }
 
-.ghost {
-  position: absolute;
-  top: 1rem;
-  left: 50%;
+/* #about .text-overlay {
+  position: relative;
+  left: 80%;
   transform: translateX(-50%);
-  font-size: 10rem;
-  color: white;
-  opacity: 0.1;
+  text-align: center;
+  width: 100%;
+  margin-top: 2rem;
+  font-family: 'Oswald';
+} */
+
+/* Ghost and My Work text */
+/* #about .text-overlay h1.ghost {
+  top: -90px;
+  font-size: 10rem; 
+  color: rgba(255, 255, 255, 0.4);
+  position: relative;
 }
 
-.me {
-  position: absolute;
-  top: 9rem; /* Move it down by 4rem */
-  left: 50%;
-  transform: translateX(-50%);
+#about .text-overlay h1.me {
+  font-size: 4rem; 
+  font-weight: bold;
   color: white;
-  z-index: 2; /* Ensure it stays on top of .ghost */
-}
+  position: relative;
+  top: -180px;
+} */
 
 #about h2 {
   color: var(--primary-color);
   font-size: large;
   font-weight: bold;
   letter-spacing: 0.8rem;
-  margin-top: 10rem; /* Adjust this value to move it down */
+  margin-top: -10rem;
 }
 
 #about .journey {
@@ -789,7 +850,7 @@ img {
   text-align: center;
   font-family: 'Oswald';
   padding: 0.2rem 0;
-  z-index: -1;
+  border-radius: 8px;
 }
 
 /* Icon Container */
@@ -938,6 +999,11 @@ img {
   width: 100%;
   overflow-y: auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Bottom shadow */
+  position: fixed; /* Ensure it is fixed relative to the viewport */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust centering */
+  z-index: 9999; /* Set a very high z-index */
 }
 
 .about-image img {
@@ -956,21 +1022,104 @@ img {
 
 /* Icon Text Box (use different approach) */
 /* .text-box {
-  display: none;
-  position: absolute;
-  top: 8rem;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 1rem;
-  background-color: #333;
-  color: #fff;
-  border-radius: 5px;
-  min-width: 400px; 
-  max-width: 90vw; 
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  z-index: 10;
-  overflow-wrap: break-word; 
-} */
+    display: none;
+    position: absolute;
+    top: 8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    min-width: 400px; 
+    max-width: 90vw; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 10;
+    overflow-wrap: break-word; 
+  } */
 
 /* END ABOUT SECTION */
+
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+
+/* BEGIN PROJECTS SECTION */
+#projects .text-overlay .ghost {
+  color: black;
+}
+
+#projects .text-overlay .me {
+  color: black;
+}
+
+/* Projects Content */
+.projects-section {
+  position: relative;
+  padding: 0 0 3rem;
+  text-align: center;
+}
+
+.projects-navbar {
+  position: relative;
+  margin-top: -6rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  z-index: 1;
+}
+
+.projects-nav-item {
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary-color);
+  /* border: none; */
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.projects-nav-item.active {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+.projects-nav-item:hover {
+  background-color: var(--tertiary-color);
+}
+
+.projects-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.project-item {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-item p {
+  font-size: 1rem;
+  color: var(--dark-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .projects-content {
+    grid-template-columns: 1fr;
+  }
+}
