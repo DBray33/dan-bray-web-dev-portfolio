@@ -78,6 +78,7 @@ img {
   position: relative; /* Keep it relative to its section */
   text-align: center; /* Center align text */
   width: 100%; /* Take full width */
+  padding-top: 3rem;
   margin-bottom: 10rem; /* Space below the overlay */
   z-index: 10; /* Ensure it is above other elements in the section */
 }
@@ -92,11 +93,10 @@ img {
 
 .text-overlay .me {
   font-size: 2.4rem; /* 30% of the size of the ghost text */
-  color: green;
   font-family: 'Oswald', sans-serif; /* Same font for consistency */
   font-weight: bold; /* Bold for emphasis */
   position: absolute; /* Positioned on top of ghost text */
-  top: 50%; /* Align vertically centered */
+  top: 82%; /* Align vertically centered */
   left: 50%; /* Align horizontally centered */
   transform: translate(-50%, -50%); /* Adjust centering precisely */
   z-index: 15; /* Ensure it appears above the ghost text */
@@ -989,29 +989,29 @@ img {
 
 /* Content for icons */
 .content-section {
+  position: relative;
   display: none;
-  padding: 2rem;
-  background-color: var(--primary-color);
-  border-radius: 10px;
   margin: -2rem auto 0;
-  transition: opacity 0.3s ease-in-out;
+  padding: 2rem;
   max-height: 65vh;
   width: 100%;
+  top: 0; /* Center vertically */
+  left: 0; /* Center horizontally */
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  transition: opacity 0.3s ease-in-out;
   overflow-y: auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Bottom shadow */
-  position: fixed; /* Ensure it is fixed relative to the viewport */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Adjust centering */
   z-index: 9999; /* Set a very high z-index */
 }
 
 .about-image img {
-  float: left; /* Position the image to the left of the text */
-  margin-right: 1rem; /* Add space between the image and the text */
-  margin-bottom: 1rem; /* Add space below the image */
-  width: 150px; /* Set the image width */
-  border-radius: 10px; /* Optional: round the corners */
+  float: left;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  width: 150px;
+  border-radius: 10px;
 }
 
 /* Active class to display the content */
@@ -1020,24 +1020,16 @@ img {
   opacity: 1;
 }
 
-/* Icon Text Box (use different approach) */
-/* .text-box {
-    display: none;
-    position: absolute;
-    top: 8rem;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 1rem;
-    background-color: #333;
-    color: #fff;
-    border-radius: 5px;
-    min-width: 400px; 
-    max-width: 90vw; 
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    z-index: 10;
-    overflow-wrap: break-word; 
-  } */
+@keyframes swipe-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 /* END ABOUT SECTION */
 
@@ -1063,14 +1055,15 @@ img {
   text-align: center;
 }
 
+/* Projects Navbar */
 .projects-navbar {
   position: relative;
-  margin-top: -8rem;
+  margin-top: -9rem;
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
   gap: 1rem;
-  z-index: 1;
+  z-index: 999;
 }
 
 .projects-nav-item {
@@ -1092,19 +1085,49 @@ img {
   background-color: var(--tertiary-color);
 }
 
-.projects-content {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+/* Projects Content */
+/* Reset for Body and HTML */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
+/* Projects Content */
+.projects-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 2rem; /* No gaps between items */
+  width: 100%; /* Fit within the viewport width */
+  margin: 0 auto; /* Center content */
+}
+
+/* Individual Project Items */
 .project-item {
   background-color: var(--secondary-color);
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* border: 2px solid black; */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1); /* Shadow */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover Effect for Shadow */
+.project-item:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+  transform: translateY(-5px); /* Lift on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .projects-content {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-item h3 {
@@ -1115,11 +1138,4 @@ img {
 .project-item p {
   font-size: 1rem;
   color: var(--dark-color);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .projects-content {
-    grid-template-columns: 1fr;
-  }
 }

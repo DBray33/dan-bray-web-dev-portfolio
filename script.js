@@ -19,20 +19,75 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Close the menu when a link is clicked
+  // Close the menu when a link is clicked and ensure smooth scroll
   menuLinks.forEach((link) => {
-    link.addEventListener('click', function () {
+    link.addEventListener('click', function (event) {
+      const href = this.getAttribute('href');
+
+      if (href.startsWith('#')) {
+        // Smooth scroll for internal links
+        event.preventDefault(); // Prevent default anchor behavior
+        const targetId = href.slice(1); // Get target section ID
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          const offset = 0; // Adjust this if you need a specific offset
+          const elementPosition = targetElement.offsetTop;
+          const finalPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: finalPosition,
+            behavior: 'smooth', // Smooth scrolling
+          });
+        }
+      }
+
+      // Close the mobile menu after clicking any link
       mobileMenu.classList.remove('active');
       toggleButton.classList.remove('menu-active'); // Reset icon state
     });
   });
 
   // Close the menu when clicking anywhere on the mobile menu background
-  mobileMenu.addEventListener('click', function () {
-    if (mobileMenu.classList.contains('active')) {
+  mobileMenu.addEventListener('click', function (event) {
+    if (
+      event.target === mobileMenu &&
+      mobileMenu.classList.contains('active')
+    ) {
       mobileMenu.classList.remove('active');
       toggleButton.classList.remove('menu-active'); // Reset icon state
     }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const navbarLinks = document.querySelectorAll('.main-menu-list a'); // Adjust selector for your navbar links
+
+  navbarLinks.forEach((link) => {
+    link.addEventListener('click', function (event) {
+      const href = this.getAttribute('href');
+
+      if (href.startsWith('#')) {
+        // Smooth scroll for internal links
+        event.preventDefault(); // Prevent default anchor behavior
+        const targetId = href.slice(1); // Get target section ID
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          const offset = 0; // Adjust this if you need a specific offset
+          const elementPosition = targetElement.offsetTop;
+          const finalPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: finalPosition,
+            behavior: 'smooth', // Smooth scrolling
+          });
+        }
+      } else {
+        // For external links, allow normal navigation
+        // Do nothing here
+      }
+    });
   });
 });
 
@@ -220,11 +275,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', handleScroll);
 });
-// Icon Content hide/display
+
+// Icon Content hide/display with swipe-down animation
 function showContent(contentId) {
   // Hide all content sections
   document.querySelectorAll('.content-section').forEach((section) => {
     section.classList.remove('active');
+    section.style.animation = ''; // Reset animation
   });
 
   // Remove active class from all icons
@@ -236,6 +293,7 @@ function showContent(contentId) {
   const selectedContent = document.getElementById(contentId);
   if (selectedContent) {
     selectedContent.classList.add('active');
+    selectedContent.style.animation = 'swipe-down 0.3s ease-out forwards';
   }
 
   // Add active class to the corresponding icon-item
@@ -255,17 +313,13 @@ function showContent(contentId) {
     ) {
       selectedContent.classList.remove('active');
       activeIcon.classList.remove('active');
+      selectedContent.style.animation = ''; // Reset animation
       document.removeEventListener('click', handleClickOutside); // Remove listener to avoid duplicates
     }
   });
 }
 
-// ///////////////////////////////
-// ///////////////////////////////
-// ///////////////////////////////
-// ///////////////////////////////
 // PROJECTS SECTION
-
 // Projects Navigation
 document.addEventListener('DOMContentLoaded', () => {
   const navItems = document.querySelectorAll('.projects-nav-item');
@@ -292,6 +346,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+// ///////////////////////////////
+// ///////////////////////////////
+// ///////////////////////////////
+// ///////////////////////////////
+
 // DROP DOWN TEXT BOX FOR ICONS ///////////////////
 // DROP DOWN TEXT BOX FOR ICONS ///////////////////
 // function toggleTextBox(event, boxId) {
