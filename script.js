@@ -2,20 +2,34 @@
 document.addEventListener('DOMContentLoaded', function () {
   const toggleButton = document.querySelector('.mobile-menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu-items');
+  const menuLinks = document.querySelectorAll('.mobile-menu-items a'); // Select all menu links
 
   // Toggle mobile menu and icon rotation
   toggleButton.addEventListener('click', function (event) {
-    event.stopPropagation();
+    event.stopPropagation(); // Prevent event from bubbling to the document
     mobileMenu.classList.toggle('active');
     toggleButton.classList.toggle('menu-active'); // Add a class to indicate active state
   });
 
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', function (event) {
-    if (
-      !mobileMenu.contains(event.target) &&
-      !toggleButton.contains(event.target)
-    ) {
+  // Close mobile menu when clicking anywhere else
+  document.addEventListener('click', function () {
+    if (mobileMenu.classList.contains('active')) {
+      mobileMenu.classList.remove('active');
+      toggleButton.classList.remove('menu-active'); // Reset icon state
+    }
+  });
+
+  // Close the menu when a link is clicked
+  menuLinks.forEach((link) => {
+    link.addEventListener('click', function () {
+      mobileMenu.classList.remove('active');
+      toggleButton.classList.remove('menu-active'); // Reset icon state
+    });
+  });
+
+  // Close the menu when clicking anywhere on the mobile menu background
+  mobileMenu.addEventListener('click', function () {
+    if (mobileMenu.classList.contains('active')) {
       mobileMenu.classList.remove('active');
       toggleButton.classList.remove('menu-active'); // Reset icon state
     }
