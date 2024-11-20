@@ -1,8 +1,26 @@
-// NAVBAR MENU
+// /////////////////////////////////////////////////////////
+// NAVBAR MENU /////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', function () {
   const toggleButton = document.querySelector('.mobile-menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu-items');
   const menuLinks = document.querySelectorAll('.mobile-menu-items a'); // Select all menu links
+
+  // Scroll effect on navbar
+  window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.navbar');
+    const mobileMenu = document.querySelector('.mobile-menu-items');
+
+    if (navbar && mobileMenu) {
+      // Only apply the scroll effect if the mobile menu is not active
+      if (navbar && !mobileMenu.classList.contains('active')) {
+        if (window.scrollY > 0) {
+          navbar.classList.add('navbar-scroll');
+        } else {
+          navbar.classList.remove('navbar-scroll');
+        }
+      }
+    }
+  });
 
   // Toggle mobile menu and icon rotation
   toggleButton.addEventListener('click', function (event) {
@@ -91,24 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// Scroll effect on navbar
-window.addEventListener('scroll', function () {
-  const navbar = document.querySelector('.navbar');
-  const mobileMenu = document.querySelector('.mobile-menu-items');
-
-  if (navbar && mobileMenu) {
-    // Only apply the scroll effect if the mobile menu is not active
-    if (navbar && !mobileMenu.classList.contains('active')) {
-      if (window.scrollY > 0) {
-        navbar.classList.add('navbar-scroll');
-      } else {
-        navbar.classList.remove('navbar-scroll');
-      }
-    }
-  }
-});
-
-// BACK TO TOP BUTTON
+// /////////////////////////////////////////
+// BACK TO TOP BUTTON ///////////////////////
 const backToTopButton = document.getElementById('back-to-top');
 if (backToTopButton) {
   backToTopButton.addEventListener('click', function (e) {
@@ -131,7 +133,9 @@ window.addEventListener('scroll', function () {
   }
 });
 
-// PARALLAX EFFECT IN HERO SECTION
+// //////////////////////////////////
+// HERO /////////////////////////////
+// Parallax effect in hero section
 window.addEventListener('scroll', function () {
   const scrollPosition = window.scrollY;
 
@@ -206,7 +210,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-// CORNER LOGO LINK //////////////////
+
+// ///////////////////////////////////////
+// LOGO - TOP LEFT CORNER //////////////////
 // Logo spin animation:
 const logoLink = document.querySelector('.logo-link');
 if (logoLink) {
@@ -230,6 +236,8 @@ window.addEventListener('scroll', function () {
   }
 });
 
+// //////////////////////////////////////////////////
+// ABOUT ////////////////////////////////////////////
 // Animation for About Intro section
 document.addEventListener('DOMContentLoaded', function () {
   const animatedElements = document.querySelectorAll(
@@ -254,7 +262,8 @@ document.addEventListener('DOMContentLoaded', function () {
   handleScroll(); // Initial check in case elements are already in view
 });
 
-// ICONS
+// ///////////////////////////////////////////////////////
+// ICONS - ABOUT SECTION /////////////////////////////////
 // About-icon slide in animation
 document.addEventListener('DOMContentLoaded', () => {
   const iconItems = document.querySelectorAll('.icon-item');
@@ -319,7 +328,8 @@ function showContent(contentId) {
   });
 }
 
-// PROJECTS SECTION
+// ///////////////////////////////////////////////
+// PROJECTS SECTION //////////////////////////////
 // Projects Navigation
 document.addEventListener('DOMContentLoaded', () => {
   const navItems = document.querySelectorAll('.projects-nav-item');
@@ -369,48 +379,36 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
-// DROP DOWN TEXT BOX FOR ICONS ///////////////////
-// DROP DOWN TEXT BOX FOR ICONS ///////////////////
-// function toggleTextBox(event, boxId) {
-//   event.stopPropagation();
-//   const textBox = document.getElementById(boxId);
-//   const isVisible = textBox.style.display === 'block';
 
-//   document.querySelectorAll('.text-box').forEach((box) => {
-//     box.style.display = 'none';
-//     box.style.left = '50%';
-//     box.style.right = 'auto';
-//     box.style.transform = 'translateX(-50%)';
-//   });
+// ///////////////////////////////
+// ///////////////////////////////
+// ///////////////////////////////
+// ///////////////////////////////
+document.addEventListener('DOMContentLoaded', function () {
+  const projectItems = document.querySelectorAll('.project-item');
 
-//   if (!isVisible) {
-//     textBox.style.display = 'block';
+  projectItems.forEach((item) => {
+    const image = item.querySelector('img');
 
-//     const rect = textBox.getBoundingClientRect();
-//     const margin = 10;
+    image.addEventListener('mouseover', function () {
+      const imageHeight = image.offsetHeight;
+      const containerHeight = item.offsetHeight;
+      const scrollDistance = imageHeight - containerHeight;
 
-//     if (rect.left < margin) {
-//       textBox.style.left = `${margin}px`;
-//       textBox.style.transform = 'none';
-//     } else if (rect.right > window.innerWidth - margin) {
-//       textBox.style.left = 'auto';
-//       textBox.style.right = `${margin}px`;
-//       textBox.style.transform = 'none';
-//     } else {
-//       textBox.style.left = '50%';
-//       textBox.style.transform = 'translateX(-50%)';
-//     }
-//   } else {
-//     textBox.style.display = 'none';
-//   }
-// }
+      // Calculate the duration dynamically based on the scroll distance
+      const duration = scrollDistance / 50; // Adjust the denominator for speed
 
-// document.addEventListener('click', function () {
-//   document.querySelectorAll('.text-box').forEach((box) => {
-//     box.style.display = 'none';
-//     box.style.left = '50%';
-//     box.style.right = 'auto';
-//     box.style.transform = 'translateX(-50%)';
-//   });
-// });
-// /////////////////////////////////////////////
+      // Apply custom animation duration
+      image.style.setProperty('--scroll-duration', `${duration}s`);
+
+      // Start the animation
+      image.style.animationDuration = `${duration}s`;
+      image.style.animationName = 'scroll-image';
+    });
+
+    image.addEventListener('mouseout', function () {
+      // Reset animation
+      image.style.animationName = '';
+    });
+  });
+});

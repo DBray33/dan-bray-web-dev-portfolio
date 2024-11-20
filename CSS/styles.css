@@ -1154,11 +1154,13 @@ h3 {
   left: 0;
   width: 100%; /* Fit the width of the container */
   height: auto; /* Maintain aspect ratio */
-  transition: transform 5s linear; /* Smooth scroll effect */
+  transform: translateY(0); /* Start position */
+  transition: transform 0.3s linear; /* Default transition for smoother behavior */
 }
 
 .project-item:hover img {
-  transform: translateY(-100%); /* Scroll the image upwards on hover */
+  animation: scroll-image linear; /* Trigger animation */
+  animation-duration: var(--scroll-duration); /* Dynamically set duration */
 }
 
 .project-item:hover {
@@ -1166,28 +1168,13 @@ h3 {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.2); /* Deeper shadow */
 }
 
-.project-item:hover .project-iframe {
-  animation: scroll-iframe s linear infinite; /* Smooth scroll animation */
-}
-
-/* Iframe Styling */
-.project-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Full width */
-  height: 200%; /* Extended height for scrolling */
-  transform-origin: top left; /* Anchor scaling to the top-left corner */
-  pointer-events: none; /* Disable interactions */
-}
-
-/* Scrolling Animation */
-@keyframes scroll-iframe {
-  0% {
+/* Dynamic Scroll Keyframes */
+@keyframes scroll-image {
+  from {
     transform: translateY(0); /* Start at the top */
   }
-  100% {
-    transform: translateY(-50%); /* Scroll to the bottom */
+  to {
+    transform: translateY(-100%); /* Scroll to the bottom */
   }
 }
 
@@ -1208,8 +1195,5 @@ h3 {
 @media (max-width: 768px) {
   .projects-content {
     grid-template-columns: 1fr; /* Single column on smaller screens */
-  }
-  .project-iframe {
-    transform: scale(0.15); /* Adjust scale for smaller screens */
   }
 }
