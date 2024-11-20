@@ -1,3 +1,28 @@
+// ///////////////////////////////////////
+// LOGO - TOP LEFT CORNER //////////////////
+// Logo spin animation:
+const logoLink = document.querySelector('.logo-link');
+if (logoLink) {
+  logoLink.addEventListener('click', function (event) {
+    event.preventDefault();
+    logoLink.classList.add('spin');
+
+    setTimeout(function () {
+      window.location.href = logoLink.href;
+    }, 500);
+  });
+}
+// Logo shrink on scroll
+window.addEventListener('scroll', function () {
+  const logo = document.querySelector('.logo-link');
+  if (window.scrollY > 50) {
+    // Adjust threshold as needed
+    logo.classList.add('logo-link-small');
+  } else {
+    logo.classList.remove('logo-link-small');
+  }
+});
+
 // /////////////////////////////////////////////////////////
 // NAVBAR MENU /////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', function () {
@@ -211,31 +236,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-// ///////////////////////////////////////
-// LOGO - TOP LEFT CORNER //////////////////
-// Logo spin animation:
-const logoLink = document.querySelector('.logo-link');
-if (logoLink) {
-  logoLink.addEventListener('click', function (event) {
-    event.preventDefault();
-    logoLink.classList.add('spin');
-
-    setTimeout(function () {
-      window.location.href = logoLink.href;
-    }, 500);
-  });
-}
-// Logo shrink on scroll
-window.addEventListener('scroll', function () {
-  const logo = document.querySelector('.logo-link');
-  if (window.scrollY > 50) {
-    // Adjust threshold as needed
-    logo.classList.add('logo-link-small');
-  } else {
-    logo.classList.remove('logo-link-small');
-  }
-});
-
 // //////////////////////////////////////////////////
 // ABOUT ////////////////////////////////////////////
 // Animation for About Intro section
@@ -353,6 +353,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Projects Hover-scroll effect
+document.addEventListener('DOMContentLoaded', function () {
+  const projectItems = document.querySelectorAll('.project-item');
+
+  projectItems.forEach((item) => {
+    const image = item.querySelector('img'); // Find the image within the project-item
+
+    if (!image) {
+      console.warn('No image found in project-item:', item); // Log a warning if the image is missing
+      return; // Skip this project-item
+    }
+
+    image.addEventListener('mouseover', function () {
+      const imageHeight = image.offsetHeight; // Height of the image
+      const containerHeight = item.offsetHeight; // Height of the container
+      const scrollDistance = imageHeight - containerHeight; // Calculate scroll distance
+
+      if (scrollDistance > 0) {
+        const duration = Math.max(3, scrollDistance / 400); // Adjust speed with denominator
+        image.style.transition = `transform ${duration}s linear`;
+        image.style.transform = `translateY(-${scrollDistance}px)`; // Scroll to the bottom
+      }
+    });
+
+    image.addEventListener('mouseout', function () {
+      // Reset the image position and transition
+      image.style.transition = 'transform 0.3s linear';
+      image.style.transform = 'translateY(0)';
+    });
+  });
+});
+
 // ///////////////////////////////
 // ///////////////////////////////
 // ///////////////////////////////
@@ -384,33 +417,22 @@ document.addEventListener('DOMContentLoaded', function () {
 // ///////////////////////////////
 // ///////////////////////////////
 // ///////////////////////////////
-document.addEventListener('DOMContentLoaded', function () {
-  const projectItems = document.querySelectorAll('.project-item');
+document.addEventListener('scroll', () => {
+  const contactSection = document.querySelector('.contact');
+  const sectionTop = contactSection.offsetTop;
+  const sectionHeight = contactSection.offsetHeight;
+  const scrollPosition = window.scrollY;
+  const windowHeight = window.innerHeight;
 
-  projectItems.forEach((item) => {
-    const image = item.querySelector('img'); // Find the image within the project-item
+  // Check if the section is in the viewport
+  if (
+    scrollPosition + windowHeight >= sectionTop &&
+    scrollPosition <= sectionTop + sectionHeight
+  ) {
+    const speed = parseFloat(contactSection.dataset.speed || 0.01);
+    const offset = (scrollPosition - sectionTop) * speed;
 
-    if (!image) {
-      console.warn('No image found in project-item:', item); // Log a warning if the image is missing
-      return; // Skip this project-item
-    }
-
-    image.addEventListener('mouseover', function () {
-      const imageHeight = image.offsetHeight; // Height of the image
-      const containerHeight = item.offsetHeight; // Height of the container
-      const scrollDistance = imageHeight - containerHeight; // Calculate scroll distance
-
-      if (scrollDistance > 0) {
-        const duration = Math.max(3, scrollDistance / 400); // Adjust speed with denominator
-        image.style.transition = `transform ${duration}s linear`;
-        image.style.transform = `translateY(-${scrollDistance}px)`; // Scroll to the bottom
-      }
-    });
-
-    image.addEventListener('mouseout', function () {
-      // Reset the image position and transition
-      image.style.transition = 'transform 0.3s linear';
-      image.style.transform = 'translateY(0)';
-    });
-  });
+    // Adjust the background position, starting lower to show more of the bottom
+    contactSection.style.backgroundPositionY = `calc(${50 + offset / 6}%)`;
+  }
 });
