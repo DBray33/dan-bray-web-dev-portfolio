@@ -1,785 +1,719 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dan Bray's Web Development Portfolio</title>
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
-      rel="stylesheet" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dan Bray's Web Development Portfolio</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
 
-    <!-- Photo Lightbox Effect -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
-      rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous" />
+  <!-- Photo Lightbox Effect -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/mobile.css" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
 
-    <meta
-      name="description"
-      content="Explore the portfolio of Dan Bray, a self-taught freelance web developer specializing in creating responsive websites, intuitive UI/UX designs, and e-commerce solutions. Discover projects showcasing expertise in HTML, CSS, JavaScript, and more." />
-  </head>
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.png" />
 
-  <body>
-    <!-- Logo -->
-    <a href="index.html" class="logo-link">
-      <img src="images/db-logo.png" alt="DB Logo" class="logo-img" />
-    </a>
+  <meta name="description"
+    content="Explore the portfolio of Dan Bray, a self-taught freelance web developer specializing in creating responsive websites, intuitive UI/UX designs, and e-commerce solutions. Discover projects showcasing expertise in HTML, CSS, JavaScript, and more." />
+</head>
 
-    <!-- NAVBAR -->
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
-      <div class="navbar-flex container">
-        <!-- Main Menu Items (Desktop) -->
-        <div id="main-menu-items" class="desktop-menu">
-          <ul class="main-menu-list">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="#about">ABOUT ME</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#skills">SKILLS</a></li>
-            <li><a href="#gallery">GALLERY</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/stanielbray/"
-                aria-label="Follow me on LinkedIn">
-                <i class="fa-brands fa-linkedin fa-2x" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/DBray33"
-                aria-label="View my GitHub projects">
-                <i class="fa-brands fa-github fa-2x" aria-hidden="true"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
+<body>
+  <!-- Logo -->
+  <a href="index.html" class="logo-link">
+    <img src="images/db-logo.png" alt="DB Logo" class="logo-img" />
+  </a>
 
-        <!-- Hamburger Icon for Mobile Menu -->
-        <div
-          class="mobile-menu-toggle"
-          role="button"
-          aria-label="Toggle mobile menu">
-          <i class="fas fa-bars fa-2x"></i>
-        </div>
-
-        <!-- Mobile Menu (Dropdown) -->
-        <div id="mobile-menu" class="mobile-menu-items">
-          <ul class="mobile-menu-list">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="#about">ABOUT ME</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#skills">SKILLS</a></li>
-            <li><a href="#gallery">GALLERY</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/stanielbray/"
-                aria-label="Follow me on LinkedIn">
-                <i class="fa-brands fa-linkedin fa-2x"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/DBray33"
-                aria-label="View my GitHub projects">
-                <i class="fa-brands fa-github fa-2x"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Hero Section-->
-    <section class="hero">
-      <!-- Carousel Content -->
-      <div class="carousel-content">
-        <div class="container">
-          <div class="caption text-center">
-            <div id="carousel-items">
-              <div class="carousel-item active">
-                <h1>Hi, I'm Dan</h1>
-                <p>
-                  A passionate web developer creating modern, user-friendly
-                  designs.
-                </p>
-                <a class="btn btn-blank" href="#about" role="button"
-                  >Get To Know Me</a
-                >
-              </div>
-              <div class="carousel-item">
-                <h1>View My Projects</h1>
-                <p>
-                  This is an endless work in progress. Plenty to come soon, and
-                  frequently!
-                </p>
-                <a class="btn btn-blank" href="#projects" role="button"
-                  >See My Work</a
-                >
-              </div>
-              <div class="carousel-item">
-                <h1>Let’s Build Something Together</h1>
-                <p>
-                  Get in touch to collaborate or learn more about what I can do
-                  for you.
-                </p>
-                <a class="btn btn-blank" href="#contact" role="button"
-                  >Contact Me</a
-                >
-              </div>
-            </div>
-            <div class="carousel-navigation">
-              <button class="carousel-btn" data-index="0"></button>
-              <button class="carousel-btn" data-index="1"></button>
-              <button class="carousel-btn" data-index="2"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Multi-Layered Parallax with Carousel Content -->
-    <section class="hero">
-      <!-- Parallax Layers -->
-      <div class="parallax-container">
-        <img
-          src="images/png-layers/Layer8.png"
-          alt="Background Layer"
-          class="layer layer8" />
-        <img
-          src="images/png-layers/Layer7.png"
-          alt="Layer 7"
-          class="layer layer7" />
-        <img
-          src="images/png-layers/Layer6.png"
-          alt="Layer 6"
-          class="layer layer6" />
-        <img
-          src="images/png-layers/Layer5.png"
-          alt="Layer 5"
-          class="layer layer5" />
-        <img
-          src="images/png-layers/Layer4.png"
-          alt="Layer 4"
-          class="layer layer4" />
-        <img
-          src="images/png-layers/Layer3.png"
-          alt="Layer 3"
-          class="layer layer3" />
-        <img
-          src="images/png-layers/Layer2.png"
-          alt="Layer 2"
-          class="layer layer2" />
-        <img
-          src="images/png-layers/Layer1.png"
-          alt="Foreground Layer"
-          class="layer layer1" />
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-      <div class="text-overlay">
-        <h1 class="ghost">ABOUT</h1>
-        <h1 class="me">ABOUT ME</h1>
-      </div>
-      <div class="content-container">
-        <div class="container">
-          <div class="header-container">
-            <div class="section-header">
-              <h2 class="animate-from-left">
-                AUTHENTICITY CREATIVITY SPECIFICITY
-              </h2>
-              <h1 class="journey animate-from-right">
-                MY WEB DEVELOPMENT JOURNEY
-              </h1>
-              <div class="heading-border animate-from-left"></div>
-              <p class="animate-from-right">
-                From early explorations in coding while running a brewery, to
-                mastering the art of creating seamless user experiences, this is
-                the story behind my growth as a web developer. Discover the
-                skills, projects, and personal insights that drive my passion
-                for crafting impactful digital solutions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Icons -->
-    <section id="about-icons" class="about-icons-section">
-      <div class="container">
-        <div class="icon-background"></div>
-        <h2 class="icons-header">Click an icon below for more info:</h2>
-        <ul class="icon-container">
-          <!-- Person Icon -->
-          <li class="icon-item" onclick="showContent('personContent')">
-            <span class="icon-link">
-              <i class="fas fa-user icon"></i>
-            </span>
-            <h2>Who Am I?</h2>
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="navbar-flex container">
+      <!-- Main Menu Items (Desktop) -->
+      <div id="main-menu-items" class="desktop-menu">
+        <ul class="main-menu-list">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="#about">ABOUT ME</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+          <li><a href="#gallery">GALLERY</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/stanielbray/" aria-label="Follow me on LinkedIn">
+              <i class="fa-brands fa-linkedin fa-2x" aria-hidden="true"></i>
+            </a>
           </li>
-
-          <!-- Brain Icon -->
-          <li class="icon-item" onclick="showContent('skillsContent')">
-            <span class="icon-link">
-              <i class="fas fa-brain icon"></i>
-            </span>
-            <h2>My Skills</h2>
-          </li>
-
-          <!-- Project Icon -->
-          <li class="icon-item" onclick="showContent('projectsContent')">
-            <span class="icon-link">
-              <i class="fas fa-tools icon"></i>
-            </span>
-            <h2>Projects</h2>
-          </li>
-
-          <!-- Web Development Icon -->
-          <li class="icon-item" onclick="showContent('developmentContent')">
-            <span class="icon-link">
-              <i class="fas fa-laptop-code icon"></i>
-            </span>
-            <h2>Development Approach</h2>
-          </li>
-
-          <!-- Communication Icon -->
-          <li class="icon-item" onclick="showContent('connectContent')">
-            <span class="icon-link">
-              <i class="fas fa-phone icon"></i>
-            </span>
-            <h2>Let's Connect!</h2>
+          <li>
+            <a href="https://github.com/DBray33" aria-label="View my GitHub projects">
+              <i class="fa-brands fa-github fa-2x" aria-hidden="true"></i>
+            </a>
           </li>
         </ul>
-
-        <!-- Content Sections for Each Icon -->
-        <div id="personContent" class="content-section">
-          <h2>About Me</h2>
-          <!-- Headshot Image -->
-          <div class="about-image">
-            <img
-              src="images/headshot.jpeg"
-              alt="Your Headshot"
-              class="img-fluid" />
-          </div>
-          <p>
-            I’m Dan Bray, a motivated and detail-oriented professional with a
-            passion for creativity and technology. After 8 years of excelling in
-            the craft beer industry, I’m transitioning my skills and experience
-            into a career in web development and digital design. Throughout my
-            career, I’ve honed my abilities in project management, web and
-            graphic design, social media strategy, and e-commerce development.
-            At Broken Chair Brewery, I managed every facet of operations, from
-            crafting award-winning beer recipes to spearheading digital
-            marketing campaigns. My efforts elevated the brewery to become a
-            community favorite and the county’s “Best Craft Brewery” every year
-            the award was available (they got rid of it).
-            <br />
-            <br />
-            Beyond brewing, I designed all visual branding, including can
-            labels, apparel, and merchandise, while also managing the brewery’s
-            website and social media presence. In addition to my brewery career,
-            I’ve built successful e-commerce stores and provided freelance
-            graphic design services. These ventures allowed me to design and
-            market custom merchandise across platforms like Shopify, Etsy, and
-            eBay, where my designs achieved top search rankings. I’m currently
-            advancing my web development skills through certifications and
-            hands-on projects. My portfolio showcases my commitment to crafting
-            impactful digital solutions while enhancing my proficiency in tools
-            such as the MERN stack and WordPress, and reflects my passion for
-            building custom-coded websites.
-          </p>
-          <h2>Hobbies/Interests</h2>
-          <p>
-            Outside of web development, I thrive on creativity and exploration.
-            My hobbies complement my work by fueling my creativity, attention to
-            detail, and drive to learn. You’ll often find me experimenting with:
-          </p>
-
-          <ul class="icon-content-bullets">
-            <li>
-              Physical Fitness: Engaging in some physical activity most days,
-              and challenging myself with new workouts.
-            </li>
-            <li>
-              Horticulture: Cultivating plants and designing lush indoor and
-              outdoor spaces.
-            </li>
-            <li>
-              Woodworking: Crafting custom furniture and unique wooden
-              creations.
-            </li>
-            <li>
-              Traveling: Exploring new places and drawing inspiration from
-              diverse cultures.
-            </li>
-            <li>
-              Interior Design: Bringing spaces to life with thoughtful
-              aesthetics and functionality.
-            </li>
-          </ul>
-        </div>
-
-        <div id="skillsContent" class="content-section">
-          <h2>My Skills</h2>
-          <p>
-            Crafting Impactful Digital Solutions with Precision and Creativity
-            <br />
-            My skills as a web developer combine a deep understanding of design,
-            technology, and user-centered thinking. Transitioning from a
-            successful career in the craft beer industry to web development has
-            sharpened my ability to tackle diverse challenges and deliver
-            exceptional results. This journey has also honed my patience for
-            achieving very specific desired results, strengthened my
-            troubleshooting expertise, and instilled a strong focus on
-            meticulous attention to detail—qualities that have been invaluable
-            in both maintaining clean, sanitary environments and creating
-            polished digital solutions. Here’s what I bring to the table:
-          </p>
-
-          <ul class="icon-content-bullets">
-            <li>
-              Frontend Development: Expertise in HTML, CSS, and JavaScript,
-              along with Bootstrap, ensures sleek, responsive websites optimized
-              for both desktop and mobile experiences. I am adept at acquiring
-              domains and launching websites, utilizing platforms like GitHub,
-              Namecheap, and Netlify to host and deploy web projects
-              efficiently.
-            </li>
-            <li>
-              Frameworks and Libraries: Proficiency in React and the MERN stack,
-              enabling the creation of dynamic and interactive applications.
-            </li>
-            <li>
-              E-commerce Expertise: Experienced in building and managing stores
-              on platforms like Shopify, Etsy, and eBay, with a strong track
-              record of optimizing for SEO, user experience, and sales growth.
-            </li>
-            <li>
-              E-commerce Expertise: Experienced in building and managing stores
-              on platforms like Shopify, Etsy, and eBay, with a strong track
-              record of optimizing for SEO, user experience, and sales growth.
-              Additionally, I successfully ran and managed a Squarespace
-              business site with a fully functional print-on-demand apparel
-              store seamlessly integrated into the website, driving customer
-              engagement and revenue.
-            </li>
-            <li>
-              Version Control: Advanced knowledge of Git and GitHub ensures
-              seamless collaboration and efficient project management.
-            </li>
-            <li>
-              SEO & Digital Marketing: Proven ability to elevate online presence
-              through data-driven social media strategies, search engine
-              optimization, and engaging content creation.
-            </li>
-            <li>
-              Web Design Principles: Adept at blending functionality with
-              aesthetic appeal to deliver websites that are not only visually
-              stunning but also intuitive and user-friendly.
-            </li>
-            <li>
-              Web Design Principles: Adept at blending functionality with
-              aesthetic appeal to deliver websites that are not only visually
-              stunning but also intuitive and user-friendly.
-            </li>
-            <li>
-              Problem Solving: Passionate about breaking down complex problems
-              and crafting elegant, efficient solutions with a focus on
-              innovation and detail.
-            </li>
-          </ul>
-          This combination of skills equips me to transform creative concepts
-          into tangible, impactful web experiences. Whether it’s developing from
-          scratch, leveraging tools like Bootstrap for rapid prototyping, or
-          using jQuery for advanced interactivity, I thrive on delivering
-          excellence that meets and exceeds expectations.
-        </div>
-
-        <div id="projectsContent" class="content-section">
-          <h2>Projects</h2>
-          <p><em>Projects are listed here, comprehensive project display and explanation on the <a href="#projects" class="link">contact page below</a></em></p>
-          <p>
-            <b>Broken Chair Brewery</b> - Simple, responsive, smooth website for
-            a small family brewery.
-          </p>
-          <p><b>Project 2</b> - Project 2 description</p>
-          <p><b>Project 3</b> - Project 3 description</p>
-          <p><b>Project 4</b> - Project 4 description</p>
-          <p><b>Project 5</b> - Project 5 description</p>
-          <p><b>Project 6</b> - Project 6 description</p>
-        </div>
-
-        <div id="developmentContent" class="content-section">
-          <h2>Development Approach</h2>
-          <div class="container">
-            <p>
-              In every project, my approach to web development is rooted in precision, creativity, and a deep commitment to delivering impactful results. Transitioning from a career managing the complexities of the craft beer industry to web development, I have honed a meticulous attention to detail, a problem-solving mindset, and an unwavering focus on user satisfaction. I am obsessed with creating movements and functionalities that make sense, feel intuitive, and are inherently satisfying—whether it's scroll behavior, hover characteristics, or ensuring elements adapt seamlessly and beautifully as the viewport changes. Here’s how I bring concepts to life:
-            </p>
-
-            <h3>1. Discovery and Planning</h3>
-            <ul class="icon-content-bullets">
-              <li>Begin by understanding the client's vision, goals, and target audience.</li>
-              <li>Conduct comprehensive research to define project scope, timelines, and deliverables.</li>
-              <li>Collaborate to ensure alignment on aesthetics, functionality, and user needs.</li>
-            </ul>
-
-            <h3>2. Design with Purpose</h3>
-            <ul class="icon-content-bullets">
-              <li>Focus on clean, user-centered layouts that enhance usability and accessibility, with movements and interactions that feel natural and engaging.</li>
-              <li>Optimize hover effects, animations, and scroll behaviors to create a seamless and satisfying user experience.</li>
-              <li>Ensure all designs are mobile-first, fully responsive, and intuitive.</li>
-            </ul>
-
-            <h3>3. Development with Precision</h3>
-            <ul class="icon-content-bullets">
-              <li>Focus on clean, user-centered layouts that enhance usability and accessibility, with movements and interactions that feel natural and engaging.</li>
-              <li>Optimize hover effects, animations, and scroll behaviors to create a seamless and satisfying user experience.</li>
-              <li>Ensure all designs are mobile-first, fully responsive, and intuitive.</li>
-            </ul>
-
-            <h3>4. E-Commerce and SEO Optimization</h3>
-            <ul class="icon-content-bullets">
-              <li>Expertise in launching and managing e-commerce platforms, including Shopify and Squarespace.</li>
-              <li>Integrate and manage features such as print-on-demand apparel stores to expand functionality and increase revenue.</li>
-              <li>Optimize all platforms for search engines, ensuring high visibility and user engagement.</li>
-            </ul>
-
-            <h3>5. Deployment and Hosting</h3>
-            <ul class="icon-content-bullets">
-              <li>Manage domains, hosting, and deployment using services like GitHub, Namecheap, and Netlify.</li>
-              <li>Ensure seamless transitions from development to production, with robust testing for performance and security.</li>
-              <li>Provide ongoing maintenance and updates to keep websites running smoothly.</li>
-            </ul>
-
-            <h3>6. Collaboration and Feedback</h3>
-            <ul class="icon-content-bullets">
-              <li>Foster open communication and iterative feedback to adapt to evolving needs.</li>
-              <li>Translate technical concepts into clear, actionable insights for clients and team members.</li>
-            </ul>
-
-            <h3>7. Continuous Improvement</h3>
-            <ul class="icon-content-bullets">
-              <li>Analyze user data and feedback to refine functionality and design.</li>
-              <li>Stay current with web trends and technologies, continuously enhancing skills to provide cutting-edge solutions.</li>
-            </ul>
-
-            <p>
-              By blending technical expertise with creativity and a user-focused mindset, I craft websites and applications that are as functional as they are visually compelling. Whether building from scratch or optimizing existing platforms, my approach ensures that every project exceeds expectations.
-            </p>
-          </div>
-        </div>
-
-        <div id="connectContent" class="content-section">
-          <h2>Let's Connect</h2>
-          <p>
-            I’m always open to collaborating on innovative projects, sharing ideas, or exploring
-            exciting opportunities. Whether you’re looking for a dedicated team member or
-            seeking a creative partnership, I’d love to hear from you. Feel free to reach out via
-            the <a href="#contact" class="link">contact page below</a>, and let’s create something
-            impactful together!
-          </p>
       </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-      <div class="text-overlay">
-        <h1 class="ghost" data-speed="0.2">PROJECTS</h1>
-        <h1 class="me" data-speed="0.5">MY WORK</h1>
+      <!-- Hamburger Icon for Mobile Menu -->
+      <div class="mobile-menu-toggle" role="button" aria-label="Toggle mobile menu">
+        <i class="fas fa-bars fa-2x"></i>
       </div>
-      <div class="content-container">
-        <div class="container">
-          <!-- Section Navbar -->
-          <div class="projects-navbar">
-            <button class="projects-nav-item active" data-filter="all">All</button>
-            <button class="projects-nav-item" data-filter="web-development">Web Development</button>
-            <button class="projects-nav-item" data-filter="design-work">Design Work</button>
-          </div>
 
-          <!-- Projects Content -->
-          <div class="projects-content">
-            <!-- Web Development Projects -->
-            <div class="project-item web-development">
-              <img src="images/website-previews/dbd.png" alt="Web Project 3" class="project-image">
-              <div class="project-info">
-                <h3>Broken Chair Brewery</h3>
-                <p>A fully functional mock website created with the basics: HTML, CSS, JavaScript.</p>
-              </div>
-            </div>
-
-            <div class="project-item web-development">
-              <img src="images/website-previews/bcb.png" alt="Web Project 3" class="project-image">
-              <div class="project-info">
-                <h3>Broken Chair Brewery</h3>
-                <p>Website remake for a small, family-owned craft brewery.</p>
-              </div>
-            </div>
-            
-            <div class="project-item web-development">
-              <img src="images/website-previews/leno.png" alt="Web Project 3" class="project-image">
-              <div class="project-info">
-                <h3>Broken Chair Brewery</h3>
-                <p>Website remake for a small, family-owned craft brewery.</p>
-              </div>
-            </div>
-
-            <div class="project-item web-development">
-              <img src="images/website-previews/lumina.png" alt="Web Project 3" class="project-image">
-              <div class="project-info">
-                <h3>Broken Chair Brewery</h3>
-                <p>Website remake for a small, family-owned craft brewery.</p>
-              </div>
-            </div>
-
-            <div class="project-item web-development">
-              <img src="images/website-previews/tutor.png" alt="Web Project 3" class="project-image">
-              <div class="project-info">
-                <h3>Broken Chair Brewery</h3>
-                <p>Website remake for a small, family-owned craft brewery.</p>
-              </div>
-            </div>
-
-            <div class="project-item web-development">
-              <img src="images/website-previews/hotel.png" alt="Web Project 3" class="project-image">
-              <div class="project-info">
-                <h3>Broken Chair Brewery</h3>
-                <p>Website remake for a small, family-owned craft brewery.</p>
-              </div>
-            </div>
-
-            <div class="project-item web-development">
-              <img src="images/website-previews/bono.png" alt="Web Project 3" class="project-image">
-              <div class="project-info">
-                <h3>Broken Chair Brewery</h3>
-                <p>Website remake for a small, family-owned craft brewery.</p>
-              </div>
-            </div>
-
-            <div class="project-item web-development">
-              <img src="images/website-previews/tutor.png" alt="Web Project 3" class="project-image">
-              <div class="project-info">
-                <h3>Broken Chair Brewery</h3>
-                <p>Website remake for a small, family-owned craft brewery.</p>
-              </div>
-            </div>
-
-            
-
-            <!-- Design Work Projects -->
-            <div class="project-item design-work">
-              <iframe
-                src="https://example.com"
-                frameborder="0"
-                scrolling="no"
-                class="project-iframe"
-                title="Design Project 1"></iframe>
-              <div class="project-info">
-                <h3>Design Project 1</h3>
-                <p>A brief description of Design Project 1.</p>
-              </div>
-            </div>
-            <div class="project-item design-work">
-              <iframe
-                src="https://example.com"
-                frameborder="0"
-                scrolling="no"
-                class="project-iframe"
-                title="Design Project 2"></iframe>
-              <div class="project-info">
-                <h3>Design Project 2</h3>
-                <p>A brief description of Design Project 2.</p>
-              </div>
-            </div>
-            <div class="project-item design-work">
-              <iframe
-                src="https://example.com"
-                frameborder="0"
-                scrolling="no"
-                class="project-iframe"
-                title="Design Project 3"></iframe>
-              <div class="project-info">
-                <h3>Design Project 3</h3>
-                <p>A brief description of Design Project 3.</p>
-              </div>
-            </div>
-            <div class="project-item design-work">
-              <iframe
-                src="https://example.com"
-                frameborder="0"
-                scrolling="no"
-                class="project-iframe"
-                title="Design Project 4"></iframe>
-              <div class="project-info">
-                <h3>Design Project 4</h3>
-                <p>A brief description of Design Project 4.</p>
-              </div>
-            </div>
-            <div class="project-item design-work">
-              <iframe
-                src="https://example.com"
-                frameborder="0"
-                scrolling="no"
-                class="project-iframe"
-                title="Design Project 5"></iframe>
-              <div class="project-info">
-                <h3>Design Project 5</h3>
-                <p>A brief description of Design Project 5.</p>
-              </div>
-            </div>
-            <div class="project-item design-work">
-              <iframe
-                src="https://example.com"
-                frameborder="0"
-                scrolling="no"
-                class="project-iframe"
-                title="Design Project 6"></iframe>
-              <div class="project-info">
-                <h3>Design Project 6</h3>
-                <p>A brief description of Design Project 6.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- Mobile Menu (Dropdown) -->
+      <div id="mobile-menu" class="mobile-menu-items">
+        <ul class="mobile-menu-list">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="#about">ABOUT ME</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+          <li><a href="#gallery">GALLERY</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/stanielbray/" aria-label="Follow me on LinkedIn">
+              <i class="fa-brands fa-linkedin fa-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/DBray33" aria-label="View my GitHub projects">
+              <i class="fa-brands fa-github fa-2x"></i>
+            </a>
+          </li>
+        </ul>
       </div>
-    </section>
+    </div>
+  </nav>
 
-    <!-- Contact -->
-    <section class="contact" id="contact">
-      <div class="contact-form container">
-        <div class="section-header">
-          <h2>Get in touch</h2>
-          <div class="heading-border"></div>
-          <p>
-            Have a question or inquiry? Leave your information below and I'll
-            get back to you as soon as possible.
-          </p>
-          <form action="https://formspree.io/f/meoqayky" method="POST">
-            <!-- Name -->
-            <input type="text" name="name" placeholder="Name" />
-            <!-- Email -->
-            <input type="email" name="email" placeholder="Email" />
-            <!-- Phone Number Section -->
-            <input type="tel" name="phone" placeholder="Phone Number" />
-            <!-- Message -->
-            <textarea name="message" placeholder="Message"></textarea>
-            <button type="submit" class="btn-blank">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Location -->
-    <section class="location">
-      <div class="location-container">
-        <div class="section-header"></div>
-        <div class="map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12165.575929722758!2d-75.945585!3d40.33360534999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6795f44b306f3%3A0xe44b408d5d3cf28e!2sWest%20Reading%2C%20PA%2019611!5e0!3m2!1sen!2sus!4v1730753361033!5m2!1sen!2sus"
-            width="600"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- Social footer -->
-    <section class="social section">
+  <!-- Hero Section-->
+  <section class="hero">
+    <!-- Carousel Content -->
+    <div class="carousel-content">
       <div class="container">
+        <div class="caption text-center">
+          <div id="carousel-items">
+            <div class="carousel-item active">
+              <h1>Hi, I'm Dan</h1>
+              <p>
+                A passionate web developer creating modern, user-friendly
+                designs.
+              </p>
+              <a class="btn btn-blank" href="#about" role="button">Get To Know Me</a>
+            </div>
+            <div class="carousel-item">
+              <h1>View My Projects</h1>
+              <p>
+                This is an endless work in progress. Plenty to come soon, and
+                frequently!
+              </p>
+              <a class="btn btn-blank" href="#projects" role="button">See My Work</a>
+            </div>
+            <div class="carousel-item">
+              <h1>Let’s Build Something Together</h1>
+              <p>
+                Get in touch to collaborate or learn more about what I can do
+                for you.
+              </p>
+              <a class="btn btn-blank" href="#contact" role="button">Contact Me</a>
+            </div>
+          </div>
+          <div class="carousel-navigation">
+            <button class="carousel-btn" data-index="0"></button>
+            <button class="carousel-btn" data-index="1"></button>
+            <button class="carousel-btn" data-index="2"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multi-Layered Parallax with Carousel Content -->
+  <section class="hero">
+    <!-- Parallax Layers -->
+    <div class="parallax-container">
+      <img src="images/png-layers/Layer8.png" alt="Background Layer" class="layer layer8" />
+      <img src="images/png-layers/Layer7.png" alt="Layer 7" class="layer layer7" />
+      <img src="images/png-layers/Layer6.png" alt="Layer 6" class="layer layer6" />
+      <img src="images/png-layers/Layer5.png" alt="Layer 5" class="layer layer5" />
+      <img src="images/png-layers/Layer4.png" alt="Layer 4" class="layer layer4" />
+      <img src="images/png-layers/Layer3.png" alt="Layer 3" class="layer layer3" />
+      <img src="images/png-layers/Layer2.png" alt="Layer 2" class="layer layer2" />
+      <img src="images/png-layers/Layer1.png" alt="Foreground Layer" class="layer layer1" />
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="text-overlay">
+      <h1 class="ghost">ABOUT</h1>
+      <h1 class="me">ABOUT ME</h1>
+    </div>
+    <div class="content-container">
+      <div class="container">
+        <div class="header-container">
+          <div class="section-header">
+            <h2 class="animate-from-left">
+              AUTHENTICITY CREATIVITY SPECIFICITY
+            </h2>
+            <h1 class="journey animate-from-right">
+              MY WEB DEVELOPMENT JOURNEY
+            </h1>
+            <div class="heading-border animate-from-left"></div>
+            <p class="animate-from-right">
+              From early explorations in coding while running a brewery, to
+              mastering the art of creating seamless user experiences, this is
+              the story behind my growth as a web developer. Discover the
+              skills, projects, and personal insights that drive my passion
+              for crafting impactful digital solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Icons -->
+  <section id="about-icons" class="about-icons-section">
+    <div class="container">
+      <div class="icon-background"></div>
+      <h2 class="icons-header">Click an icon below for more info:</h2>
+      <ul class="icon-container">
+        <!-- Person Icon -->
+        <li class="icon-item" onclick="showContent('personContent')">
+          <span class="icon-link">
+            <i class="fas fa-user icon"></i>
+          </span>
+          <h2>Who Am I?</h2>
+        </li>
+
+        <!-- Brain Icon -->
+        <li class="icon-item" onclick="showContent('skillsContent')">
+          <span class="icon-link">
+            <i class="fas fa-brain icon"></i>
+          </span>
+          <h2>My Skills</h2>
+        </li>
+
+        <!-- Project Icon -->
+        <li class="icon-item" onclick="showContent('projectsContent')">
+          <span class="icon-link">
+            <i class="fas fa-tools icon"></i>
+          </span>
+          <h2>Projects</h2>
+        </li>
+
+        <!-- Web Development Icon -->
+        <li class="icon-item" onclick="showContent('developmentContent')">
+          <span class="icon-link">
+            <i class="fas fa-laptop-code icon"></i>
+          </span>
+          <h2>Development Approach</h2>
+        </li>
+
+        <!-- Communication Icon -->
+        <li class="icon-item" onclick="showContent('connectContent')">
+          <span class="icon-link">
+            <i class="fas fa-phone icon"></i>
+          </span>
+          <h2>Let's Connect!</h2>
+        </li>
+      </ul>
+
+      <!-- Content Sections for Each Icon -->
+      <div id="personContent" class="content-section">
+        <h2>About Me</h2>
+        <!-- Headshot Image -->
+        <div class="about-image">
+          <img src="images/headshot.jpeg" alt="Your Headshot" class="img-fluid" />
+        </div>
         <p>
-          <!-- Thanks for checking out all the works I have completed so far! There's
+          I’m Dan Bray, a motivated and detail-oriented professional with a
+          passion for creativity and technology. After 8 years of excelling in
+          the craft beer industry, I’m transitioning my skills and experience
+          into a career in web development and digital design. Throughout my
+          career, I’ve honed my abilities in project management, web and
+          graphic design, social media strategy, and e-commerce development.
+          At Broken Chair Brewery, I managed every facet of operations, from
+          crafting award-winning beer recipes to spearheading digital
+          marketing campaigns. My efforts elevated the brewery to become a
+          community favorite and the county’s “Best Craft Brewery” every year
+          the award was available (they got rid of it).
+          <br />
+          <br />
+          Beyond brewing, I designed all visual branding, including can
+          labels, apparel, and merchandise, while also managing the brewery’s
+          website and social media presence. In addition to my brewery career,
+          I’ve built successful e-commerce stores and provided freelance
+          graphic design services. These ventures allowed me to design and
+          market custom merchandise across platforms like Shopify, Etsy, and
+          eBay, where my designs achieved top search rankings. I’m currently
+          advancing my web development skills through certifications and
+          hands-on projects. My portfolio showcases my commitment to crafting
+          impactful digital solutions while enhancing my proficiency in tools
+          such as the MERN stack and WordPress, and reflects my passion for
+          building custom-coded websites.
+        </p>
+        <h2>Hobbies/Interests</h2>
+        <p>
+          Outside of web development, I thrive on creativity and exploration.
+          My hobbies complement my work by fueling my creativity, attention to
+          detail, and drive to learn. You’ll often find me experimenting with:
+        </p>
+
+        <ul class="icon-content-bullets">
+          <li>
+            Physical Fitness: Engaging in some physical activity most days,
+            and challenging myself with new workouts.
+          </li>
+          <li>
+            Horticulture: Cultivating plants and designing lush indoor and
+            outdoor spaces.
+          </li>
+          <li>
+            Woodworking: Crafting custom furniture and unique wooden
+            creations.
+          </li>
+          <li>
+            Traveling: Exploring new places and drawing inspiration from
+            diverse cultures.
+          </li>
+          <li>
+            Interior Design: Bringing spaces to life with thoughtful
+            aesthetics and functionality.
+          </li>
+        </ul>
+      </div>
+
+      <div id="skillsContent" class="content-section">
+        <h2>My Skills</h2>
+        <p>
+          Crafting Impactful Digital Solutions with Precision and Creativity
+          <br />
+          My skills as a web developer combine a deep understanding of design,
+          technology, and user-centered thinking. Transitioning from a
+          successful career in the craft beer industry to web development has
+          sharpened my ability to tackle diverse challenges and deliver
+          exceptional results. This journey has also honed my patience for
+          achieving very specific desired results, strengthened my
+          troubleshooting expertise, and instilled a strong focus on
+          meticulous attention to detail—qualities that have been invaluable
+          in both maintaining clean, sanitary environments and creating
+          polished digital solutions. Here’s what I bring to the table:
+        </p>
+
+        <ul class="icon-content-bullets">
+          <li>
+            Frontend Development: Expertise in HTML, CSS, and JavaScript,
+            along with Bootstrap, ensures sleek, responsive websites optimized
+            for both desktop and mobile experiences. I am adept at acquiring
+            domains and launching websites, utilizing platforms like GitHub,
+            Namecheap, and Netlify to host and deploy web projects
+            efficiently.
+          </li>
+          <li>
+            Frameworks and Libraries: Proficiency in React and the MERN stack,
+            enabling the creation of dynamic and interactive applications.
+          </li>
+          <li>
+            E-commerce Expertise: Experienced in building and managing stores
+            on platforms like Shopify, Etsy, and eBay, with a strong track
+            record of optimizing for SEO, user experience, and sales growth.
+          </li>
+          <li>
+            E-commerce Expertise: Experienced in building and managing stores
+            on platforms like Shopify, Etsy, and eBay, with a strong track
+            record of optimizing for SEO, user experience, and sales growth.
+            Additionally, I successfully ran and managed a Squarespace
+            business site with a fully functional print-on-demand apparel
+            store seamlessly integrated into the website, driving customer
+            engagement and revenue.
+          </li>
+          <li>
+            Version Control: Advanced knowledge of Git and GitHub ensures
+            seamless collaboration and efficient project management.
+          </li>
+          <li>
+            SEO & Digital Marketing: Proven ability to elevate online presence
+            through data-driven social media strategies, search engine
+            optimization, and engaging content creation.
+          </li>
+          <li>
+            Web Design Principles: Adept at blending functionality with
+            aesthetic appeal to deliver websites that are not only visually
+            stunning but also intuitive and user-friendly.
+          </li>
+          <li>
+            Web Design Principles: Adept at blending functionality with
+            aesthetic appeal to deliver websites that are not only visually
+            stunning but also intuitive and user-friendly.
+          </li>
+          <li>
+            Problem Solving: Passionate about breaking down complex problems
+            and crafting elegant, efficient solutions with a focus on
+            innovation and detail.
+          </li>
+        </ul>
+        This combination of skills equips me to transform creative concepts
+        into tangible, impactful web experiences. Whether it’s developing from
+        scratch, leveraging tools like Bootstrap for rapid prototyping, or
+        using jQuery for advanced interactivity, I thrive on delivering
+        excellence that meets and exceeds expectations.
+      </div>
+
+      <div id="projectsContent" class="content-section">
+        <h2>Projects</h2>
+        <p><em>Projects are listed here, comprehensive project display and explanation on the <a href="#projects"
+              class="link">contact page below</a></em></p>
+        <p>
+          <b>Broken Chair Brewery</b> - Simple, responsive, smooth website for
+          a small family brewery.
+        </p>
+        <p><b>Project 2</b> - Project 2 description</p>
+        <p><b>Project 3</b> - Project 3 description</p>
+        <p><b>Project 4</b> - Project 4 description</p>
+        <p><b>Project 5</b> - Project 5 description</p>
+        <p><b>Project 6</b> - Project 6 description</p>
+      </div>
+
+      <div id="developmentContent" class="content-section">
+        <h2>Development Approach</h2>
+        <div class="container">
+          <p>
+            In every project, my approach to web development is rooted in precision, creativity, and a deep commitment
+            to delivering impactful results. Transitioning from a career managing the complexities of the craft beer
+            industry to web development, I have honed a meticulous attention to detail, a problem-solving mindset, and
+            an unwavering focus on user satisfaction. I am obsessed with creating movements and functionalities that
+            make sense, feel intuitive, and are inherently satisfying—whether it's scroll behavior, hover
+            characteristics, or ensuring elements adapt seamlessly and beautifully as the viewport changes. Here’s how I
+            bring concepts to life:
+          </p>
+
+          <h3>1. Discovery and Planning</h3>
+          <ul class="icon-content-bullets">
+            <li>Begin by understanding the client's vision, goals, and target audience.</li>
+            <li>Conduct comprehensive research to define project scope, timelines, and deliverables.</li>
+            <li>Collaborate to ensure alignment on aesthetics, functionality, and user needs.</li>
+          </ul>
+
+          <h3>2. Design with Purpose</h3>
+          <ul class="icon-content-bullets">
+            <li>Focus on clean, user-centered layouts that enhance usability and accessibility, with movements and
+              interactions that feel natural and engaging.</li>
+            <li>Optimize hover effects, animations, and scroll behaviors to create a seamless and satisfying user
+              experience.</li>
+            <li>Ensure all designs are mobile-first, fully responsive, and intuitive.</li>
+          </ul>
+
+          <h3>3. Development with Precision</h3>
+          <ul class="icon-content-bullets">
+            <li>Focus on clean, user-centered layouts that enhance usability and accessibility, with movements and
+              interactions that feel natural and engaging.</li>
+            <li>Optimize hover effects, animations, and scroll behaviors to create a seamless and satisfying user
+              experience.</li>
+            <li>Ensure all designs are mobile-first, fully responsive, and intuitive.</li>
+          </ul>
+
+          <h3>4. E-Commerce and SEO Optimization</h3>
+          <ul class="icon-content-bullets">
+            <li>Expertise in launching and managing e-commerce platforms, including Shopify and Squarespace.</li>
+            <li>Integrate and manage features such as print-on-demand apparel stores to expand functionality and
+              increase revenue.</li>
+            <li>Optimize all platforms for search engines, ensuring high visibility and user engagement.</li>
+          </ul>
+
+          <h3>5. Deployment and Hosting</h3>
+          <ul class="icon-content-bullets">
+            <li>Manage domains, hosting, and deployment using services like GitHub, Namecheap, and Netlify.</li>
+            <li>Ensure seamless transitions from development to production, with robust testing for performance and
+              security.</li>
+            <li>Provide ongoing maintenance and updates to keep websites running smoothly.</li>
+          </ul>
+
+          <h3>6. Collaboration and Feedback</h3>
+          <ul class="icon-content-bullets">
+            <li>Foster open communication and iterative feedback to adapt to evolving needs.</li>
+            <li>Translate technical concepts into clear, actionable insights for clients and team members.</li>
+          </ul>
+
+          <h3>7. Continuous Improvement</h3>
+          <ul class="icon-content-bullets">
+            <li>Analyze user data and feedback to refine functionality and design.</li>
+            <li>Stay current with web trends and technologies, continuously enhancing skills to provide cutting-edge
+              solutions.</li>
+          </ul>
+
+          <p>
+            By blending technical expertise with creativity and a user-focused mindset, I craft websites and
+            applications that are as functional as they are visually compelling. Whether building from scratch or
+            optimizing existing platforms, my approach ensures that every project exceeds expectations.
+          </p>
+        </div>
+      </div>
+
+      <div id="connectContent" class="content-section">
+        <h2>Let's Connect</h2>
+        <p>
+          I’m always open to collaborating on innovative projects, sharing ideas, or exploring
+          exciting opportunities. Whether you’re looking for a dedicated team member or
+          seeking a creative partnership, I’d love to hear from you. Feel free to reach out via
+          the <a href="#contact" class="link">contact page below</a>, and let’s create something
+          impactful together!
+        </p>
+      </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="text-overlay">
+      <h1 class="ghost" data-speed="0.2">PROJECTS</h1>
+      <h1 class="me" data-speed="0.5">MY WORK</h1>
+    </div>
+    <div class="content-container">
+      <div class="container">
+        <!-- Section Navbar -->
+        <div class="projects-navbar">
+          <button class="projects-nav-item active" data-filter="all">All</button>
+          <button class="projects-nav-item" data-filter="web-development">Web Development</button>
+          <button class="projects-nav-item" data-filter="design-work">Design Work</button>
+        </div>
+        <h6>HOVER OVER IMAGE for preview</h6>
+        <h6 class="mobile-instructions">TAP IMAGE for preview</h6>
+
+        <!-- Projects Content -->
+        <div class="projects-content">
+          <!-- Web Development Projects -->
+          <div class="project-item web-development">
+            <img src="images/website-previews/dbd.png" alt="Web Project 3" class="project-image">
+            <div class="project-info">
+              <h3>Dan Bray's Web Development Portfolio</h3>
+              <p>You're lookin at it.. a fully responsive/functional portfolio website.</p>
+            </div>
+          </div>
+
+          <div class="project-item web-development">
+            <img src="images/website-previews/bcb.png" alt="Web Project 3" class="project-image">
+            <div class="project-info">
+              <h3>Broken Chair Brewery</h3>
+              <p>Website remake for a small, family-owned craft brewery.</p>
+            </div>
+          </div>
+
+          <div class="project-item web-development">
+            <img src="images/website-previews/leno.png" alt="Web Project 3" class="project-image">
+            <div class="project-info">
+              <h3>Leno</h3>
+              <p>Mock website designed as a landing page for a tech productivity app assistant</p>
+            </div>
+          </div>
+
+          <div class="project-item web-development">
+            <img src="images/website-previews/lumina.png" alt="Web Project 3" class="project-image">
+            <div class="project-info">
+              <h3>Lumina</h3>
+              <p>Photography gallery website with the use of CSS Grid and Lightbox Javascript for photo display</p>
+            </div>
+          </div>
+
+          <div class="project-item web-development">
+            <img src="images/website-previews/tutor.png" alt="Web Project 3" class="project-image">
+            <div class="project-info">
+              <h3>Tutor</h3>
+              <p>Website for tech education platform</p>
+            </div>
+          </div>
+
+          <div class="project-item web-development">
+            <img src="images/website-previews/hotel.png" alt="Web Project 3" class="project-image">
+            <div class="project-info">
+              <h3>Hotel Website</h3>
+              <p>Basic hotel website landing page</p>
+            </div>
+          </div>
+
+          <div class="project-item web-development">
+            <img src="images/website-previews/bono.png" alt="Web Project 3" class="project-image">
+            <div class="project-info">
+              <h3>Bono</h3>
+              <p>Landing / Contact form page for a CMS service</p>
+            </div>
+          </div>
+
+
+
+
+
+          <!-- Design Work Projects -->
+
+          <div class="project-item design-work">
+            <img src="https://picsum.photos/200" alt="Web Project 3" class="project-image">
+            <div class="project-info">
+              <h3>Placeholder</h3>
+              <p>Description of project</p>
+            </div>
+          </div>
+
+          <div class="project-item design-work">
+            <img src="https://picsum.photos/200" alt="Web Project 3" class="project-image">
+            <div class="project-info">
+              <h3>Placeholder</h3>
+              <p>Description of project</p>
+            </div>
+          </div>
+
+          <div class="project-item design-work">
+            <img src="https://picsum.photos/200" alt="Web Project 3" class="project-image">
+            <div class="project-info">
+              <h3>Placeholder</h3>
+              <p>Description of project</p>
+            </div>
+          </div>
+
+          <div class="project-item design-work">
+            <img src="https://picsum.photos/200" alt="Web Project 3" class="project-image">
+            <div class="project-info">
+              <h3>Placeholder</h3>
+              <p>Description of project</p>
+            </div>
+          </div>
+
+          <div class="project-item design-work">
+            <img src="https://picsum.photos/200" alt="Web Project 3" class="project-image">
+            <div class="project-info">
+              <h3>Placeholder</h3>
+              <p>Description of project</p>
+            </div>
+          </div>
+
+          <div class="project-item design-work">
+            <img src="https://picsum.photos/200" alt="Web Project 3" class="project-image">
+            <div class="project-info">
+              <h3>Placeholder</h3>
+              <p>Description of project</p>
+            </div>
+          </div>
+
+          <div class="project-item design-work">
+            <img src="https://picsum.photos/200" alt="Web Project 3" class="project-image">
+            <div class="project-info">
+              <h3>Placeholder</h3>
+              <p>Description of project</p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="contact-form container">
+      <div class="section-header">
+        <h2>Get in touch</h2>
+        <div class="heading-border"></div>
+        <p>
+          Have a question or inquiry? Leave your information below and I'll
+          get back to you as soon as possible.
+        </p>
+        <form action="https://formspree.io/f/meoqayky" method="POST">
+          <!-- Name -->
+          <input type="text" name="name" placeholder="Name" />
+          <!-- Email -->
+          <input type="email" name="email" placeholder="Email" />
+          <!-- Phone Number Section -->
+          <input type="tel" name="phone" placeholder="Phone Number" />
+          <!-- Message -->
+          <textarea name="message" placeholder="Message"></textarea>
+          <button type="submit" class="btn-blank">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="location">
+    <div class="location-container">
+      <div class="section-header"></div>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12165.575929722758!2d-75.945585!3d40.33360534999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6795f44b306f3%3A0xe44b408d5d3cf28e!2sWest%20Reading%2C%20PA%2019611!5e0!3m2!1sen!2sus!4v1730753361033!5m2!1sen!2sus"
+          width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social footer -->
+  <section class="social section">
+    <div class="container">
+      <p>
+        <!-- Thanks for checking out all the works I have completed so far! There's
           always something new to learn, and I will always be working on a new
           project, so stay tuned for frequent updates and additions. -->
-        </p>
-        <div class="social-icons">
-          <a
-            href="https://www.linkedin.com/in/stanielbray/"
-            target="_blank"
-            aria-label="Check me out on LinkedIn">
-            <i class="fa-brands fa-linkedin fa-2x"></i>
-          </a>
-          <a
-            href="https://github.com/DBray33"
-            target="_blank"
-            aria-label="Check out my repositories on Github">
-            <i class="fa-brands fa-github fa-2x"></i>
-          </a>
-        </div>
+      </p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/stanielbray/" target="_blank" aria-label="Check me out on LinkedIn">
+          <i class="fa-brands fa-linkedin fa-2x"></i>
+        </a>
+        <a href="https://github.com/DBray33" target="_blank" aria-label="Check out my repositories on Github">
+          <i class="fa-brands fa-github fa-2x"></i>
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container footer-flex">
-        <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <p>&copy;2024 - 2025 Dan Bray. All rights reserved.</p>
-      </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-flex">
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p>&copy;2024 - 2025 Dan Bray. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <!-- Back to top arrow -->
-    <a href="#" id="back-to-top" title="Back to Top">&uarr;</a>
+  <!-- Back to top arrow -->
+  <a href="#" id="back-to-top" title="Back to Top">&uarr;</a>
 
-    <!-- Lightbox gallery effect -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+  <!-- Lightbox gallery effect -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- jQuery.stellar -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.min.js"></script>
+  <!-- jQuery.stellar -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.min.js"></script>
 
-    <!-- Bootstrap JavaScript Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"></script>
+  <!-- Bootstrap JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
 
-    <!-- Custom JS -->
-    <script src="script.js"></script>
-  </body>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+
 </html>

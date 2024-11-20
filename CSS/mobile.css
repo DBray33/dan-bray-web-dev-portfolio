@@ -186,4 +186,11 @@
     padding: 2rem; /* Adds 2rem padding around all content */
     position: relative;
   }
+
+  .projects-section h6 {
+    display: none;
+  }
+  .projects-section .mobile-instructions {
+    display: block;
+  }
 }
