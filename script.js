@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-// LOGO LINK //////////////////
+// CORNER LOGO LINK //////////////////
 // Logo spin animation:
 const logoLink = document.querySelector('.logo-link');
 if (logoLink) {
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll);
 });
 
-// Icon Content hide/display with swipe-down animation
+// Icon Content hide/display with pop-up animation
 function showContent(contentId) {
   // Hide all content sections
   document.querySelectorAll('.content-section').forEach((section) => {
@@ -293,7 +293,7 @@ function showContent(contentId) {
   const selectedContent = document.getElementById(contentId);
   if (selectedContent) {
     selectedContent.classList.add('active');
-    selectedContent.style.animation = 'swipe-down 0.3s ease-out forwards';
+    selectedContent.style.animation = 'bubble-up 0.3s ease-out forwards';
   }
 
   // Add active class to the corresponding icon-item
@@ -327,15 +327,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   navItems.forEach((navItem) => {
     navItem.addEventListener('click', () => {
-      // Remove active class from all nav items
       navItems.forEach((item) => item.classList.remove('active'));
-      // Add active class to clicked nav item
+
       navItem.classList.add('active');
 
-      // Get filter category
       const filter = navItem.getAttribute('data-filter');
 
-      // Show/Hide projects based on filter
       projectItems.forEach((project) => {
         if (filter === 'all' || project.classList.contains(filter)) {
           project.style.display = 'block';

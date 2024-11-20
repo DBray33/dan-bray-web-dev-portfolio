@@ -1017,11 +1017,12 @@ img {
   left: 0; /* Center horizontally */
   background-color: var(--primary-color);
   border-radius: 10px;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   overflow-y: auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Bottom shadow */
-  transform: translate(-50%, -50%); /* Adjust centering */
-  z-index: 9999; /* Set a very high z-index */
+  transform: scale(0.9); /* Initial size for the bubbling effect */
+  z-index: 1; /* Default z-index */
+  opacity: 0; /* Start fully transparent */
 }
 
 .about-image img {
@@ -1040,10 +1041,11 @@ h3 {
 .content-section.active {
   display: block;
   opacity: 1;
+  transform: scale(1); /* Grows to full size */
+  z-index: 9999; /* Pop above other elements */
 }
 
 .icon-content-bullets {
-  list-style: none; /* Remove default bullets */
   padding-left: 2rem;
 }
 
@@ -1056,8 +1058,8 @@ h3 {
 
 .icon-content-bullets li::before {
   content: '';
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   background-color: var(--secondary-color); /* Custom bullet color */
   border-radius: 50%; /* Makes it a circle */
   position: absolute;
@@ -1065,14 +1067,15 @@ h3 {
   top: 0.4rem; /* Adjust alignment vertically */
 }
 
-@keyframes swipe-down {
+/* Updated Animation for Bubbling Effect */
+@keyframes bubble-up {
   from {
-    transform: translateY(-100%);
-    opacity: 0;
+    transform: scale(0.9); /* Slightly smaller than full size */
+    opacity: 0; /* Fully transparent */
   }
   to {
-    transform: translateY(0);
-    opacity: 1;
+    transform: scale(1); /* Full size */
+    opacity: 1; /* Fully visible */
   }
 }
 
@@ -1089,15 +1092,7 @@ h3 {
 /* ////////////////////////////////////////////// */
 
 /* BEGIN PROJECTS SECTION */
-#projects .text-overlay .ghost {
-  color: black;
-}
-
-#projects .text-overlay .me {
-  color: black;
-}
-
-/* Projects Content */
+/* Projects Section */
 .projects-section {
   position: relative;
   padding: 0 0 3rem;
@@ -1118,7 +1113,6 @@ h3 {
 .projects-nav-item {
   padding: 0.5rem 1rem;
   background-color: var(--secondary-color);
-  /* border: none; */
   color: black;
   cursor: pointer;
   border-radius: 5px;
@@ -1135,56 +1129,87 @@ h3 {
 }
 
 /* Projects Content */
-/* Reset for Body and HTML */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-/* Projects Content */
 .projects-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  gap: 2rem; /* No gaps between items */
-  width: 100%; /* Fit within the viewport width */
-  margin: 0 auto; /* Center content */
+  gap: 1.5rem; /* Adjust spacing between items */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
 }
 
 /* Individual Project Items */
 .project-item {
+  position: relative;
+  overflow: hidden; /* Ensures content stays inside the box */
   background-color: var(--secondary-color);
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  /* border: 2px solid black; */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1); /* Shadow */
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  aspect-ratio: 1; /* Ensures a square container */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
-/* Hover Effect for Shadow */
+.project-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Fit the width of the container */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 5s linear; /* Smooth scroll effect */
+}
+
+.project-item:hover img {
+  transform: translateY(-100%); /* Scroll the image upwards on hover */
+}
+
 .project-item:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.2); /* Deeper shadow */
-  transform: translateY(-5px); /* Lift on hover */
+}
+
+.project-item:hover .project-iframe {
+  animation: scroll-iframe s linear infinite; /* Smooth scroll animation */
+}
+
+/* Iframe Styling */
+.project-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 200%; /* Extended height for scrolling */
+  transform-origin: top left; /* Anchor scaling to the top-left corner */
+  pointer-events: none; /* Disable interactions */
+}
+
+/* Scrolling Animation */
+@keyframes scroll-iframe {
+  0% {
+    transform: translateY(0); /* Start at the top */
+  }
+  100% {
+    transform: translateY(-50%); /* Scroll to the bottom */
+  }
+}
+
+/* Project Info Overlay */
+.project-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  z-index: 1;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .projects-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column on smaller screens */
   }
-}
-
-.project-item h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.project-item p {
-  font-size: 1rem;
-  color: var(--dark-color);
+  .project-iframe {
+    transform: scale(0.15); /* Adjust scale for smaller screens */
+  }
 }
