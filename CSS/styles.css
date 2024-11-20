@@ -343,6 +343,10 @@ img {
 
 /* INTRO SECTION */
 /* Hero and Parallax Layers */
+.hero {
+  background-image: url('../images/IMG_0447.jpeg');
+  z-index: 9999;
+}
 
 /* Carousel Content Positioning */
 .carousel-content {
@@ -832,6 +836,7 @@ img {
 /* ////////////////////////////////////////////// */
 
 /* ICON MENU SECTION */
+
 .about-icons-section {
   position: relative;
   padding: 4rem 0;
@@ -846,7 +851,7 @@ img {
 
 .icons-header {
   background: var(--secondary-color);
-  margin-bottom: 3rem;
+  margin-bottom: 7rem;
   font-size: 1.2rem;
   text-align: center;
   font-family: 'Oswald';
@@ -1027,10 +1032,37 @@ img {
   border-radius: 10px;
 }
 
+h3 {
+  font-family: 'Oswald';
+}
+
 /* Active class to display the content */
 .content-section.active {
   display: block;
   opacity: 1;
+}
+
+.icon-content-bullets {
+  list-style: none; /* Remove default bullets */
+  padding-left: 2rem;
+}
+
+.icon-content-bullets li {
+  position: relative;
+  padding-left: 2rem; /* Space for the custom bullet */
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.icon-content-bullets li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: var(--secondary-color); /* Custom bullet color */
+  border-radius: 50%; /* Makes it a circle */
+  position: absolute;
+  left: 0;
+  top: 0.4rem; /* Adjust alignment vertically */
 }
 
 @keyframes swipe-down {
@@ -1042,6 +1074,10 @@ img {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+#contact {
+  scroll-margin-top: -80px; /* Adjust this value based on your navbar height */
 }
 
 /* END ABOUT SECTION */

@@ -350,7 +350,28 @@ document.addEventListener('DOMContentLoaded', () => {
 // ///////////////////////////////
 // ///////////////////////////////
 // ///////////////////////////////
+document.addEventListener('DOMContentLoaded', function () {
+  const links = document.querySelectorAll('.btn-blank[href^="#"]'); // Select all buttons with href starting with "#"
 
+  links.forEach((link) => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent default link behavior
+      const targetId = this.getAttribute('href').slice(1); // Get the ID of the target section
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const offset = 0; // Adjust this value if needed (e.g., -50 to account for fixed headers)
+        const elementPosition = targetElement.offsetTop;
+        const finalPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: finalPosition,
+          behavior: 'smooth', // Enable smooth scrolling
+        });
+      }
+    });
+  });
+});
 // DROP DOWN TEXT BOX FOR ICONS ///////////////////
 // DROP DOWN TEXT BOX FOR ICONS ///////////////////
 // function toggleTextBox(event, boxId) {
