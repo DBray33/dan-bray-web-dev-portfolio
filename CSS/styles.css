@@ -498,6 +498,7 @@ img {
 
 /* CONTACT FORM */
 .contact {
+  position: relative; /* Ensure the pseudo-element is positioned correctly */
   background: url('../images/workspace.jpeg') no-repeat center/cover;
   margin: 0 auto;
   padding: 2rem;
@@ -505,6 +506,23 @@ img {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.contact > * {
+  position: relative; /* Ensure child elements are above the overlay */
+  z-index: 2;
 }
 
 .contact h2 {
