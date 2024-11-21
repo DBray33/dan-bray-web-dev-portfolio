@@ -1217,6 +1217,7 @@ h3 {
   text-align: center;
   color: var(--text-color);
 }
+
 .projects-section .mobile-instructions {
   display: none;
 }
@@ -1258,12 +1259,12 @@ h3 {
 .project-item:hover img {
   animation: scroll-image linear; /* Trigger animation */
   animation-duration: var(--scroll-duration); /* Dynamically set duration */
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 /* Remove unwanted spaces on hover */
 .project-item:hover {
-  transform: scale(1.05); /* Slight zoom effect */
+  transform: scale(1.01);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.2); /* Deeper shadow */
 }
 
@@ -1283,11 +1284,77 @@ h3 {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 0.5rem;
+  background: var(--secondary-color);
+  color: #333;
+  padding: 1rem;
   text-align: center;
   z-index: 1;
+  box-sizing: border-box;
+  box-shadow: 0 -12px 9px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden; /* Prevent content overflow during the transition */
+  transition: max-height 0.5s ease; /* Smooth transition for height */
+}
+
+/* Fixed height for h3 */
+.project-info h3 {
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  color: black;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Info Content - Hidden by default */
+.info-content {
+  max-height: 0; /* Fully collapsed by default */
+  overflow: hidden; /* Prevent overflowing content */
+  transition: max-height 0.5s ease; /* Smooth slide effect */
+  margin-top: 1rem;
+  opacity: 0; /* Start hidden */
+  transition: max-height 0.5s ease, opacity 0.5s ease; /* Combine height and opacity transitions */
+}
+
+.project-info.expanded {
+  height: auto; /* Expand to fit content */
+}
+
+.project-info.expanded .info-content {
+  max-height: 300px; /* Set a maximum height for the expanded state */
+  opacity: 1; /* Fully visible */
+}
+
+/* Button Styling */
+.more-info-btn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: white;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+/* Hover Effects */
+.more-info-btn:hover {
+  background-color: var(--tertiary-color); /* Highlight color on hover */
 }
 
 /* Responsive Adjustments */

@@ -483,3 +483,22 @@ document.addEventListener('DOMContentLoaded', function () {
 // ///////////////////////////////
 // ///////////////////////////////
 // ///////////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const moreInfoButtons = document.querySelectorAll('.more-info-btn');
+
+  moreInfoButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const projectInfo = event.target.closest('.project-info');
+
+      // Toggle expanded class
+      projectInfo.classList.toggle('expanded');
+
+      // Change button text
+      if (projectInfo.classList.contains('expanded')) {
+        button.textContent = 'Less Info';
+      } else {
+        button.textContent = 'More Info';
+      }
+    });
+  });
+});
