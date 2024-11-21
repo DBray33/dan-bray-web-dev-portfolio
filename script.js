@@ -345,9 +345,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
       projectItems.forEach((project) => {
         if (filter === 'all' || project.classList.contains(filter)) {
+          project.classList.remove('slide-out');
+          project.classList.add('phase-in');
           project.style.display = 'block';
+
+          // Remove the animation class after it runs
+          project.addEventListener(
+            'animationend',
+            () => {
+              project.classList.remove('phase-in');
+            },
+            { once: true }
+          );
         } else {
-          project.style.display = 'none';
+          project.classList.add('slide-out');
+
+          // Hide the item after the slide-out animation
+          project.addEventListener(
+            'animationend',
+            () => {
+              project.style.display = 'none';
+              project.classList.remove('slide-out');
+            },
+            { once: true }
+          );
         }
       });
     });
@@ -372,7 +393,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const scrollDistance = imageHeight - containerHeight; // Calculate scroll distance
 
       if (scrollDistance > 0) {
-        const duration = Math.max(3, scrollDistance / 400); // Adjust speed with denominator
+        const duration = Math.max(3, scrollDistance / 150); // Adjust speed with denominator
         image.style.transition = `transform ${duration}s linear`;
         image.style.transform = `translateY(-${scrollDistance}px)`; // Scroll to the bottom
       }
@@ -380,10 +401,55 @@ document.addEventListener('DOMContentLoaded', function () {
 
     image.addEventListener('mouseout', function () {
       // Reset the image position and transition
-      image.style.transition = 'transform 0.3s linear';
+      image.style.transition = 'transform 0.9s linear';
       image.style.transform = 'translateY(0)';
     });
   });
+});
+
+// Custom Scroll landing for Projects link in About section icon content box when clicked
+document.addEventListener('DOMContentLoaded', function () {
+  const customProjectLink = document.querySelector('.custom-project-link');
+  if (customProjectLink) {
+    customProjectLink.addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent default anchor behavior
+      const targetElement = document.querySelector('#projects');
+
+      if (targetElement) {
+        const customOffset = 8; // Adjust this value to land on the exact spot
+        const elementPosition = targetElement.offsetTop;
+        const finalPosition = elementPosition - customOffset;
+
+        window.scrollTo({
+          top: finalPosition,
+          behavior: 'smooth', // Smooth scrolling
+        });
+      }
+    });
+  }
+});
+
+// /////////////////////////////////////////////
+// CONTACT /////////////////////////////////////
+// Contact link: Custom scroll when link in About section icon content box is clicked:
+document.addEventListener('scroll', () => {
+  const contactSection = document.querySelector('.contact');
+  const sectionTop = contactSection.offsetTop;
+  const sectionHeight = contactSection.offsetHeight;
+  const scrollPosition = window.scrollY;
+  const windowHeight = window.innerHeight;
+
+  // Check if the section is in the viewport
+  if (
+    scrollPosition + windowHeight >= sectionTop &&
+    scrollPosition <= sectionTop + sectionHeight
+  ) {
+    const speed = parseFloat(contactSection.dataset.speed || 0.01);
+    const offset = (scrollPosition - sectionTop) * speed;
+
+    // Adjust the background position, starting lower to show more of the bottom
+    contactSection.style.backgroundPositionY = `calc(${50 + offset / 6}%)`;
+  }
 });
 
 // ///////////////////////////////
@@ -417,22 +483,3 @@ document.addEventListener('DOMContentLoaded', function () {
 // ///////////////////////////////
 // ///////////////////////////////
 // ///////////////////////////////
-document.addEventListener('scroll', () => {
-  const contactSection = document.querySelector('.contact');
-  const sectionTop = contactSection.offsetTop;
-  const sectionHeight = contactSection.offsetHeight;
-  const scrollPosition = window.scrollY;
-  const windowHeight = window.innerHeight;
-
-  // Check if the section is in the viewport
-  if (
-    scrollPosition + windowHeight >= sectionTop &&
-    scrollPosition <= sectionTop + sectionHeight
-  ) {
-    const speed = parseFloat(contactSection.dataset.speed || 0.01);
-    const offset = (scrollPosition - sectionTop) * speed;
-
-    // Adjust the background position, starting lower to show more of the bottom
-    contactSection.style.backgroundPositionY = `calc(${50 + offset / 6}%)`;
-  }
-});
