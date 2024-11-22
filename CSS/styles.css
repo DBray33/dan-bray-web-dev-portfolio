@@ -1167,12 +1167,6 @@ h3 {
 
 /* END ABOUT SECTION */
 
-/* ////////////////////////////////////////////// */
-/* ////////////////////////////////////////////// */
-/* ////////////////////////////////////////////// */
-/* ////////////////////////////////////////////// */
-/* ////////////////////////////////////////////// */
-
 /* BEGIN PROJECTS SECTION */
 /* Projects Section */
 .projects-section {
@@ -1327,14 +1321,38 @@ h3 {
   text-align: center;
 }
 
-/* Info Content - Hidden by default */
 .info-content {
   max-height: 0; /* Fully collapsed by default */
   overflow-y: scroll;
-  transition: max-height 0.5s ease; /* Smooth slide effect */
+  transition: max-height 0.5s ease, opacity 0.5s ease; /* Combine height and opacity transitions */
   margin-top: 1rem;
   opacity: 0; /* Start hidden */
-  transition: max-height 0.5s ease, opacity 0.5s ease; /* Combine height and opacity transitions */
+}
+
+/* Custom Scrollbar Styling for WebKit-based browsers */
+.info-content::-webkit-scrollbar {
+  width: 12px; /* Set scrollbar width */
+}
+
+/* Styles draggable part of scrollbar */
+.info-content::-webkit-scrollbar-thumb {
+  background-color: var(--tertiary-color); /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners for the thumb */
+  border: 3px solid var(--secondary-color); /* Space around thumb */
+}
+
+/* Styles the background of the scrollbar track */
+.info-content::-webkit-scrollbar-track {
+  background-color: var(--secondary-color); /* Color of the scrollbar track */
+  border-radius: 6px;
+}
+
+/* Optional: Styles for Firefox */
+.info-content {
+  /* Thumb color and track color */
+  /* scrollbar-color: var(--tertiary-color) var(--secondary-color); */
+  /* Narrow scrollbar */
+  /* scrollbar-width: thin; */
 }
 
 .project-info.expanded {
@@ -1410,4 +1428,79 @@ h3 {
 
 .project-item.phase-in {
   animation: phaseIn 0.5s ease-out;
+}
+
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+/* Skills Section */
+.skills-section {
+  position: relative;
+  height: 30vh; /* Full viewport height */
+  display: flex;
+  justify-content: center; /* Center logos horizontally */
+  align-items: center; /* Center logos vertically */
+  overflow: hidden; /* Hide logos moving in and out */
+  background-color: #333; /* Optional background color */
+}
+
+.skills-container {
+  position: relative;
+  width: 100%; /* Full-width container */
+  display: flex;
+  justify-content: space-evenly; /* Evenly spaced logos */
+  align-items: center; /* Center the logos vertically */
+  height: 100%; /* Occupy full height of the section */
+}
+
+.skill-logo {
+  position: relative;
+  width: 10%; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-200px); /* Start above the viewport */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  animation: float 3s infinite ease-in-out; /* Floating effect */
+}
+
+/* Floating effect */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0); /* Original position */
+  }
+  50% {
+    transform: translateY(-10px); /* Move slightly upward */
+  }
+}
+
+/* Spinning effect */
+@keyframes spin-fast {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.skill-logo.spinning {
+  animation: spin-fast 0.5s linear infinite; /* Fast spinning */
+  transform-origin: center center; /* Ensure spin happens from the center */
+}
+
+/* Active state (stationary) */
+.skill-logo.active {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Centered in viewport */
+  animation: float 3s infinite ease-in-out; /* Transition to floating effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skill-logo {
+    width: 15%; /* Adjust logo size for smaller screens */
+  }
 }

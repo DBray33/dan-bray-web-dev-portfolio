@@ -519,3 +519,41 @@ document.addEventListener('scroll', () => {
 // ///////////////////////////////
 // ///////////////////////////////
 // ///////////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const skillsSection = document.querySelector('.skills-section');
+  const skillLogos = document.querySelectorAll('.skill-logo');
+
+  const observerOptions = {
+    root: null, // Observe within the viewport
+    threshold: [0, 0.1, 0.5, 0.9, 1], // Trigger at various visibility percentages
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        skillLogos.forEach((logo, index) => {
+          setTimeout(() => {
+            logo.classList.add('spinning');
+            logo.style.opacity = '1';
+            logo.style.transform = `translateY(0)`; // Center in viewport
+          }, index * 200); // Staggered spin start
+
+          // Stop spinning after reaching the center
+          setTimeout(() => {
+            logo.classList.remove('spinning');
+            logo.classList.add('active'); // Apply floating effect
+          }, 2000); // Adjust delay as needed
+        });
+      } else {
+        // Reset logos when the section leaves the viewport
+        skillLogos.forEach((logo) => {
+          logo.classList.remove('spinning', 'active');
+          logo.style.opacity = '0';
+          logo.style.transform = 'translateY(-200px)'; // Reset above the viewport
+        });
+      }
+    });
+  }, observerOptions);
+
+  observer.observe(skillsSection);
+});
