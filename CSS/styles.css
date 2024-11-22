@@ -1287,31 +1287,29 @@ h3 {
   width: 100%;
   background: var(--secondary-color);
   color: #333;
-  padding: 1rem;
+  padding-bottom: 1rem;
   text-align: center;
   z-index: 1;
   box-sizing: border-box;
   box-shadow: 0 -12px 9px rgba(0, 0, 0, 0.3);
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  overflow: hidden; /* Prevent content overflow during the transition */
-  transition: max-height 0.5s ease; /* Smooth transition for height */
+  overflow: hidden;
+  transition: max-height 0.5s ease;
 }
 
 /* Fixed height for h3 */
 .project-info h3 {
   height: 3rem;
-  line-height: 3rem;
+  line-height: 2em;
   font-size: 1.2rem;
   margin: 0;
   padding: 0.5rem 1rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-
   color: black;
   border-radius: 5px;
   width: 100%;
@@ -1340,7 +1338,7 @@ h3 {
 
 /* Button Styling */
 .more-info-btn {
-  margin-top: 0.5rem;
+  margin-top: -1rem;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   color: white;
