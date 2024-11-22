@@ -502,3 +502,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Contact Section parallax designated for smaller screens
+document.addEventListener('scroll', () => {
+  const contactSection = document.querySelector('.contact');
+  if (!contactSection) return;
+
+  const sectionTop = contactSection.offsetTop;
+  const scrollPosition = window.scrollY;
+  const offset = (scrollPosition - sectionTop) * 0.5; // Adjust speed
+
+  // Update background position
+  contactSection.style.backgroundPositionY = `calc(50% + ${offset}px)`;
+});

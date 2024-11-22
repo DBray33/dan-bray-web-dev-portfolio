@@ -524,6 +524,7 @@ img {
 .contact {
   position: relative;
   background: url('../images/workspace.jpeg') no-repeat center/cover;
+  background-attachment: scroll; /* Change from fixed to scroll */
   padding: 2rem;
   height: 103vh;
   display: flex;
