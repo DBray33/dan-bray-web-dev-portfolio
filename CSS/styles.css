@@ -520,7 +520,6 @@ img {
 
 /* GALLERY */
 /* CONTACT SECTION */
-/* Contact Section */
 .contact {
   position: relative;
   background: url('../images/workspace.jpeg') no-repeat center/cover;
@@ -558,6 +557,7 @@ img {
 }
 
 .desktop-contact-title {
+  padding-left: 3rem;
   display: block;
   width: 40%; /* Takes up the left side */
   text-align: left;
@@ -1183,6 +1183,16 @@ h3 {
   box-sizing: border-box; /* Include padding in the width calculation */
 }
 
+.sort-by {
+  top: -8.5rem;
+  margin: 0 0 1rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 200;
+  color: black;
+  position: relative;
+}
+
 /* Projects Navbar */
 .projects-navbar {
   position: relative;
@@ -1296,7 +1306,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  overflow: hidden;
+  overflow: auto;
   transition: max-height 0.5s ease;
 }
 
@@ -1320,7 +1330,7 @@ h3 {
 /* Info Content - Hidden by default */
 .info-content {
   max-height: 0; /* Fully collapsed by default */
-  overflow: hidden; /* Prevent overflowing content */
+  overflow-y: scroll;
   transition: max-height 0.5s ease; /* Smooth slide effect */
   margin-top: 1rem;
   opacity: 0; /* Start hidden */

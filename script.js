@@ -479,10 +479,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// ///////////////////////////////
-// ///////////////////////////////
-// ///////////////////////////////
-// ///////////////////////////////
+// PROJECTS more info/less info button
 document.addEventListener('DOMContentLoaded', () => {
   const moreInfoButtons = document.querySelectorAll('.more-info-btn');
 
@@ -493,17 +490,19 @@ document.addEventListener('DOMContentLoaded', () => {
       // Toggle expanded class
       projectInfo.classList.toggle('expanded');
 
-      // Change button text
+      // Change button text and background color
       if (projectInfo.classList.contains('expanded')) {
         button.textContent = 'Less Info';
+        button.style.backgroundColor = 'var(--tertiary-color)'; // Set active background color
       } else {
         button.textContent = 'More Info';
+        button.style.backgroundColor = 'var(--primary-color)'; // Reset to default color
       }
     });
   });
 });
 
-// Contact Section parallax designated for smaller screens
+// CONTACT Section parallax designated for smaller screens
 document.addEventListener('scroll', () => {
   const contactSection = document.querySelector('.contact');
   if (!contactSection) return;
@@ -515,3 +514,8 @@ document.addEventListener('scroll', () => {
   // Update background position
   contactSection.style.backgroundPositionY = `calc(50% + ${offset}px)`;
 });
+
+// ///////////////////////////////
+// ///////////////////////////////
+// ///////////////////////////////
+// ///////////////////////////////
