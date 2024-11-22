@@ -64,6 +64,10 @@ img {
   height: auto;
 }
 
+section {
+  border-bottom: 1px solid black; /* Temporary debugging */
+}
+
 /* BACK TO TOP BUTTON */
 #back-to-top {
   position: fixed;
@@ -941,8 +945,10 @@ img {
   font-size: 1.2rem;
   text-align: center;
   font-family: 'Oswald';
-  padding: 0.2rem 0;
+  padding: 0.2rem 1rem; /* Adds horizontal padding */
   border-radius: 8px;
+  max-width: calc(100% - 2rem); /* Ensures space on both sides */
+  margin: 0 auto 7rem; /* Centers and keeps the vertical margin */
 }
 
 /* Icon Container */
@@ -1098,7 +1104,7 @@ img {
   margin: -2rem auto 0;
   padding: 2rem;
   max-height: 65vh;
-  width: 100%;
+  width: calc(100% - 2rem); /* Adds space on both sides */
   top: 0; /* Center vertically */
   left: 0; /* Center horizontally */
   background-color: var(--primary-color);
@@ -1109,6 +1115,24 @@ img {
   transform: scale(0.9); /* Initial size for the bubbling effect */
   z-index: 1; /* Default z-index */
   opacity: 0; /* Start fully transparent */
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: var(--secondary-color) var(--primary-color); /* Thumb and track colors */
+}
+
+/* Custom Scrollbar Styling */
+.content-section::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+.content-section::-webkit-scrollbar-track {
+  background: var(--primary-color); /* Background of the scrollbar track */
+  border-radius: 10px; /* Optional: Rounded edges */
+}
+
+.content-section::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Optional: Rounded edges */
+  border: 2px solid var(--primary-color); /* Optional: Adds a border */
 }
 
 .about-image img {
@@ -1137,7 +1161,7 @@ h3 {
 
 .icon-content-bullets li {
   position: relative;
-  padding-left: 2rem; /* Space for the custom bullet */
+  padding-left: 0.9rem; /* Space for the custom bullet */
   margin-bottom: 0.5rem;
   line-height: 1.5;
 }
@@ -1150,7 +1174,7 @@ h3 {
   border-radius: 50%; /* Makes it a circle */
   position: absolute;
   left: 0;
-  top: 0.4rem; /* Adjust alignment vertically */
+  top: 0.6rem; /* Increase this value slightly to move the bullet down */
 }
 
 /* Updated Animation for Bubbling Effect */
