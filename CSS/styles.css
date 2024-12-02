@@ -1279,6 +1279,27 @@ h3 {
   aspect-ratio: 1; /* Keep items square */
   box-shadow: 0 10px 8px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.1); /* Add shadows */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0; /* Initially hidden */
+  transform: translateZ(-200px) scale(0.8); /* Start from back and smaller size */
+  transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth transition */
+}
+
+.project-item.loaded {
+  animation-delay: 0.2s; /* Optional delay for loaded items */
+  opacity: 1; /* Ensure visibility after animation */
+  transform: none; /* Reset transformation */
+}
+
+/* Fade-in and expand animation */
+@keyframes fadeInExpand {
+  from {
+    opacity: 0;
+    transform: translateZ(-200px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0) scale(1);
+  }
 }
 
 .project-item img {

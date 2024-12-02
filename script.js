@@ -559,3 +559,24 @@ document.addEventListener('DOMContentLoaded', () => {
 // ///////////////////////////////
 // ///////////////////////////////
 // ///////////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const projectItems = document.querySelectorAll('.project-item');
+
+  const observerOptions = {
+    root: null, // Observe in the viewport
+    threshold: 0.2, // Trigger when 20% of the element is visible
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('loaded'); // Trigger animation
+        observer.unobserve(entry.target); // Stop observing once it's animated
+      }
+    });
+  }, observerOptions);
+
+  projectItems.forEach((item) => {
+    observer.observe(item); // Observe each project item
+  });
+});
