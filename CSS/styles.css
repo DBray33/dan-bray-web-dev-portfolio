@@ -1368,6 +1368,10 @@ h3 {
 }
 
 .info-content {
+  padding: 1rem 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-height: 0; /* Fully collapsed by default */
   overflow-y: scroll;
   transition: max-height 0.5s ease, opacity 0.5s ease; /* Combine height and opacity transitions */
