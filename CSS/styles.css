@@ -372,7 +372,7 @@ section {
 /* INTRO SECTION */
 /* Hero and Parallax Layers */
 .hero {
-  background-image: url('../images/IMG_0447.jpeg');
+  /* background-image: url('../images/IMG_0447.jpeg'); */
   z-index: 9999;
 }
 
