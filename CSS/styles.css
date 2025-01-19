@@ -1240,11 +1240,11 @@ h3 {
   background-color: var(--tertiary-color);
 }
 
-.projects-section h6 {
-  margin-top: -1rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: var(--text-color);
+.projects-section .desktop-instructions {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  margin-bottom: 1rem;
 }
 
 .projects-section .mobile-instructions {

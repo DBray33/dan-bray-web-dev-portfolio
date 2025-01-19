@@ -187,10 +187,13 @@
     position: relative;
   }
 
-  .projects-section h6 {
+  .projects-section .desktop-instructions {
     display: none;
   }
   .projects-section .mobile-instructions {
-    display: block;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;
+    margin-bottom: 1rem;
   }
 }
