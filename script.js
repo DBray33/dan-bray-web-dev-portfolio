@@ -327,20 +327,46 @@ function showContent(contentId) {
     }
   });
 }
-
-// ///////////////////////////////////////////////
-// PROJECTS SECTION //////////////////////////////
-// Projects Navigation
+// //////////////////////////////////////////////////
+// Projects Navigation and Interactions
 document.addEventListener('DOMContentLoaded', () => {
   const navItems = document.querySelectorAll('.projects-nav-item');
   const projectItems = document.querySelectorAll('.project-item');
 
+  console.log('Found project items:', projectItems.length);
+
+  // Add link icons to h3 elements that contain links
+  projectItems.forEach((item) => {
+    const h3 = item.querySelector('.project-info h3');
+    const link = h3?.querySelector('a');
+
+    if (h3 && link) {
+      // Create link icon
+      const linkIcon = document.createElement('span');
+      linkIcon.innerHTML =
+        ' <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>';
+      linkIcon.style.cssText = `
+        display: inline-flex;
+        align-items: center;
+        vertical-align: middle;
+        margin-left: 5px;
+        position: relative;
+        top: -1px; /* Fine-tune vertical alignment */
+      `;
+      h3.appendChild(linkIcon);
+    }
+  });
+
+  // Ensure all project items are visible initially
+  projectItems.forEach((item) => {
+    item.classList.add('loaded');
+  });
+
+  // Project Filtering
   navItems.forEach((navItem) => {
     navItem.addEventListener('click', () => {
       navItems.forEach((item) => item.classList.remove('active'));
-
       navItem.classList.add('active');
-
       const filter = navItem.getAttribute('data-filter');
 
       projectItems.forEach((project) => {
@@ -349,7 +375,6 @@ document.addEventListener('DOMContentLoaded', () => {
           project.classList.add('phase-in');
           project.style.display = 'block';
 
-          // Remove the animation class after it runs
           project.addEventListener(
             'animationend',
             () => {
@@ -360,7 +385,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           project.classList.add('slide-out');
 
-          // Hide the item after the slide-out animation
           project.addEventListener(
             'animationend',
             () => {
@@ -373,62 +397,216 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
-});
 
-// Projects Hover-scroll effect
-document.addEventListener('DOMContentLoaded', function () {
-  const projectItems = document.querySelectorAll('.project-item');
-
+  // Projects Hover-scroll effect
   projectItems.forEach((item) => {
-    const image = item.querySelector('img'); // Find the image within the project-item
+    const image = item.querySelector('img');
 
     if (!image) {
-      console.warn('No image found in project-item:', item); // Log a warning if the image is missing
-      return; // Skip this project-item
+      console.warn('No image found in project-item:', item);
+      return;
     }
 
     image.addEventListener('mouseover', function () {
-      const imageHeight = image.offsetHeight; // Height of the image
-      const containerHeight = item.offsetHeight; // Height of the container
-      const scrollDistance = imageHeight - containerHeight; // Calculate scroll distance
+      const imageHeight = image.offsetHeight;
+      const containerHeight = item.offsetHeight;
+      const scrollDistance = imageHeight - containerHeight;
 
       if (scrollDistance > 0) {
-        const duration = Math.max(3, scrollDistance / 150); // Adjust speed with denominator
+        const duration = Math.max(3, scrollDistance / 150);
         image.style.transition = `transform ${duration}s linear`;
-        image.style.transform = `translateY(-${scrollDistance}px)`; // Scroll to the bottom
+        image.style.transform = `translateY(-${scrollDistance}px)`;
       }
     });
 
     image.addEventListener('mouseout', function () {
-      // Reset the image position and transition
       image.style.transition = 'transform 0.9s linear';
       image.style.transform = 'translateY(0)';
     });
   });
-});
 
-// Custom Scroll landing for Projects link in About section icon content box when clicked
-document.addEventListener('DOMContentLoaded', function () {
+  // UPDATED OVERLAY IMPLEMENTATION WITH ANIMATIONS
+  // Remove existing .more-info-btn elements (if any duplicates exist)
+  document
+    .querySelectorAll('.more-info-btn:nth-child(n+2)')
+    .forEach((btn) => btn.remove());
+
+  // Create new overlay buttons for each project
+  projectItems.forEach((item, index) => {
+    const existingButton = item.querySelector('.more-info-btn');
+
+    if (existingButton) {
+      // Style existing button
+      existingButton.style.cssText = `
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--secondary-color);
+        color: black;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        z-index: 999;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      `;
+
+      // Set up click event
+      existingButton.addEventListener('click', createModalOverlay);
+    } else {
+      // Create new button if none exists
+      const newButton = document.createElement('button');
+      newButton.classList.add('more-info-btn');
+      newButton.textContent = 'More Info';
+      newButton.style.cssText = `
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--secondary-color);
+        color: black;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        z-index: 999;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      `;
+
+      // Add the button to the project item
+      item.appendChild(newButton);
+
+      // Set up click event
+      newButton.addEventListener('click', createModalOverlay);
+    }
+
+    function createModalOverlay() {
+      console.log(`More Info button clicked for project ${index}`);
+
+      // Find project info content
+      const projectInfo = item.querySelector('.project-info');
+      const titleElement = projectInfo?.querySelector('h3');
+      const contentElement = projectInfo?.querySelector('.info-content');
+
+      // Get title and content, including any HTML like links
+      const title = titleElement ? titleElement.innerHTML : 'Project Details';
+      const content = contentElement
+        ? contentElement.innerHTML
+        : '<p>No details available</p>';
+
+      // Create modal overlay with animation
+      const modal = document.createElement('div');
+      modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: background-color 0.3s ease;
+      `;
+
+      // Create modal content with animation
+      const modalContent = document.createElement('div');
+      modalContent.style.cssText = `
+        background: white;
+        color: black;
+        padding: 30px;
+        border-radius: 8px;
+        max-width: 80%;
+        max-height: 80%;
+        overflow-y: auto;
+        position: relative;
+        transform: scale(0.5);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      `;
+
+      // Create close button
+      const closeButton = document.createElement('button');
+      closeButton.innerHTML = '&times;';
+      closeButton.style.cssText = `
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+      `;
+      closeButton.addEventListener('click', function () {
+        document.body.removeChild(modal);
+      });
+
+      // Create title container
+      const titleContainer = document.createElement('div');
+      titleContainer.innerHTML = title;
+      titleContainer.style.cssText = `
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+      `;
+
+      // Create content container
+      const contentContainer = document.createElement('div');
+      contentContainer.innerHTML = content;
+      contentContainer.style.cssText = `
+        font-size: 1rem;
+        line-height: 1.6;
+      `;
+
+      // Assemble modal
+      modalContent.appendChild(closeButton);
+      modalContent.appendChild(titleContainer);
+      modalContent.appendChild(contentContainer);
+      modal.appendChild(modalContent);
+
+      // Add modal to body
+      document.body.appendChild(modal);
+
+      // Trigger animation after a small delay
+      setTimeout(() => {
+        modal.style.backgroundColor = 'rgba(0,0,0,0.8)';
+        modalContent.style.transform = 'scale(1)';
+        modalContent.style.opacity = '1';
+      }, 10);
+
+      // Close modal when clicking outside content
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          document.body.removeChild(modal);
+        }
+      });
+    }
+  });
+
+  // Custom Scroll landing for Projects link in About section
   const customProjectLink = document.querySelector('.custom-project-link');
   if (customProjectLink) {
     customProjectLink.addEventListener('click', function (event) {
-      event.preventDefault(); // Prevent default anchor behavior
+      event.preventDefault();
       const targetElement = document.querySelector('#projects');
 
       if (targetElement) {
-        const customOffset = 8; // Adjust this value to land on the exact spot
+        const customOffset = 8;
         const elementPosition = targetElement.offsetTop;
         const finalPosition = elementPosition - customOffset;
 
         window.scrollTo({
           top: finalPosition,
-          behavior: 'smooth', // Smooth scrolling
+          behavior: 'smooth',
         });
       }
     });
   }
 });
-
 // /////////////////////////////////////////////
 // CONTACT /////////////////////////////////////
 // Contact link: Custom scroll when link in About section icon content box is clicked:
