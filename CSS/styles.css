@@ -652,56 +652,6 @@ section {
   }
 }
 
-/* LOCATION */
-.location {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 90vh;
-  padding-bottom: 3rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.location::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-/* Ensure content appears above the overlay */
-.location > * {
-  position: relative;
-  z-index: 2;
-}
-
-.location .map {
-  max-width: 100%;
-  margin: 0 auto;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  border-radius: 0.25rem;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
-}
-
-.location .map iframe {
-  padding: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-/* END LOCATION SECTION */
-
 /* SOCIAL */
 .social {
   background: var(--primary-color);

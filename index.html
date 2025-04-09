@@ -1114,32 +1114,79 @@
       </div>
     </section>
 
-    <!-- Location -->
+    <!-- Location Section -->
     <section class="location">
       <div class="location-container">
-        <div class="section-header"></div>
-        <div class="map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12165.575929722758!2d-75.945585!3d40.33360534999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6795f44b306f3%3A0xe44b408d5d3cf28e!2sWest%20Reading%2C%20PA%2019611!5e0!3m2!1sen!2sus!4v1730753361033!5m2!1sen!2sus"
-            width="600"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Map of West Reading, Pennsylvania"></iframe>
+        <div class="section-header">
+          <h2>West Reading, PA</h2>
         </div>
+        <div id="map" class="map"></div>
       </div>
     </section>
+
+    <style>
+      /* LOCATION SECTION */
+      .location {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+        padding: 3rem 0;
+        position: relative;
+        overflow: hidden;
+        background-color: #f1e5ca;
+      }
+
+      .location-container {
+        width: 80%;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .location .map {
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 0.25rem;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      }
+      /* END LOCATION SECTION */
+    </style>
+
+    <script>
+      // Initialize the map when the page loads
+      function initMap() {
+        // West Reading, PA coordinates
+        const westReading = { lat: 40.3336, lng: -75.9456 };
+
+        // Create the map centered on West Reading
+        const map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: westReading,
+        });
+
+        // Add a marker for West Reading
+        const marker = new google.maps.Marker({
+          position: westReading,
+          map: map,
+          title: 'West Reading, PA',
+        });
+      }
+
+      // Load Google Maps only if not already loaded
+      if (typeof google === 'undefined' || typeof google.maps === 'undefined') {
+        const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBAR1It7UAPI8_bo74It5EuvNe0mg3t6Po&callback=initMap`;
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+      }
+    </script>
 
     <!-- Social footer -->
     <section class="social section">
       <div class="container">
-        <p>
-          <!-- Thanks for checking out all the works I have completed so far! There's
-          always something new to learn, and I will always be working on a new
-          project, so stay tuned for frequent updates and additions. -->
-        </p>
         <div class="social-icons">
           <a
             href="https://www.linkedin.com/in/stanielbray/"
