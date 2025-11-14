@@ -20,11 +20,12 @@
     }
 
     .hero-content {
-        order: 2;
+        order: 1;
     }
 
     .hero-visual {
-        order: 1;
+        order: 2;
+        margin-left: 1.5rem;
     }
 
     .hero-description {
@@ -162,7 +163,9 @@
     }
 
     .gradient-orb {
-        filter: blur(60px);
+        filter: blur(120px);
+        opacity: 0.3;
+        animation: none !important;
     }
 
     .orb-1 {
@@ -173,6 +176,8 @@
     .orb-2 {
         width: 350px;
         height: 350px;
+        bottom: -200px;
+        right: -200px;
     }
 
     .orb-3 {
@@ -235,6 +240,23 @@
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    /* Easter Egg Message */
+    .easter-egg-message {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.8125rem;
+        gap: 0.5rem;
+        max-width: 280px;
+        width: auto;
+    }
+
+    .easter-egg-message i {
+        font-size: 0.875rem;
+    }
+
+    .easter-egg-message .fa-arrow-right {
+        font-size: 0.75rem;
     }
 
     /* Contact */
@@ -304,6 +326,10 @@
 
     .code-body {
         font-size: 0.75rem;
+    }
+
+    .hero-visual .glass-card {
+        max-width: 340px;
     }
 
     /* Section Headers */
@@ -443,10 +469,33 @@
     }
 }
 
+/* Cards size adjustment at 499px and below */
+@media (max-width: 499px) {
+    .hero-visual .glass-card {
+        max-width: 340px;
+    }
+}
+
 /* ====================================
    MOBILE CAROUSEL (500px and below)
    ==================================== */
 @media (max-width: 500px) {
+    .hero-visual .glass-card {
+        max-width: 340px;
+    }
+
+    .code-preview {
+        padding: 1rem;
+    }
+
+    .code-body {
+        font-size: 0.75rem;
+    }
+
+    .stats-preview {
+        padding: 1rem;
+    }
+
     /* Reusable Mobile Carousel Container */
     .mobile-carousel-wrapper {
         position: relative;
