@@ -271,6 +271,8 @@
         max-width: 90%;
         width: auto;
         white-space: nowrap;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .easter-egg-message i {
@@ -279,6 +281,10 @@
 
     .easter-egg-message .fa-arrow-right {
         font-size: 0.75rem;
+    }
+
+    .easter-egg-message:hover {
+        transform: translateX(-50%) translateY(-2px);
     }
 
     /* Modal Code */
