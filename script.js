@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initSmoothScroll();
     initCodeCardControls();
+    initBackToTop();
 });
 
 // ====================================
@@ -384,6 +385,79 @@ function initCodeCardControls() {
         }
     }
 
+    // Swipe detection variables
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let touchStartY = 0;
+    let touchEndY = 0;
+    const swipeThreshold = 50; // Minimum distance for a swipe
+
+    // Swipe handler for cards
+    function handleSwipe(card) {
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
+
+        // Only process if horizontal swipe is more significant than vertical
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > swipeThreshold) {
+            // Determine which card is currently on top
+            const codeIsOnTop = parseInt(codeCard.style.zIndex || 2) > parseInt(statsCard.style.zIndex || 1);
+
+            // Swipe in either direction swaps to the other card
+            if (codeIsOnTop) {
+                // Show stats card on top
+                swapToCard(statsCard, codeCard, deltaX > 0 ? 'right' : 'left');
+            } else {
+                // Show code card on top
+                swapToCard(codeCard, statsCard, deltaX > 0 ? 'right' : 'left');
+            }
+        }
+    }
+
+    // Swap cards with animation
+    function swapToCard(topCard, bottomCard, direction) {
+        // Add swipe animation classes
+        const translateDirection = direction === 'left' ? '-' : '';
+
+        topCard.style.transition = 'all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)';
+        topCard.style.transform = `translate(${translateDirection}2rem, 2rem)`;
+        topCard.style.zIndex = '2';
+        topCard.style.opacity = '1';
+
+        bottomCard.style.transition = 'all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)';
+        bottomCard.style.transform = 'translate(0, 0)';
+        bottomCard.style.zIndex = '1';
+        bottomCard.style.opacity = '0.7';
+
+        // Reset transitions after animation
+        setTimeout(() => {
+            topCard.style.transition = '';
+            bottomCard.style.transition = '';
+            bottomCard.style.opacity = '';
+        }, 400);
+    }
+
+    // Touch event listeners for swipe
+    [codeCard, statsCard].forEach(card => {
+        if (!card) return;
+
+        card.addEventListener('touchstart', (e) => {
+            // Don't interfere with control buttons
+            if (e.target.closest('[data-action]')) return;
+
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        card.addEventListener('touchend', (e) => {
+            // Don't interfere with control buttons
+            if (e.target.closest('[data-action]')) return;
+
+            touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe(card);
+        }, { passive: true });
+    });
+
     // Click cards to bring them to front
     codeCard?.addEventListener('click', (e) => {
         // Only bring to front if not clicking a control button
@@ -650,6 +724,32 @@ function initCodeCardControls() {
         statsModal.classList.add('hidden');
         document.body.style.overflow = '';
     }
+}
+
+// ====================================
+// BACK TO TOP BUTTON
+// ====================================
+function initBackToTop() {
+    const backToTopBtn = document.getElementById('backToTop');
+
+    if (!backToTopBtn) return;
+
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    // Scroll to top when clicked
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 }
 
 // ====================================
