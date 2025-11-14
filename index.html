@@ -1,637 +1,1055 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dan Bray | Web Developer Portfolio</title>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png">
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://storage.googleapis.com/danbray.dev/assets/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://storage.googleapis.com/danbray.dev/assets/favicon/favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://storage.googleapis.com/danbray.dev/assets/favicon/favicon-32x32.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://storage.googleapis.com/danbray.dev/assets/favicon/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="https://storage.googleapis.com/danbray.dev/assets/favicon/android-chrome-192x192.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="https://storage.googleapis.com/danbray.dev/assets/favicon/android-chrome-512x512.png" />
 
-    <meta name="description" content="Dan Bray - Professional Web Developer specializing in modern, responsive websites. Explore my portfolio of web development projects and get in touch for your next project.">
-</head>
-<body>
+    <meta
+      name="description"
+      content="Dan Bray - Professional Web Developer specializing in modern, responsive websites. Explore my portfolio of web development projects and get in touch for your next project." />
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="nav" id="nav">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <img src="images/db-logo.png" alt="DB Logo">
+      <div class="nav-container">
+        <a href="#home" class="nav-logo">
+          <img
+            src="https://storage.googleapis.com/danbray.dev/assets/favicon/db-logo-nav.png"
+            alt="DB Logo" />
+        </a>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li class="nav-social">
+            <a
+              href="https://github.com/DBray33"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub">
+              <i class="fab fa-github"></i>
             </a>
+            <a
+              href="https://www.linkedin.com/in/stanielbray/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+        </ul>
 
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li class="nav-social">
-                    <a href="https://github.com/DBray33" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/stanielbray/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </li>
-            </ul>
-
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-background">
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-            <div class="gradient-orb orb-3"></div>
+      <div class="hero-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+      </div>
+
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="status-dot"></span>
+            Available for opportunities
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Dan Bray</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Web Developer crafting modern, user-friendly digital experiences
+          </p>
+
+          <p class="hero-description">
+            Specializing in responsive web design, e-commerce solutions, and
+            creating seamless user experiences that drive engagement and
+            results.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              View My Work
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary"> Get In Touch </a>
+          </div>
         </div>
 
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="status-dot"></span>
-                    Available for opportunities
+        <div class="hero-visual">
+          <!-- Main Code Preview Card -->
+          <div class="glass-card floating" id="code-card">
+            <div class="code-preview">
+              <div class="code-header">
+                <div class="code-dots">
+                  <span
+                    class="dot-close"
+                    data-action="close"
+                    title="Close"></span>
+                  <span
+                    class="dot-minimize"
+                    data-action="minimize"
+                    title="Minimize"></span>
+                  <span
+                    class="dot-maximize"
+                    data-action="maximize"
+                    title="Maximize"></span>
                 </div>
-
-                <h1 class="hero-title">
-                    Hi, I'm <span class="gradient-text">Dan Bray</span>
-                </h1>
-
-                <p class="hero-subtitle">
-                    Web Developer crafting modern, user-friendly digital experiences
-                </p>
-
-                <p class="hero-description">
-                    Specializing in responsive web design, e-commerce solutions, and creating seamless user experiences that drive engagement and results.
-                </p>
-
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">
-                        View My Work
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        Get In Touch
-                    </a>
-                </div>
-            </div>
-
-            <div class="hero-visual">
-                <div class="glass-card floating">
-                    <div class="code-preview">
-                        <div class="code-header">
-                            <div class="code-dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <span class="code-title">portfolio.js</span>
-                        </div>
-                        <div class="code-body">
-                            <pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+                <span class="code-title">portfolio.js</span>
+              </div>
+              <div class="code-body">
+                <pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
   <span class="code-property">name</span>: <span class="code-string">'Dan Bray'</span>,
   <span class="code-property">location</span>: <span class="code-string">'West Reading, PA'</span>,
   <span class="code-property">skills</span>: [<span class="code-string">'HTML'</span>, <span class="code-string">'CSS'</span>, <span class="code-string">'JavaScript'</span>],
   <span class="code-property">passion</span>: <span class="code-string">'Building great UX'</span>
 };</code></pre>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
+
+          <!-- Alternate Stats Card (behind code card) -->
+          <div class="glass-card floating" id="stats-card">
+            <div class="stats-preview">
+              <div class="code-header">
+                <div class="code-dots">
+                  <span
+                    class="dot-close"
+                    data-action="close-stats"
+                    title="Close"></span>
+                  <span
+                    class="dot-minimize"
+                    data-action="minimize-stats"
+                    title="Minimize"></span>
+                  <span
+                    class="dot-maximize"
+                    data-action="maximize-stats"
+                    title="Maximize"></span>
+                </div>
+                <span class="code-title">stats.json</span>
+              </div>
+              <div class="stats-body">
+                <div class="stat-row">
+                  <i class="fas fa-project-diagram"></i>
+                  <span>8+ Projects Completed</span>
+                </div>
+                <div class="stat-row">
+                  <i class="fas fa-code"></i>
+                  <span>Clean Code Advocate</span>
+                </div>
+                <div class="stat-row">
+                  <i class="fas fa-rocket"></i>
+                  <span>Performance Focused</span>
+                </div>
+                <div class="stat-row">
+                  <i class="fas fa-users"></i>
+                  <span>User-First Mindset</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Easter Egg Message -->
+          <a
+            href="#contact"
+            class="easter-egg-message hidden"
+            id="easter-egg-message">
+            <i class="fas fa-envelope"></i>
+            <span>You've made it this far... give me a shout!</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
 
-        <div class="scroll-indicator">
-            <span>Scroll to explore</span>
-            <i class="fas fa-chevron-down"></i>
+        <!-- Minimized Tabs -->
+        <div class="minimized-tabs">
+          <div class="minimized-tab hidden" id="code-tab">
+            <div class="tab-content">
+              <span class="tab-icon">📄</span>
+              <span class="tab-title">portfolio.js</span>
+              <button class="tab-restore" title="Restore">
+                <i class="fas fa-window-restore"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="minimized-tab hidden" id="stats-tab">
+            <div class="tab-content">
+              <span class="tab-icon">📊</span>
+              <span class="tab-title">stats.json</span>
+              <button class="tab-restore" title="Restore">
+                <i class="fas fa-window-restore"></i>
+              </button>
+            </div>
+          </div>
         </div>
+
+        <!-- Maximize Modal -->
+        <div class="code-modal hidden" id="code-modal">
+          <div class="modal-backdrop"></div>
+          <div class="modal-content glass-card">
+            <div class="code-header">
+              <div class="code-dots">
+                <span
+                  class="dot-close"
+                  data-action="close-modal"
+                  title="Close"></span>
+                <span
+                  class="dot-minimize"
+                  data-action="minimize-modal"
+                  title="Minimize"></span>
+                <span
+                  class="dot-maximize"
+                  data-action="restore-size"
+                  title="Restore"></span>
+              </div>
+              <span class="code-title">portfolio.js - Expanded View</span>
+            </div>
+            <div class="code-body-expanded">
+              <pre><code><span class="code-comment">// Dan Bray - Web Developer Portfolio</span>
+
+<span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">'Dan Bray'</span>,
+  <span class="code-property">location</span>: <span class="code-string">'West Reading, PA'</span>,
+  <span class="code-property">role</span>: <span class="code-string">'Web Developer'</span>,
+
+  <span class="code-property">skills</span>: {
+    <span class="code-property">frontend</span>: [<span class="code-string">'HTML5'</span>, <span class="code-string">'CSS3'</span>, <span class="code-string">'JavaScript'</span>, <span class="code-string">'React'</span>],
+    <span class="code-property">backend</span>: [<span class="code-string">'Node.js'</span>, <span class="code-string">'Express'</span>, <span class="code-string">'MongoDB'</span>],
+    <span class="code-property">tools</span>: [<span class="code-string">'Git'</span>, <span class="code-string">'VS Code'</span>, <span class="code-string">'Netlify'</span>]
+  },
+
+  <span class="code-property">approach</span>: <span class="code-string">'User-first, mobile-responsive, performance-optimized'</span>,
+  <span class="code-property">passion</span>: <span class="code-string">'Building great UX & solving problems'</span>,
+
+  <span class="code-property">currentlyLearning</span>: [<span class="code-string">'Advanced React'</span>, <span class="code-string">'TypeScript'</span>, <span class="code-string">'Web Performance'</span>],
+
+  <span class="code-property">contact</span>: {
+    <span class="code-property">email</span>: <span class="code-string">'d.bray33@gmail.com'</span>,
+    <span class="code-property">github</span>: <span class="code-string">'github.com/DBray33'</span>,
+    <span class="code-property">available</span>: <span class="code-keyword">true</span>
+  }
+};
+
+<span class="code-keyword">export default</span> developer;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Modal -->
+        <div class="code-modal hidden" id="stats-modal">
+          <div class="modal-backdrop"></div>
+          <div class="modal-content glass-card">
+            <div class="code-header">
+              <div class="code-dots">
+                <span
+                  class="dot-close"
+                  data-action="close-stats-modal"
+                  title="Close"></span>
+                <span
+                  class="dot-minimize"
+                  data-action="minimize-stats-modal"
+                  title="Minimize"></span>
+                <span
+                  class="dot-maximize"
+                  data-action="restore-stats-size"
+                  title="Restore"></span>
+              </div>
+              <span class="code-title">stats.json - Expanded View</span>
+            </div>
+            <div class="code-body-expanded">
+              <pre><code><span class="code-comment">// Dan Bray - Developer Stats & Achievements</span>
+
+{
+  <span class="code-property">"totalProjects"</span>: <span class="code-number">8</span>,
+  <span class="code-property">"clientSatisfaction"</span>: <span class="code-string">"100%"</span>,
+  <span class="code-property">"coffeeConsumed"</span>: <span class="code-string">"∞ cups"</span>,
+
+  <span class="code-property">"achievements"</span>: [
+    {
+      <span class="code-property">"title"</span>: <span class="code-string">"Pixel Perfect"</span>,
+      <span class="code-property">"description"</span>: <span class="code-string">"Designs that look identical across all devices"</span>,
+      <span class="code-property">"unlocked"</span>: <span class="code-keyword">true</span>
+    },
+    {
+      <span class="code-property">"title"</span>: <span class="code-string">"Speed Demon"</span>,
+      <span class="code-property">"description"</span>: <span class="code-string">"Optimized site load times under 2 seconds"</span>,
+      <span class="code-property">"unlocked"</span>: <span class="code-keyword">true</span>
+    },
+    {
+      <span class="code-property">"title"</span>: <span class="code-string">"Bug Squasher"</span>,
+      <span class="code-property">"description"</span>: <span class="code-string">"Fixed 100+ bugs before coffee got cold"</span>,
+      <span class="code-property">"unlocked"</span>: <span class="code-keyword">true</span>
+    },
+    {
+      <span class="code-property">"title"</span>: <span class="code-string">"Easter Egg Hunter"</span>,
+      <span class="code-property">"description"</span>: <span class="code-string">"You found the interactive window controls!"</span>,
+      <span class="code-property">"unlocked"</span>: <span class="code-keyword">true</span>
+    }
+  ],
+
+  <span class="code-property">"funFacts"</span>: {
+    <span class="code-property">"favoriteEditor"</span>: <span class="code-string">"VS Code"</span>,
+    <span class="code-property">"codingPlaylist"</span>: <span class="code-string">"Lo-fi Beats"</span>,
+    <span class="code-property">"debuggingStyle"</span>: <span class="code-string">"console.log() everything"</span>,
+    <span class="code-property">"favoriteFramework"</span>: <span class="code-string">"React"</span>,
+    <span class="code-property">"nightOwl"</span>: <span class="code-keyword">true</span>
+  },
+
+  <span class="code-property">"skillsGained"</span>: {
+    <span class="code-property">"frontend"</span>: <span class="code-number">95</span>,
+    <span class="code-property">"backend"</span>: <span class="code-number">80</span>,
+    <span class="code-property">"design"</span>: <span class="code-number">85</span>,
+    <span class="code-property">"problemSolving"</span>: <span class="code-number">100</span>
+  },
+
+  <span class="code-property">"currentStatus"</span>: <span class="code-string">"Ready for new challenges!"</span>
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Get to know me</span>
-                <h2 class="section-title">About Me</h2>
-            </div>
-
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="glass-card">
-                        <img src="https://storage.googleapis.com/danbray.dev/assets/headshot.webp" alt="Dan Bray">
-                        <div class="about-image-overlay"></div>
-                    </div>
-                </div>
-
-                <div class="about-text">
-                    <div class="glass-card">
-                        <h3>From Craft Beer to Code</h3>
-                        <p>
-                            I'm Dan Bray, a motivated and detail-oriented professional with a passion for creativity and technology. After 8 years of excelling in the craft beer industry, I've transitioned my skills and experience into a career in web development and digital design.
-                        </p>
-                        <p>
-                            Throughout my career, I've honed my abilities in project management, web and graphic design, social media strategy, and e-commerce development. At Broken Chair Brewery, I managed every facet of operations, from crafting award-winning beer recipes to spearheading digital marketing campaigns.
-                        </p>
-                        <p>
-                            I'm currently advancing my web development skills through certifications and hands-on projects. My portfolio showcases my commitment to crafting impactful digital solutions while enhancing my proficiency in the MERN stack, WordPress, and custom-coded websites.
-                        </p>
-
-                        <div class="about-stats">
-                            <div class="stat">
-                                <span class="stat-number">8+</span>
-                                <span class="stat-label">Projects</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">100%</span>
-                                <span class="stat-label">Committed</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">∞</span>
-                                <span class="stat-label">Learning</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="about-interests">
-                <div class="glass-card">
-                    <h3>Beyond Code</h3>
-                    <p>Outside of web development, I thrive on creativity and exploration. My hobbies complement my work by fueling my creativity, attention to detail, and drive to learn.</p>
-                    <div class="interests-grid">
-                        <div class="interest-item">
-                            <i class="fas fa-dumbbell"></i>
-                            <span>Physical Fitness</span>
-                        </div>
-                        <div class="interest-item">
-                            <i class="fas fa-seedling"></i>
-                            <span>Horticulture</span>
-                        </div>
-                        <div class="interest-item">
-                            <i class="fas fa-hammer"></i>
-                            <span>Woodworking</span>
-                        </div>
-                        <div class="interest-item">
-                            <i class="fas fa-plane"></i>
-                            <span>Traveling</span>
-                        </div>
-                        <div class="interest-item">
-                            <i class="fas fa-couch"></i>
-                            <span>Interior Design</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Get to know me</span>
+          <h2 class="section-title">About Me</h2>
         </div>
+
+        <div class="about-content">
+          <div class="about-image">
+            <div class="glass-card">
+              <img
+                src="https://storage.googleapis.com/danbray.dev/assets/headshot.webp"
+                alt="Dan Bray" />
+              <div class="about-image-overlay"></div>
+            </div>
+          </div>
+
+          <div class="about-text">
+            <div class="glass-card">
+              <h3>From Craft Beer to Code</h3>
+              <p>
+                I'm Dan Bray, a motivated and detail-oriented professional with
+                a passion for creativity and technology. After 8 years of
+                excelling in the craft beer industry, I've transitioned my
+                skills and experience into a career in web development and
+                digital design.
+              </p>
+              <p>
+                Throughout my career, I've honed my abilities in project
+                management, web and graphic design, social media strategy, and
+                e-commerce development. At Broken Chair Brewery, I managed every
+                facet of operations, from crafting award-winning beer recipes to
+                spearheading digital marketing campaigns.
+              </p>
+              <p>
+                I'm currently advancing my web development skills through
+                certifications and hands-on projects. My portfolio showcases my
+                commitment to crafting impactful digital solutions while
+                enhancing my proficiency in the MERN stack, WordPress, and
+                custom-coded websites.
+              </p>
+
+              <div class="about-stats">
+                <div class="stat">
+                  <span class="stat-number">8+</span>
+                  <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">100%</span>
+                  <span class="stat-label">Committed</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">∞</span>
+                  <span class="stat-label">Learning</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-interests">
+          <div class="glass-card">
+            <h3>Beyond Code</h3>
+            <p>
+              Outside of web development, I thrive on creativity and
+              exploration. My hobbies complement my work by fueling my
+              creativity, attention to detail, and drive to learn.
+            </p>
+            <div class="interests-grid">
+              <div class="interest-item">
+                <i class="fas fa-dumbbell"></i>
+                <span>Physical Fitness</span>
+              </div>
+              <div class="interest-item">
+                <i class="fas fa-seedling"></i>
+                <span>Horticulture</span>
+              </div>
+              <div class="interest-item">
+                <i class="fas fa-hammer"></i>
+                <span>Woodworking</span>
+              </div>
+              <div class="interest-item">
+                <i class="fas fa-plane"></i>
+                <span>Traveling</span>
+              </div>
+              <div class="interest-item">
+                <i class="fas fa-couch"></i>
+                <span>Interior Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Skills Section -->
     <section class="skills" id="skills">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">My expertise</span>
-                <h2 class="section-title">Skills & Technologies</h2>
-            </div>
-
-            <div class="skills-grid">
-                <!-- Frontend Development -->
-                <div class="skill-category glass-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Frontend Development</h3>
-                    <p>Expertise in HTML, CSS, and JavaScript, along with Bootstrap, ensuring sleek, responsive websites optimized for both desktop and mobile experiences.</p>
-                    <div class="skill-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                        <span>Bootstrap</span>
-                        <span>Responsive Design</span>
-                    </div>
-                </div>
-
-                <!-- Frameworks & Libraries -->
-                <div class="skill-category glass-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-layer-group"></i>
-                    </div>
-                    <h3>Frameworks & Libraries</h3>
-                    <p>Proficiency in React and the MERN stack, enabling the creation of dynamic and interactive applications.</p>
-                    <div class="skill-tags">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>Express</span>
-                        <span>MongoDB</span>
-                        <span>jQuery</span>
-                    </div>
-                </div>
-
-                <!-- E-commerce & CMS -->
-                <div class="skill-category glass-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3>E-commerce & CMS</h3>
-                    <p>Experienced in building and managing stores on platforms like Shopify, WordPress, and Squarespace, with a strong track record of optimizing for SEO and user experience.</p>
-                    <div class="skill-tags">
-                        <span>Shopify</span>
-                        <span>WordPress</span>
-                        <span>Squarespace</span>
-                        <span>WooCommerce</span>
-                    </div>
-                </div>
-
-                <!-- Version Control & Deployment -->
-                <div class="skill-category glass-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-code-branch"></i>
-                    </div>
-                    <h3>Version Control & Deployment</h3>
-                    <p>Advanced knowledge of Git and GitHub ensures seamless collaboration and efficient project management. Proficient in deployment via Netlify, Namecheap, and more.</p>
-                    <div class="skill-tags">
-                        <span>Git</span>
-                        <span>GitHub</span>
-                        <span>Netlify</span>
-                        <span>Domain Management</span>
-                    </div>
-                </div>
-
-                <!-- SEO & Marketing -->
-                <div class="skill-category glass-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>SEO & Digital Marketing</h3>
-                    <p>Proven ability to elevate online presence through data-driven social media strategies, search engine optimization, and engaging content creation.</p>
-                    <div class="skill-tags">
-                        <span>SEO</span>
-                        <span>Google Analytics</span>
-                        <span>SEMrush</span>
-                        <span>Content Strategy</span>
-                    </div>
-                </div>
-
-                <!-- Design & UX -->
-                <div class="skill-category glass-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Design & UX</h3>
-                    <p>Adept at blending functionality with aesthetic appeal to deliver websites that are not only visually stunning but also intuitive and user-friendly.</p>
-                    <div class="skill-tags">
-                        <span>UI/UX Design</span>
-                        <span>Responsive Design</span>
-                        <span>Accessibility</span>
-                        <span>Design Systems</span>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">My expertise</span>
+          <h2 class="section-title">Skills & Technologies</h2>
         </div>
+
+        <div class="skills-grid">
+          <!-- Frontend Development -->
+          <div class="skill-category glass-card">
+            <div class="skill-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Frontend Development</h3>
+            <p>
+              Expertise in HTML, CSS, and JavaScript, along with Bootstrap,
+              ensuring sleek, responsive websites optimized for both desktop and
+              mobile experiences.
+            </p>
+            <div class="skill-tags">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>Bootstrap</span>
+              <span>Responsive Design</span>
+            </div>
+          </div>
+
+          <!-- Frameworks & Libraries -->
+          <div class="skill-category glass-card">
+            <div class="skill-icon">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <h3>Frameworks & Libraries</h3>
+            <p>
+              Proficiency in React and the MERN stack, enabling the creation of
+              dynamic and interactive applications.
+            </p>
+            <div class="skill-tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>MongoDB</span>
+              <span>jQuery</span>
+            </div>
+          </div>
+
+          <!-- E-commerce & CMS -->
+          <div class="skill-category glass-card">
+            <div class="skill-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h3>E-commerce & CMS</h3>
+            <p>
+              Experienced in building and managing stores on platforms like
+              Shopify, WordPress, and Squarespace, with a strong track record of
+              optimizing for SEO and user experience.
+            </p>
+            <div class="skill-tags">
+              <span>Shopify</span>
+              <span>WordPress</span>
+              <span>Squarespace</span>
+              <span>WooCommerce</span>
+            </div>
+          </div>
+
+          <!-- Version Control & Deployment -->
+          <div class="skill-category glass-card">
+            <div class="skill-icon">
+              <i class="fas fa-code-branch"></i>
+            </div>
+            <h3>Version Control & Deployment</h3>
+            <p>
+              Advanced knowledge of Git and GitHub ensures seamless
+              collaboration and efficient project management. Proficient in
+              deployment via Netlify, Namecheap, and more.
+            </p>
+            <div class="skill-tags">
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>Netlify</span>
+              <span>Domain Management</span>
+            </div>
+          </div>
+
+          <!-- SEO & Marketing -->
+          <div class="skill-category glass-card">
+            <div class="skill-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3>SEO & Digital Marketing</h3>
+            <p>
+              Proven ability to elevate online presence through data-driven
+              social media strategies, search engine optimization, and engaging
+              content creation.
+            </p>
+            <div class="skill-tags">
+              <span>SEO</span>
+              <span>Google Analytics</span>
+              <span>SEMrush</span>
+              <span>Content Strategy</span>
+            </div>
+          </div>
+
+          <!-- Design & UX -->
+          <div class="skill-category glass-card">
+            <div class="skill-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3>Design & UX</h3>
+            <p>
+              Adept at blending functionality with aesthetic appeal to deliver
+              websites that are not only visually stunning but also intuitive
+              and user-friendly.
+            </p>
+            <div class="skill-tags">
+              <span>UI/UX Design</span>
+              <span>Responsive Design</span>
+              <span>Accessibility</span>
+              <span>Design Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section class="projects" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">My work</span>
-                <h2 class="section-title">Featured Projects</h2>
-            </div>
-
-            <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="client">Client Work</button>
-                <button class="filter-btn" data-filter="personal">Personal Projects</button>
-            </div>
-
-            <div class="projects-grid">
-                <!-- Project 1: Keystone Web Solutions -->
-                <div class="project-card glass-card" data-category="client">
-                    <div class="project-image">
-                        <img src="https://storage.googleapis.com/danbray.dev/project-previews/keystone-web-solutions-portfolio-1.webp" alt="Keystone Web Solutions">
-                        <div class="project-overlay">
-                            <a href="https://keystonewebsolutions.com" target="_blank" rel="noopener noreferrer" class="btn btn-small">
-                                Visit Site <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span>Web Development</span>
-                            <span>Agency</span>
-                        </div>
-                        <h3>Keystone Web Solutions</h3>
-                        <p>Professional web development agency specializing in creating sharp, visually appealing websites that prioritize user-friendly experiences.</p>
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: Valley Peak Roofing -->
-                <div class="project-card glass-card" data-category="client">
-                    <div class="project-image">
-                        <img src="https://storage.googleapis.com/danbray.dev/project-previews/valley-peak-roofing-portfolio.webp" alt="Valley Peak Roofing">
-                        <div class="project-overlay">
-                            <a href="https://valleypeakroof.com" target="_blank" rel="noopener noreferrer" class="btn btn-small">
-                                Visit Site <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span>SEO Focused</span>
-                            <span>Client Site</span>
-                        </div>
-                        <h3>Valley Peak Roofing</h3>
-                        <p>Comprehensive website redesign focused on maximizing SEO performance. Migrated from WordPress to custom-coded architecture with GA4 analytics and SEMrush monitoring.</p>
-                        <div class="project-tech">
-                            <span>Custom Code</span>
-                            <span>SEO</span>
-                            <span>Analytics</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: Waldman Electric -->
-                <div class="project-card glass-card" data-category="client">
-                    <div class="project-image">
-                        <img src="https://storage.googleapis.com/background-vid/AA.%20Website%20Design%20%26%20Development%20Page/A%20Website%20That%20Actually%20Works%20For%20You/waldman-optimized.webp" alt="Waldman Electric">
-                        <div class="project-overlay">
-                            <a href="https://waldmanelectric.com" target="_blank" rel="noopener noreferrer" class="btn btn-small">
-                                Visit Site <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span>Local Business</span>
-                            <span>Redesign</span>
-                        </div>
-                        <h3>Waldman Electric</h3>
-                        <p>Clean, professional website redesign for a trusted local electrician. Migrated from Hibu platform to modern, custom-built solution with improved UX.</p>
-                        <div class="project-tech">
-                            <span>Responsive</span>
-                            <span>Forms</span>
-                            <span>Netlify</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: John's Chimney Service -->
-                <div class="project-card glass-card" data-category="client">
-                    <div class="project-image">
-                        <img src="https://storage.googleapis.com/background-vid/AA.%20Website%20Design%20%26%20Development%20Page/A%20Website%20That%20Actually%20Works%20For%20You/johnschimney-optimized.webp" alt="John's Chimney Service">
-                        <div class="project-overlay">
-                            <a href="https://johnschimneyservicellc.com" target="_blank" rel="noopener noreferrer" class="btn btn-small">
-                                Visit Site <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span>Service Business</span>
-                            <span>Mobile-First</span>
-                        </div>
-                        <h3>John's Chimney Service</h3>
-                        <p>Professional chimney service website featuring service details, seasonal promotions, customer testimonials, and easy contact options for chimney sweeping and maintenance.</p>
-                        <div class="project-tech">
-                            <span>Mobile-First</span>
-                            <span>Service Booking</span>
-                            <span>SEO Optimized</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5: National Timepiece -->
-                <div class="project-card glass-card" data-category="client">
-                    <div class="project-image">
-                        <img src="https://storage.googleapis.com/background-vid/Portfolio%20Images/national-timepiece.webp" alt="National Timepiece">
-                        <div class="project-overlay">
-                            <a href="https://national-timepiece-preview.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-small">
-                                Visit Site <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span>E-commerce</span>
-                            <span>Luxury</span>
-                        </div>
-                        <h3>National Timepiece</h3>
-                        <p>Certified watchmaker website featuring video background hero section, comprehensive repair services showcase, and advanced product catalog with real-time search and sorting for pre-owned luxury watches.</p>
-                        <div class="project-tech">
-                            <span>Video Integration</span>
-                            <span>Advanced Search</span>
-                            <span>Product Catalog</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6: Fired Up BBQ -->
-                <div class="project-card glass-card" data-category="client">
-                    <div class="project-image">
-                        <img src="https://storage.googleapis.com/background-vid/AA.%20Website%20Design%20%26%20Development%20Page/A%20Website%20That%20Actually%20Works%20For%20You/firedup-optimized.webp" alt="Fired Up BBQ">
-                        <div class="project-overlay">
-                            <a href="https://firedupbbqcatering.com" target="_blank" rel="noopener noreferrer" class="btn btn-small">
-                                Visit Site <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span>Catering</span>
-                            <span>Event Booking</span>
-                        </div>
-                        <h3>Fired Up BBQ</h3>
-                        <p>BBQ catering website showcasing menu selections, event packages, photo gallery of smoked meats, and streamlined catering inquiry forms for weddings and corporate events.</p>
-                        <div class="project-tech">
-                            <span>Event Booking</span>
-                            <span>Photo Gallery</span>
-                            <span>Contact Forms</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 7: Berks County Views -->
-                <div class="project-card glass-card" data-category="personal">
-                    <div class="project-image">
-                        <img src="https://storage.googleapis.com/danbray.dev/project-previews/bcoviews.webp" alt="Berks County Views">
-                        <div class="project-overlay">
-                            <a href="https://bco-views-preview.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-small">
-                                Visit Site <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span>Photography</span>
-                            <span>Community</span>
-                        </div>
-                        <h3>Berks County Views</h3>
-                        <p>Photography and community event website with auto-rotating carousel, interactive gallery, and dynamic thumbnail display system.</p>
-                        <div class="project-tech">
-                            <span>Gallery</span>
-                            <span>Carousel</span>
-                            <span>Events</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 8: Broken Chair Brewery -->
-                <div class="project-card glass-card" data-category="client">
-                    <div class="project-image">
-                        <img src="https://storage.googleapis.com/background-vid/Portfolio%20Images/BCB-mockup.webp" alt="Broken Chair Brewery">
-                        <div class="project-overlay">
-                            <a href="https://www.brokenchairbeer.com" target="_blank" rel="noopener noreferrer" class="btn btn-small">
-                                Visit Site <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span>Client Site</span>
-                            <span>Brewery</span>
-                        </div>
-                        <h3>Broken Chair Brewery</h3>
-                        <p>Website remake for a small, family-owned craft brewery with clean design and smooth navigation.</p>
-                        <div class="project-tech">
-                            <span>Responsive</span>
-                            <span>Clean Design</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">My work</span>
+          <h2 class="section-title">Featured Projects</h2>
         </div>
+
+        <div class="projects-filter">
+          <button class="filter-btn active" data-filter="all">
+            All Projects
+          </button>
+          <button class="filter-btn" data-filter="client">Client Work</button>
+          <button class="filter-btn" data-filter="personal">
+            Personal Projects
+          </button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Keystone Web Solutions -->
+          <div class="project-card glass-card" data-category="client">
+            <div class="project-image">
+              <img
+                src="https://storage.googleapis.com/danbray.dev/project-previews/keystone-web-solutions-portfolio-1.webp"
+                alt="Keystone Web Solutions" />
+              <div class="project-overlay">
+                <a
+                  href="https://keystonewebsolutions.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-small">
+                  Visit Site <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span>Web Development</span>
+                <span>Agency</span>
+              </div>
+              <h3>Keystone Web Solutions</h3>
+              <p>
+                Professional web development agency specializing in creating
+                sharp, visually appealing websites that prioritize user-friendly
+                experiences.
+              </p>
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Valley Peak Roofing -->
+          <div class="project-card glass-card" data-category="client">
+            <div class="project-image">
+              <img
+                src="https://storage.googleapis.com/danbray.dev/project-previews/valley-peak-roofing-portfolio.webp"
+                alt="Valley Peak Roofing" />
+              <div class="project-overlay">
+                <a
+                  href="https://valleypeakroof.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-small">
+                  Visit Site <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span>SEO Focused</span>
+                <span>Client Site</span>
+              </div>
+              <h3>Valley Peak Roofing</h3>
+              <p>
+                Comprehensive website redesign focused on maximizing SEO
+                performance. Migrated from WordPress to custom-coded
+                architecture with GA4 analytics and SEMrush monitoring.
+              </p>
+              <div class="project-tech">
+                <span>Custom Code</span>
+                <span>SEO</span>
+                <span>Analytics</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Waldman Electric -->
+          <div class="project-card glass-card" data-category="client">
+            <div class="project-image">
+              <img
+                src="https://storage.googleapis.com/background-vid/AA.%20Website%20Design%20%26%20Development%20Page/A%20Website%20That%20Actually%20Works%20For%20You/waldman-optimized.webp"
+                alt="Waldman Electric" />
+              <div class="project-overlay">
+                <a
+                  href="https://waldmanelectric.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-small">
+                  Visit Site <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span>Local Business</span>
+                <span>Redesign</span>
+              </div>
+              <h3>Waldman Electric</h3>
+              <p>
+                Clean, professional website redesign for a trusted local
+                electrician. Migrated from Hibu platform to modern, custom-built
+                solution with improved UX.
+              </p>
+              <div class="project-tech">
+                <span>Responsive</span>
+                <span>Forms</span>
+                <span>Netlify</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: John's Chimney Service -->
+          <div class="project-card glass-card" data-category="client">
+            <div class="project-image">
+              <img
+                src="https://storage.googleapis.com/background-vid/AA.%20Website%20Design%20%26%20Development%20Page/A%20Website%20That%20Actually%20Works%20For%20You/johnschimney-optimized.webp"
+                alt="John's Chimney Service" />
+              <div class="project-overlay">
+                <a
+                  href="https://johnschimneyservicellc.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-small">
+                  Visit Site <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span>Service Business</span>
+                <span>Mobile-First</span>
+              </div>
+              <h3>John's Chimney Service</h3>
+              <p>
+                Professional chimney service website featuring service details,
+                seasonal promotions, customer testimonials, and easy contact
+                options for chimney sweeping and maintenance.
+              </p>
+              <div class="project-tech">
+                <span>Mobile-First</span>
+                <span>Service Booking</span>
+                <span>SEO Optimized</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: National Timepiece -->
+          <div class="project-card glass-card" data-category="client">
+            <div class="project-image">
+              <img
+                src="https://storage.googleapis.com/background-vid/Portfolio%20Images/national-timepiece.webp"
+                alt="National Timepiece" />
+              <div class="project-overlay">
+                <a
+                  href="https://national-timepiece-preview.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-small">
+                  Visit Site <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span>E-commerce</span>
+                <span>Luxury</span>
+              </div>
+              <h3>National Timepiece</h3>
+              <p>
+                Certified watchmaker website featuring video background hero
+                section, comprehensive repair services showcase, and advanced
+                product catalog with real-time search and sorting for pre-owned
+                luxury watches.
+              </p>
+              <div class="project-tech">
+                <span>Video Integration</span>
+                <span>Advanced Search</span>
+                <span>Product Catalog</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6: Fired Up BBQ -->
+          <div class="project-card glass-card" data-category="client">
+            <div class="project-image">
+              <img
+                src="https://storage.googleapis.com/background-vid/AA.%20Website%20Design%20%26%20Development%20Page/A%20Website%20That%20Actually%20Works%20For%20You/firedup-optimized.webp"
+                alt="Fired Up BBQ" />
+              <div class="project-overlay">
+                <a
+                  href="https://firedupbbqcatering.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-small">
+                  Visit Site <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span>Catering</span>
+                <span>Event Booking</span>
+              </div>
+              <h3>Fired Up BBQ</h3>
+              <p>
+                BBQ catering website showcasing menu selections, event packages,
+                photo gallery of smoked meats, and streamlined catering inquiry
+                forms for weddings and corporate events.
+              </p>
+              <div class="project-tech">
+                <span>Event Booking</span>
+                <span>Photo Gallery</span>
+                <span>Contact Forms</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 7: Berks County Views -->
+          <div class="project-card glass-card" data-category="personal">
+            <div class="project-image">
+              <img
+                src="https://storage.googleapis.com/danbray.dev/project-previews/bcoviews.webp"
+                alt="Berks County Views" />
+              <div class="project-overlay">
+                <a
+                  href="https://bco-views-preview.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-small">
+                  Visit Site <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span>Photography</span>
+                <span>Community</span>
+              </div>
+              <h3>Berks County Views</h3>
+              <p>
+                Photography and community event website with auto-rotating
+                carousel, interactive gallery, and dynamic thumbnail display
+                system.
+              </p>
+              <div class="project-tech">
+                <span>Gallery</span>
+                <span>Carousel</span>
+                <span>Events</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 8: Broken Chair Brewery -->
+          <div class="project-card glass-card" data-category="client">
+            <div class="project-image">
+              <img
+                src="https://storage.googleapis.com/background-vid/Portfolio%20Images/BCB-mockup.webp"
+                alt="Broken Chair Brewery" />
+              <div class="project-overlay">
+                <a
+                  href="https://www.brokenchairbeer.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-small">
+                  Visit Site <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span>Client Site</span>
+                <span>Brewery</span>
+              </div>
+              <h3>Broken Chair Brewery</h3>
+              <p>
+                Website remake for a small, family-owned craft brewery with
+                clean design and smooth navigation.
+              </p>
+              <div class="project-tech">
+                <span>Responsive</span>
+                <span>Clean Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Let's connect</span>
-                <h2 class="section-title">Get In Touch</h2>
-            </div>
-
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="glass-card">
-                        <h3>Let's work together</h3>
-                        <p>I'm always open to collaborating on innovative projects, sharing ideas, or exploring exciting opportunities. Whether you're looking for a dedicated team member or seeking a creative partnership, I'd love to hear from you.</p>
-
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <h4>Location</h4>
-                                    <p>West Reading, PA</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h4>Email</h4>
-                                    <p>d.bray33@gmail.com</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div>
-                                    <h4>Phone</h4>
-                                    <p>610-301-9351</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="contact-social">
-                            <a href="https://github.com/DBray33" target="_blank" rel="noopener noreferrer" class="social-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/stanielbray/" target="_blank" rel="noopener noreferrer" class="social-link">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-wrapper">
-                    <div class="glass-card">
-                        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
-                            <!-- Hidden fields for Netlify -->
-                            <input type="hidden" name="form-name" value="contact">
-                            <p style="display: none;">
-                                <label>Don't fill this out if you're human: <input name="bot-field"></label>
-                            </p>
-
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary btn-block">
-                                Send Message
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Let's connect</span>
+          <h2 class="section-title">Get In Touch</h2>
         </div>
+
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="glass-card">
+              <h3>Let's work together</h3>
+              <p>
+                I'm always open to collaborating on innovative projects, sharing
+                ideas, or exploring exciting opportunities. Whether you're
+                looking for a dedicated team member or seeking a creative
+                partnership, I'd love to hear from you.
+              </p>
+
+              <div class="contact-details">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div>
+                    <h4>Location</h4>
+                    <p>West Reading, PA</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div>
+                    <h4>Email</h4>
+                    <p>d.bray33@gmail.com</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div>
+                    <h4>Phone</h4>
+                    <p>610-301-9351</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-social">
+                <a
+                  href="https://github.com/DBray33"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/stanielbray/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-link">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <div class="glass-card">
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                class="contact-form">
+                <!-- Hidden fields for Netlify -->
+                <input type="hidden" name="form-name" value="contact" />
+                <p style="display: none">
+                  <label
+                    >Don't fill this out if you're human:
+                    <input name="bot-field"
+                  /></label>
+                </p>
+
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" />
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                  Send Message
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Dan Bray. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="https://github.com/DBray33" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://www.linkedin.com/in/stanielbray/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; 2025 Dan Bray. All rights reserved.</p>
+          <div class="footer-links">
+            <a
+              href="https://github.com/DBray33"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+            <a
+              href="https://www.linkedin.com/in/stanielbray/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+          </div>
         </div>
+      </div>
     </footer>
 
     <!-- Scripts -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

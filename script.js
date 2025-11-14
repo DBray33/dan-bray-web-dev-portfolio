@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectFilter();
     initScrollAnimations();
     initSmoothScroll();
+    initCodeCardControls();
 });
 
 // ====================================
@@ -176,10 +177,10 @@ function initScrollAnimations() {
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                // Optional: Stop observing after animation
-                // observer.unobserve(entry.target);
+            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                entry.target.classList.add('fade-in', 'animated');
+                // Stop observing after animation to prevent re-triggering
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -349,8 +350,312 @@ document.querySelectorAll('.btn').forEach(btn => {
 });
 
 // ====================================
+// CODE CARD INTERACTIVE CONTROLS
+// ====================================
+function initCodeCardControls() {
+    const codeCard = document.getElementById('code-card');
+    const statsCard = document.getElementById('stats-card');
+    const codeTab = document.getElementById('code-tab');
+    const statsTab = document.getElementById('stats-tab');
+    const codeModal = document.getElementById('code-modal');
+    const statsModal = document.getElementById('stats-modal');
+    const easterEggMessage = document.getElementById('easter-egg-message');
+
+    let easterEggShown = false;
+
+    // Check if both cards are hidden and show easter egg
+    function checkAndShowEasterEgg() {
+        const bothHidden = codeCard.classList.contains('hidden') && statsCard.classList.contains('hidden');
+
+        if (bothHidden && !easterEggShown) {
+            easterEggMessage.classList.remove('hidden');
+            easterEggShown = true;
+        }
+    }
+
+    // Bring a card to the front
+    function bringToFront(card) {
+        if (card === codeCard) {
+            codeCard.style.zIndex = '2';
+            statsCard.style.zIndex = '1';
+        } else if (card === statsCard) {
+            statsCard.style.zIndex = '2';
+            codeCard.style.zIndex = '1';
+        }
+    }
+
+    // Click cards to bring them to front
+    codeCard?.addEventListener('click', (e) => {
+        // Only bring to front if not clicking a control button
+        if (!e.target.closest('[data-action]')) {
+            bringToFront(codeCard);
+        }
+    });
+
+    statsCard?.addEventListener('click', (e) => {
+        // Only bring to front if not clicking a control button
+        if (!e.target.closest('[data-action]')) {
+            bringToFront(statsCard);
+        }
+    });
+
+    // Handle all window control clicks
+    document.addEventListener('click', (e) => {
+        const action = e.target.dataset.action;
+        if (!action) return;
+
+        switch(action) {
+            case 'close':
+                handleClose();
+                break;
+            case 'close-stats':
+                handleCloseStats();
+                break;
+            case 'minimize':
+                handleMinimize();
+                break;
+            case 'minimize-stats':
+                handleMinimizeStats();
+                break;
+            case 'maximize':
+                handleMaximize();
+                break;
+            case 'maximize-stats':
+                handleMaximizeStats();
+                break;
+            case 'restore-code':
+                handleRestoreCode();
+                break;
+            case 'close-modal':
+                handleCloseModal();
+                break;
+            case 'minimize-modal':
+                handleMinimizeFromModal();
+                break;
+            case 'restore-size':
+                handleRestoreSize();
+                break;
+            case 'close-stats-modal':
+                handleCloseStatsModal();
+                break;
+            case 'minimize-stats-modal':
+                handleMinimizeFromStatsModal();
+                break;
+            case 'restore-stats-size':
+                handleRestoreStatsSize();
+                break;
+        }
+    });
+
+    // Restore from code tab
+    codeTab?.addEventListener('click', (e) => {
+        if (!e.target.closest('.tab-restore')) {
+            handleRestoreCodeFromTab();
+        }
+    });
+
+    codeTab?.querySelector('.tab-restore')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        handleRestoreCodeFromTab();
+    });
+
+    // Restore from stats tab
+    statsTab?.addEventListener('click', (e) => {
+        if (!e.target.closest('.tab-restore')) {
+            handleRestoreStats();
+        }
+    });
+
+    statsTab?.querySelector('.tab-restore')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        handleRestoreStats();
+    });
+
+    // Close modals when clicking backdrop
+    codeModal?.querySelector('.modal-backdrop')?.addEventListener('click', handleCloseModal);
+    statsModal?.querySelector('.modal-backdrop')?.addEventListener('click', handleCloseStatsModal);
+
+    // Close Button - Hide code card completely (no tab)
+    function handleClose() {
+        codeCard.style.transition = 'all 0.4s ease-out';
+        codeCard.style.transform = 'scale(0.8)';
+        codeCard.style.opacity = '0';
+
+        setTimeout(() => {
+            codeCard.classList.add('hidden');
+            codeCard.style.transform = '';
+            codeCard.style.opacity = '';
+            codeCard.style.transition = '';
+            checkAndShowEasterEgg();
+        }, 400);
+    }
+
+    // Close Stats Button - Hide stats card completely (no tab)
+    function handleCloseStats() {
+        statsCard.style.transition = 'all 0.4s ease-out';
+        statsCard.style.transform = 'scale(0.8)';
+        statsCard.style.opacity = '0';
+
+        setTimeout(() => {
+            statsCard.classList.add('hidden');
+            statsCard.style.transform = '';
+            statsCard.style.opacity = '';
+            statsCard.style.transition = '';
+            checkAndShowEasterEgg();
+        }, 400);
+    }
+
+    // Restore Code Button - Restore code card from green button on stats
+    function handleRestoreCode() {
+        codeCard.classList.remove('hidden');
+        codeCard.style.transform = 'scale(0.95)';
+        codeCard.style.opacity = '0';
+        bringToFront(codeCard);
+
+        requestAnimationFrame(() => {
+            codeCard.style.transition = 'all 0.3s ease-out';
+            codeCard.style.transform = '';
+            codeCard.style.opacity = '1';
+
+            setTimeout(() => {
+                codeCard.style.transition = '';
+            }, 300);
+        });
+    }
+
+    // Restore Stats from tab
+    function handleRestoreStats() {
+        statsTab.classList.add('hidden');
+
+        statsCard.classList.remove('hidden');
+        statsCard.style.transform = 'scale(0.8)';
+        statsCard.style.opacity = '0';
+        bringToFront(statsCard);
+
+        requestAnimationFrame(() => {
+            statsCard.style.transition = 'all 0.4s ease-out';
+            statsCard.style.transform = '';
+            statsCard.style.opacity = '1';
+
+            setTimeout(() => {
+                statsCard.style.transition = '';
+            }, 400);
+        });
+    }
+
+    // Minimize Button - Hide only code card, show tab, reveal stats behind
+    function handleMinimize() {
+        codeCard.style.transition = 'all 0.4s ease-out';
+        codeCard.style.transform = 'scale(0.8)';
+        codeCard.style.opacity = '0';
+
+        setTimeout(() => {
+            codeCard.classList.add('hidden');
+            codeCard.style.transform = '';
+            codeCard.style.opacity = '';
+            codeCard.style.transition = '';
+            codeTab.classList.remove('hidden');
+            checkAndShowEasterEgg();
+        }, 400);
+    }
+
+    // Minimize Stats Button - Hide only stats card, show tab
+    function handleMinimizeStats() {
+        statsCard.style.transition = 'all 0.4s ease-out';
+        statsCard.style.transform = 'scale(0.8)';
+        statsCard.style.opacity = '0';
+
+        setTimeout(() => {
+            statsCard.classList.add('hidden');
+            statsCard.style.transform = '';
+            statsCard.style.opacity = '';
+            statsCard.style.transition = '';
+            statsTab.classList.remove('hidden');
+            checkAndShowEasterEgg();
+        }, 400);
+    }
+
+    // Restore Code from tab
+    function handleRestoreCodeFromTab() {
+        codeTab.classList.add('hidden');
+
+        codeCard.classList.remove('hidden');
+        codeCard.style.transform = 'scale(0.8)';
+        codeCard.style.opacity = '0';
+        bringToFront(codeCard);
+
+        requestAnimationFrame(() => {
+            codeCard.style.transition = 'all 0.4s ease-out';
+            codeCard.style.transform = '';
+            codeCard.style.opacity = '1';
+
+            setTimeout(() => {
+                codeCard.style.transition = '';
+            }, 400);
+        });
+    }
+
+    // Maximize Button - Show modal
+    function handleMaximize() {
+        codeModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close Modal
+    function handleCloseModal() {
+        codeModal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    // Minimize from Modal
+    function handleMinimizeFromModal() {
+        codeModal.classList.add('hidden');
+        document.body.style.overflow = '';
+        codeCard.classList.add('hidden');
+        codeTab.classList.remove('hidden');
+        checkAndShowEasterEgg();
+    }
+
+    // Restore Size (from maximized to normal)
+    function handleRestoreSize() {
+        codeModal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    // Stats Modal Handlers
+
+    // Maximize Stats Button - Show stats modal
+    function handleMaximizeStats() {
+        statsModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close Stats Modal
+    function handleCloseStatsModal() {
+        statsModal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    // Minimize from Stats Modal
+    function handleMinimizeFromStatsModal() {
+        statsModal.classList.add('hidden');
+        document.body.style.overflow = '';
+        statsCard.classList.add('hidden');
+        statsTab.classList.remove('hidden');
+        checkAndShowEasterEgg();
+    }
+
+    // Restore Stats Size (from maximized to normal)
+    function handleRestoreStatsSize() {
+        statsModal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+}
+
+// ====================================
 // CONSOLE MESSAGE
 // ====================================
-console.log('%c👋 Hi there!', 'font-size: 20px; font-weight: bold; color: #667eea;');
+console.log('%c👋 Hi there!', 'font-size: 20px; font-weight: bold; color: #7780F8;');
 console.log('%cInterested in the code? Check out my GitHub!', 'font-size: 14px; color: #b8b8d1;');
-console.log('%chttps://github.com/DBray33', 'font-size: 14px; color: #00f2fe;');
+console.log('%chttps://github.com/DBray33', 'font-size: 14px; color: #44DCDF;');
+console.log('%c💡 Psst... the code card might be more interactive than you think', 'font-size: 12px; color: #7780F8; font-style: italic;');
