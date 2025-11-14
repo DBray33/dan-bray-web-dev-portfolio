@@ -1,1307 +1,637 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dan Bray's Web Development Portfolio</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dan Bray | Web Developer Portfolio</title>
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
-      rel="stylesheet" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Photo Lightbox Effect -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
-      rel="stylesheet" />
-
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/mobile.css" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mobile.css">
 
     <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png" />
+    <link rel="icon" href="images/favicon.png">
 
-    <meta
-      name="description"
-      content="Explore the portfolio of Dan Bray, a self-taught freelance web developer specializing in creating responsive websites, intuitive UI/UX designs, and e-commerce solutions. Discover projects showcasing expertise in HTML, CSS, JavaScript, and more." />
-  </head>
+    <meta name="description" content="Dan Bray - Professional Web Developer specializing in modern, responsive websites. Explore my portfolio of web development projects and get in touch for your next project.">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <img src="images/db-logo.png" alt="DB Logo">
+            </a>
 
-  <body>
-    <!-- Logo -->
-    <a href="index.html" class="logo-link">
-      <img src="images/db-logo.png" alt="DB Logo" class="logo-img" />
-    </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-social">
+                    <a href="https://github.com/DBray33" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/stanielbray/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
 
-    <!-- NAVBAR -->
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
-      <div class="navbar-flex container">
-        <!-- Main Menu Items (Desktop) -->
-        <div id="main-menu-items" class="desktop-menu">
-          <ul class="main-menu-list">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="#about">ABOUT ME</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#skills">SKILLS</a></li>
-            <!-- <li><a href="#gallery">GALLERY</a></li> -->
-            <li><a href="#contact">CONTACT</a></li>
-            <li></li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/stanielbray/"
-                aria-label="Follow me on LinkedIn"
-                target="_blank"
-                rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin fa-2x" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/DBray33"
-                aria-label="View my GitHub projects"
-                target="_blank"
-                rel="noopener noreferrer">
-                <i class="fa-brands fa-github fa-2x" aria-hidden="true"></i>
-              </a>
-            </li>
-          </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-
-        <!-- Hamburger Icon for Mobile Menu -->
-        <div
-          class="mobile-menu-toggle"
-          role="button"
-          aria-label="Toggle mobile menu">
-          <i class="fas fa-bars fa-2x"></i>
-        </div>
-
-        <!-- Mobile Menu (Dropdown) -->
-        <div id="mobile-menu" class="mobile-menu-items">
-          <ul class="mobile-menu-list">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="#about">ABOUT ME</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#skills">SKILLS</a></li>
-            <!-- <li><a href="#gallery">GALLERY</a></li> -->
-            <li><a href="#contact">CONTACT</a></li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/stanielbray/"
-                aria-label="Follow me on LinkedIn"
-                target="_blank">
-                <i class="fa-brands fa-linkedin fa-2x"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/DBray33"
-                aria-label="View my GitHub projects"
-                target="_blank">
-                <i class="fa-brands fa-github fa-2x"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
     </nav>
 
-    <!-- Hero Section-->
-    <section class="hero">
-      <!-- Carousel Content -->
-      <div class="carousel-content">
-        <div class="container">
-          <div class="caption text-center">
-            <div id="carousel-items">
-              <div class="carousel-item active">
-                <h1>Hi, I'm Dan</h1>
-                <p>
-                  A passionate web developer creating modern, user-friendly
-                  designs
-                </p>
-                <a class="btn btn-blank" href="#about" role="button"
-                  >Get To Know Me</a
-                >
-              </div>
-              <div class="carousel-item">
-                <h1>Check Out My Projects</h1>
-                <p>
-                  This is an endless work in progress. Plenty to come soon, and
-                  frequently
-                </p>
-                <a class="btn btn-blank" href="#projects" role="button"
-                  >See My Work</a
-                >
-              </div>
-              <div class="carousel-item">
-                <h1>Let’s Build Something Together</h1>
-                <p>
-                  Get in touch to collaborate or learn more about what I can do
-                  for you.
-                </p>
-                <a class="btn btn-blank" href="#contact" role="button"
-                  >Contact Me</a
-                >
-              </div>
-            </div>
-            <div class="carousel-navigation">
-              <button
-                class="carousel-btn"
-                data-index="0"
-                aria-label="Go to slide 1"></button>
-              <button
-                class="carousel-btn"
-                data-index="1"
-                aria-label="Go to slide 2"></button>
-              <button
-                class="carousel-btn"
-                data-index="2"
-                aria-label="Go to slide 3"></button>
-            </div>
-          </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
         </div>
-      </div>
-    </section>
 
-    <!-- Multi-Layered Parallax with Carousel Content -->
-    <section class="hero">
-      <!-- Parallax Layers -->
-      <div class="parallax-container">
-        <img
-          src="images/png-layers/Layer8.png"
-          alt="Background Layer"
-          class="layer layer8" />
-        <img
-          src="images/png-layers/Layer7.png"
-          alt="Layer 7"
-          class="layer layer7" />
-        <img
-          src="images/png-layers/Layer6.png"
-          alt="Layer 6"
-          class="layer layer6" />
-        <img
-          src="images/png-layers/Layer5.png"
-          alt="Layer 5"
-          class="layer layer5" />
-        <img
-          src="images/png-layers/Layer4.png"
-          alt="Layer 4"
-          class="layer layer4" />
-        <img
-          src="images/png-layers/Layer3.png"
-          alt="Layer 3"
-          class="layer layer3" />
-        <img
-          src="images/png-layers/Layer2.png"
-          alt="Layer 2"
-          class="layer layer2" />
-        <img
-          src="images/png-layers/Layer1.png"
-          alt="Foreground Layer"
-          class="layer layer1" />
-      </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="status-dot"></span>
+                    Available for opportunities
+                </div>
+
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text">Dan Bray</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Web Developer crafting modern, user-friendly digital experiences
+                </p>
+
+                <p class="hero-description">
+                    Specializing in responsive web design, e-commerce solutions, and creating seamless user experiences that drive engagement and results.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">
+                        View My Work
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="glass-card floating">
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <div class="code-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <span class="code-title">portfolio.js</span>
+                        </div>
+                        <div class="code-body">
+                            <pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">'Dan Bray'</span>,
+  <span class="code-property">location</span>: <span class="code-string">'West Reading, PA'</span>,
+  <span class="code-property">skills</span>: [<span class="code-string">'HTML'</span>, <span class="code-string">'CSS'</span>, <span class="code-string">'JavaScript'</span>],
+  <span class="code-property">passion</span>: <span class="code-string">'Building great UX'</span>
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
-      <div class="text-overlay">
-        <h1 class="ghost">ABOUT</h1>
-        <h1 class="me">ABOUT ME</h1>
-      </div>
-      <div class="content-container">
+    <section class="about" id="about">
         <div class="container">
-          <div class="header-container">
             <div class="section-header">
-              <h2 class="animate-from-left">
-                AUTHENTICITY CREATIVITY SPECIFICITY
-              </h2>
-              <h1 class="journey animate-from-right">
-                MY WEB DEVELOPMENT JOURNEY
-              </h1>
-              <div class="heading-border animate-from-left"></div>
-              <p class="animate-from-right">
-                From early explorations in coding while running a brewery, to
-                mastering the art of creating seamless user experiences, this is
-                the story behind my growth as a web developer. Discover the
-                skills, projects, and personal insights that drive my passion
-                for crafting impactful digital solutions.
-              </p>
+                <span class="section-label">Get to know me</span>
+                <h2 class="section-title">About Me</h2>
             </div>
-          </div>
+
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="glass-card">
+                        <img src="https://storage.googleapis.com/danbray.dev/assets/headshot.webp" alt="Dan Bray">
+                        <div class="about-image-overlay"></div>
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <div class="glass-card">
+                        <h3>From Craft Beer to Code</h3>
+                        <p>
+                            I'm Dan Bray, a motivated and detail-oriented professional with a passion for creativity and technology. After 8 years of excelling in the craft beer industry, I've transitioned my skills and experience into a career in web development and digital design.
+                        </p>
+                        <p>
+                            Throughout my career, I've honed my abilities in project management, web and graphic design, social media strategy, and e-commerce development. At Broken Chair Brewery, I managed every facet of operations, from crafting award-winning beer recipes to spearheading digital marketing campaigns.
+                        </p>
+                        <p>
+                            I'm currently advancing my web development skills through certifications and hands-on projects. My portfolio showcases my commitment to crafting impactful digital solutions while enhancing my proficiency in the MERN stack, WordPress, and custom-coded websites.
+                        </p>
+
+                        <div class="about-stats">
+                            <div class="stat">
+                                <span class="stat-number">8+</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Committed</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">∞</span>
+                                <span class="stat-label">Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-interests">
+                <div class="glass-card">
+                    <h3>Beyond Code</h3>
+                    <p>Outside of web development, I thrive on creativity and exploration. My hobbies complement my work by fueling my creativity, attention to detail, and drive to learn.</p>
+                    <div class="interests-grid">
+                        <div class="interest-item">
+                            <i class="fas fa-dumbbell"></i>
+                            <span>Physical Fitness</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-seedling"></i>
+                            <span>Horticulture</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-hammer"></i>
+                            <span>Woodworking</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-plane"></i>
+                            <span>Traveling</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-couch"></i>
+                            <span>Interior Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Icons -->
-    <section id="about-icons" class="about-icons-section">
-      <div class="container">
-        <div class="icon-background"></div>
-        <h2 class="icons-header">Click an icon below for more info:</h2>
-        <ul class="icon-container">
-          <!-- Person Icon -->
-          <li class="icon-item" onclick="showContent('personContent')">
-            <span class="icon-link">
-              <i class="fas fa-user icon"></i>
-            </span>
-            <h2>Who Am I?</h2>
-          </li>
-
-          <!-- Brain Icon -->
-          <li class="icon-item" onclick="showContent('skillsContent')">
-            <span class="icon-link">
-              <i class="fas fa-brain icon"></i>
-            </span>
-            <h2>My Skills</h2>
-          </li>
-
-          <!-- Project Icon -->
-          <li class="icon-item" onclick="showContent('projectsContent')">
-            <span class="icon-link">
-              <i class="fas fa-tools icon"></i>
-            </span>
-            <h2>Projects</h2>
-          </li>
-
-          <!-- Web Development Icon -->
-          <li class="icon-item" onclick="showContent('developmentContent')">
-            <span class="icon-link">
-              <i class="fas fa-laptop-code icon"></i>
-            </span>
-            <h2>Development Approach</h2>
-          </li>
-
-          <!-- Communication Icon -->
-          <li class="icon-item" onclick="showContent('connectContent')">
-            <span class="icon-link">
-              <i class="fas fa-phone icon"></i>
-            </span>
-            <h2>Let's Connect!</h2>
-          </li>
-        </ul>
-
-        <!-- Content Sections for Each Icon -->
-        <div id="personContent" class="content-section">
-          <h2>About Me</h2>
-          <!-- Headshot Image -->
-          <div class="about-image">
-            <img
-              src="https://storage.googleapis.com/danbray.dev/assets/headshot.webp"
-              alt="Your Headshot"
-              class="img-fluid" />
-          </div>
-          <p>
-            I’m Dan Bray, a motivated and detail-oriented professional with a
-            passion for creativity and technology. After 8 years of excelling in
-            the craft beer industry, I’m transitioning my skills and experience
-            into a career in web development and digital design. Throughout my
-            career, I’ve honed my abilities in project management, web and
-            graphic design, social media strategy, and e-commerce development.
-            At Broken Chair Brewery, I managed every facet of operations, from
-            crafting award-winning beer recipes to spearheading digital
-            marketing campaigns. My efforts elevated the brewery to become a
-            community favorite and the county’s “Best Craft Brewery” every year
-            the award was available (they got rid of it).
-            <br />
-            <br />
-            Beyond brewing, I designed all visual branding, including can
-            labels, apparel, and merchandise, while also managing the brewery’s
-            website and social media presence. In addition to my brewery career,
-            I’ve built successful e-commerce stores and provided freelance
-            graphic design services. These ventures allowed me to design and
-            market custom merchandise across platforms like Shopify, Etsy, and
-            eBay, where my designs achieved top search rankings. I’m currently
-            advancing my web development skills through certifications and
-            hands-on projects. My portfolio showcases my commitment to crafting
-            impactful digital solutions while enhancing my proficiency in tools
-            such as the MERN stack and WordPress, and reflects my passion for
-            building custom-coded websites.
-          </p>
-          <h2>Hobbies/Interests</h2>
-          <p>
-            Outside of web development, I thrive on creativity and exploration.
-            My hobbies complement my work by fueling my creativity, attention to
-            detail, and drive to learn. You’ll often find me experimenting with:
-          </p>
-
-          <ul class="icon-content-bullets">
-            <li>
-              Physical Fitness: Engaging in some physical activity most days,
-              and challenging myself with new workouts.
-            </li>
-            <li>
-              Horticulture: Cultivating plants and designing lush indoor and
-              outdoor spaces.
-            </li>
-            <li>
-              Woodworking: Crafting custom furniture and unique wooden
-              creations.
-            </li>
-            <li>
-              Traveling: Exploring new places and drawing inspiration from
-              diverse cultures.
-            </li>
-            <li>
-              Interior Design: Bringing spaces to life with thoughtful
-              aesthetics and functionality.
-            </li>
-          </ul>
-        </div>
-
-        <div id="skillsContent" class="content-section">
-          <h2>My Skills</h2>
-          <p>
-            Crafting Impactful Digital Solutions with Precision and Creativity
-            <br />
-            My skills as a web developer combine a deep understanding of design,
-            technology, and user-centered thinking. Transitioning from a
-            successful career in the craft beer industry to web development has
-            sharpened my ability to tackle diverse challenges and deliver
-            exceptional results. This journey has also honed my patience for
-            achieving very specific desired results, strengthened my
-            troubleshooting expertise, and instilled a strong focus on
-            meticulous attention to detail—qualities that have been invaluable
-            in both maintaining clean, sanitary environments and creating
-            polished digital solutions. Here’s what I bring to the table:
-          </p>
-
-          <ul class="icon-content-bullets">
-            <li>
-              Frontend Development: Expertise in HTML, CSS, and JavaScript,
-              along with Bootstrap, ensures sleek, responsive websites optimized
-              for both desktop and mobile experiences. I am adept at acquiring
-              domains and launching websites, utilizing platforms like GitHub,
-              Namecheap, and Netlify to host and deploy web projects
-              efficiently.
-            </li>
-            <li>
-              Frameworks and Libraries: Proficiency in React and the MERN stack,
-              enabling the creation of dynamic and interactive applications.
-            </li>
-            <li>
-              E-commerce Expertise: Experienced in building and managing stores
-              on platforms like Shopify, Etsy, and eBay, with a strong track
-              record of optimizing for SEO, user experience, and sales growth.
-            </li>
-            <li>
-              E-commerce Expertise: Experienced in building and managing stores
-              on platforms like Shopify, Etsy, and eBay, with a strong track
-              record of optimizing for SEO, user experience, and sales growth.
-              Additionally, I successfully ran and managed a Squarespace
-              business site with a fully functional print-on-demand apparel
-              store seamlessly integrated into the website, driving customer
-              engagement and revenue.
-            </li>
-            <li>
-              Version Control: Advanced knowledge of Git and GitHub ensures
-              seamless collaboration and efficient project management.
-            </li>
-            <li>
-              SEO & Digital Marketing: Proven ability to elevate online presence
-              through data-driven social media strategies, search engine
-              optimization, and engaging content creation.
-            </li>
-            <li>
-              Web Design Principles: Adept at blending functionality with
-              aesthetic appeal to deliver websites that are not only visually
-              stunning but also intuitive and user-friendly.
-            </li>
-            <li>
-              Web Design Principles: Adept at blending functionality with
-              aesthetic appeal to deliver websites that are not only visually
-              stunning but also intuitive and user-friendly.
-            </li>
-            <li>
-              Problem Solving: Passionate about breaking down complex problems
-              and crafting elegant, efficient solutions with a focus on
-              innovation and detail.
-            </li>
-          </ul>
-          This combination of skills equips me to transform creative concepts
-          into tangible, impactful web experiences. Whether it’s developing from
-          scratch, leveraging tools like Bootstrap for rapid prototyping, or
-          using jQuery for advanced interactivity, I thrive on delivering
-          excellence that meets and exceeds expectations.
-        </div>
-
-        <div id="projectsContent" class="content-section">
-          <h2>Projects</h2>
-          <p>
-            <em>
-              Projects are listed here, comprehensive project display and
-              explanation on the
-              <a href="#projects" class="custom-project-link"
-                >projects page below</a
-              >
-            </em>
-            <br /><br />
-
-            <b>Keystone Web Solutions</b> - Fully operable web development,
-            design, SEO agency website.
-            <br />
-            <b>Property Management Group (PMG)</b> - Simple, responsive, smooth
-            website for a small family brewery.
-            <br />
-            <b>Portfolio Website</b> - The site you're currently on.
-            <br />
-            <b>Broken Chair Brewery</b> - Simple, responsive, smooth website for
-            a small family brewery.
-            <br />
-            <b>Leno Website</b> - Mock landing page I created while learning.
-            <br />
-            <b>Lumina</b> - Mock landing page for a photography gallery website,
-            created while learning.
-            <br />
-            <b>Tutor Site</b> - Mock landing page for a tech education platform,
-            practice project.
-          </p>
-
-          <p><b>Project 6</b> - Project 6 description</p>
-        </div>
-
-        <div id="developmentContent" class="content-section">
-          <h2>Development Approach</h2>
-          <div class="container">
-            <p>
-              In every project, my approach to web development is rooted in
-              precision, creativity, and a deep commitment to delivering
-              websites that drive engagement, enhance user experience, and
-              achieve measurable success. Whether it's for my work-in-progress
-              freelance website, or for a client, the ultimate goal is to
-              attract new customers, provide a seamless experience that fosters
-              lasting connections, and ultimately drive increased sales.
-              Transitioning from a career managing the complexities of the craft
-              beer industry to web development, I have honed a meticulous
-              attention to detail, a problem-solving mindset, and an unwavering
-              focus on user satisfaction. I am obsessed with creating movements
-              and functionalities that make sense, feel intuitive, and are
-              inherently satisfying—whether it's scroll behavior, hover
-              characteristics, or ensuring elements adapt seamlessly and
-              beautifully as the viewport changes. Here’s how I bring concepts
-              to life:
-            </p>
-
-            <h3>1. Discovery and Planning</h3>
-            <ul class="icon-content-bullets">
-              <li>
-                Begin by understanding the client's vision, goals, and target
-                audience.
-              </li>
-              <li>
-                Conduct comprehensive research to define project scope,
-                timelines, and deliverables.
-              </li>
-              <li>
-                Collaborate to ensure alignment on aesthetics, functionality,
-                and user needs.
-              </li>
-            </ul>
-
-            <h3>2. Design with Purpose</h3>
-            <ul class="icon-content-bullets">
-              <li>
-                Focus on clean, user-centered layouts that enhance usability and
-                accessibility, with movements and interactions that feel natural
-                and engaging.
-              </li>
-              <li>
-                Optimize hover effects, animations, and scroll behaviors to
-                create a seamless and satisfying user experience.
-              </li>
-              <li>
-                Ensure all designs are mobile-first, fully responsive, and
-                intuitive.
-              </li>
-            </ul>
-
-            <h3>3. Development with Precision</h3>
-            <ul class="icon-content-bullets">
-              <li>
-                Focus on clean, user-centered layouts that enhance usability and
-                accessibility, with movements and interactions that feel natural
-                and engaging.
-              </li>
-              <li>
-                Optimize hover effects, animations, and scroll behaviors to
-                create a seamless and satisfying user experience.
-              </li>
-              <li>
-                Ensure all designs are mobile-first, fully responsive, and
-                intuitive.
-              </li>
-            </ul>
-
-            <h3>4. E-Commerce and SEO Optimization</h3>
-            <ul class="icon-content-bullets">
-              <li>
-                Expertise in launching and managing e-commerce platforms,
-                including Shopify and Squarespace.
-              </li>
-              <li>
-                Integrate and manage features such as print-on-demand apparel
-                stores to expand functionality and increase revenue.
-              </li>
-              <li>
-                Optimize all platforms for search engines, ensuring high
-                visibility and user engagement.
-              </li>
-            </ul>
-
-            <h3>5. Deployment and Hosting</h3>
-            <ul class="icon-content-bullets">
-              <li>
-                Manage domains, hosting, and deployment using services like
-                GitHub, Namecheap, and Netlify.
-              </li>
-              <li>
-                Ensure seamless transitions from development to production, with
-                robust testing for performance and security.
-              </li>
-              <li>
-                Provide ongoing maintenance and updates to keep websites running
-                smoothly.
-              </li>
-            </ul>
-
-            <h3>6. Collaboration and Feedback</h3>
-            <ul class="icon-content-bullets">
-              <li>
-                Foster open communication and iterative feedback to adapt to
-                evolving needs.
-              </li>
-              <li>
-                Translate technical concepts into clear, actionable insights for
-                clients and team members.
-              </li>
-            </ul>
-
-            <h3>7. Continuous Improvement</h3>
-            <ul class="icon-content-bullets">
-              <li>
-                Analyze user data and feedback to refine functionality and
-                design.
-              </li>
-              <li>
-                Stay current with web trends and technologies, continuously
-                enhancing skills to provide cutting-edge solutions.
-              </li>
-            </ul>
-
-            <p>
-              By blending technical expertise with creativity and a user-focused
-              mindset, I craft websites and applications that are as functional
-              as they are visually compelling. Whether building from scratch or
-              optimizing existing platforms, my approach ensures that every
-              project exceeds expectations.
-            </p>
-          </div>
-        </div>
-
-        <div id="connectContent" class="content-section">
-          <h2>Let's Connect</h2>
-          <p>
-            I’m always open to collaborating on innovative projects, sharing
-            ideas, or exploring exciting opportunities. Whether you’re looking
-            for a dedicated team member or seeking a creative partnership, I’d
-            love to hear from you. Feel free to reach out via the
-            <a href="#contact" class="link">contact page below</a>, and let’s
-            create something impactful together!
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-      <div class="text-overlay">
-        <h1 class="ghost" data-speed="0.2">PROJECTS</h1>
-        <h1 class="me" data-speed="0.5">MY WORK</h1>
-      </div>
-      <div class="content-container">
-        <div class="container">
-          <!-- Section Navbar -->
-          <h2 class="sort-by">[Sort by]</h2>
-          <div class="projects-navbar">
-            <button class="projects-nav-item active" data-filter="all">
-              All
-            </button>
-            <button class="projects-nav-item" data-filter="website-design">
-              Website Design
-            </button>
-            <button class="projects-nav-item" data-filter="graphic-design">
-              Graphic Design
-            </button>
-          </div>
-          <h3 class="desktop-instructions">HOVER OVER IMAGE for preview</h3>
-          <h3 class="mobile-instructions">TAP IMAGE for preview</h3>
-
-          <!-- Projects Content -->
-          <div class="projects-content">
-            <!-- Web Development Projects -->
-            <!-- Project 1 -->
-            <div class="project-item web-development">
-              <img
-                src="https://storage.googleapis.com/danbray.dev/project-previews/keystone-web-solutions-llc.webp"
-                alt="Web Project 1"
-                class="project-image" />
-              <div class="project-info">
-                <h3>
-                  <a
-                    href="https://keystonewebsolutions.com"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Keystone Web Solutions
-                  </a>
-                </h3>
-                <div class="info-content">
-                  <p>
-                    Keystone Web Solutions is a professional web development
-                    agency specializing in creating sharp, visually appealing
-                    websites that prioritize user-friendly experiences. Our
-                    approach to web development focuses on designing sites that
-                    are not only aesthetically pleasing but also easy to
-                    navigate, ensuring that visitors can find what they need
-                    quickly and effortlessly. <br /><br />
-                    We understand the importance of a strong, professional
-                    online presence, and our goal is to help businesses achieve
-                    just that. Whether you're looking to revamp your current
-                    website or build a new one from scratch, we are here to
-                    bring your vision to life with a perfect blend of
-                    functionality and style.
-                  </p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div>
-
-            <!-- Project: Valley Peak Roofing -->
-            <div class="project-item web-development">
-              <img
-                src="https://storage.googleapis.com/danbray.dev/project-previews/valley-peak-roofing.webp"
-                alt="Valley Peak Roofing Website"
-                class="project-image" />
-              <div class="project-info">
-                <h3>
-                  <a
-                    href="https://valleypeakroof.com"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Valley Peak Roofing
-                  </a>
-                </h3>
-                <div class="info-content">
-                  <p>
-                    A comprehensive website redesign and content restructure for
-                    Valley Peak Roofing, focused on maximizing SEO performance
-                    and user engagement. The project involved migrating from
-                    WordPress to custom-coded architecture, allowing for
-                    complete control over performance optimization and
-                    functionality. <br /><br />
-
-                    The site features extensive SEO implementation with Core Web
-                    Vitals tracking, integrated Google Tag Manager and GA4
-                    analytics, SEMrush monitoring, and Google Search Console
-                    optimization. Interactive elements include strategically
-                    placed modals throughout the site – informative overlays for
-                    service details, streamlined contact forms for quick
-                    inquiries, and dedicated financing application forms to
-                    facilitate customer conversions. <br /><br />
-
-                    All form submissions are efficiently handled through
-                    Netlify's backend services. Since deployment and indexing,
-                    the site has shown substantial and consistent growth in
-                    search impressions, demonstrating the effectiveness of the
-                    SEO-focused redesign and technical improvements in the
-                    site's visibility and organic reach.
-                  </p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div>
-
-            <!-- Project: Waldman Electric -->
-            <div class="project-item web-development">
-              <img
-                src="https://storage.googleapis.com/danbray.dev/project-previews/waldman-electric.webp"
-                alt="Waldman Electric Website"
-                class="project-image" />
-              <div class="project-info">
-                <h3>
-                  <a
-                    href="https://waldmanelectric.com"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Waldman Electric
-                  </a>
-                </h3>
-                <div class="info-content">
-                  <p>
-                    A clean, professional website redesign for Waldman Electric,
-                    a trusted local electrician company. The project involved
-                    migrating from their previous Hibu platform to a modern,
-                    custom-built solution that better represents their brand and
-                    services. <br /><br />
-
-                    While maintaining a straightforward approach appropriate for
-                    a local service business, the new design focuses on improved
-                    user experience, clear service presentation, and easy
-                    customer contact options. Form submissions are seamlessly
-                    processed through Netlify's infrastructure, ensuring
-                    reliable lead capture and customer communication.
-                    <br /><br />
-
-                    Following deployment and proper indexing, the site has
-                    experienced substantial and consistent growth in search
-                    impressions within the first few months, significantly
-                    improving the company's online visibility in their local
-                    market and helping them connect with more potential
-                    customers in need of electrical services.
-                  </p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-item web-development">
-              <img
-                src="https://storage.googleapis.com/danbray.dev/project-previews/speaker-site.webp"
-                alt="Web Project 2"
-                class="project-image" />
-              <div class="project-info">
-                <h3>
-                  <a
-                    href="https://speaker-site-proposal.netlify.app/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Speaker Booking Site Client Proposal
-                  </a>
-                </h3>
-                <div class="info-content">
-                  <p>
-                    A few of my most recent projects are currently prototypes
-                    for potential clients. This is a clean, professionally
-                    designed website showcasing a motivational speaker's
-                    services. The single-page layout features sections for
-                    about, speaking topics, videos, testimonials, and a booking
-                    form. The site includes custom animations, a video lightbox
-                    system, testimonial carousel, and responsive design.
-                    Everything is built with performance and user experience in
-                    mind, guiding potential clients smoothly from introduction
-                    to booking request.
-                  </p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-item web-development">
-              <img
-                src="https://storage.googleapis.com/danbray.dev/project-previews/pmg.webp"
-                alt="Web Project 2"
-                class="project-image" />
-              <div class="project-info">
-                <h3>
-                  <a
-                    href="https://propertymanagementtemplate1.netlify.app/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Property Management Group
-                  </a>
-                </h3>
-                <div class="info-content">
-                  <p>
-                    This is a full, 22 page, comprehensive website for a
-                    property management company. It offers services for clients
-                    (real estate owners) and the tenants renting their
-                    properties.
-                    <br /><br />In order to display information in different
-                    sections without creating information and content bloat,
-                    I've place information on the back of cards that flip when
-                    you hover your cursor over them, which is replaced by a tap
-                    on mobile. <br /><br />There is a bar chart that displays
-                    the average monthly rent in the area, and when you scroll to
-                    the section, the bars dynamically raise to their respective
-                    rent price with the use of javascript functionality. It's
-                    very aesthetically pleaseing when scrollig to the section.
-                    <br /><br />The site has a listings section. If I utilized
-                    this template for a client, I would implement full rental
-                    listing pages, fit with photos, descriptions, all the
-                    details you would find on a property listing on a platform
-                    like Zillow. <br /><br />
-                    I plan on developing a few different templates for property
-                    management companies. The goal for this one is highly
-                    responsive and easily navigable. Whether you are a tenant or
-                    owner, current or prospective, you should be able to find
-                    what you're looking for on this site with ease.
-                  </p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-item web-development">
-              <img
-                src="https://storage.googleapis.com/danbray.dev/project-previews/bcoviews.webp"
-                alt="Web Project 2"
-                class="project-image" />
-              <div class="project-info">
-                <h3>
-                  <a
-                    href="https://bco-views-preview.netlify.app/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Local Borough Photography & Community Event Website
-                  </a>
-                </h3>
-                <div class="info-content">
-                  <p>
-                    A proposal website for the beloved local photography and
-                    community group, Berks County Views. The site opens with an
-                    auto-rotating carousel showcasing their stunning regional
-                    photography that immediately connects visitors to the beauty
-                    of Berks County. <br /><br />
-                    Below the carousel, an upcoming events section keeps the
-                    community informed about opportunities to gather and
-                    celebrate local culture. The centerpiece photography display
-                    features an interactive gallery where a main featured image
-                    is flanked by six smaller thumbnails – hovering over any
-                    thumbnail dynamically updates the main display, creating an
-                    engaging browsing experience. <br /><br />
-                    Each photography collection includes a link to a dedicated
-                    gallery page with complete event coverage. The site rounds
-                    out with sections for local news, photography tips, and a
-                    streamlined contact form – all presented in a responsive
-                    design that works beautifully across devices, reflecting the
-                    group's commitment to making Berks County's visual heritage
-                    accessible to everyone.
-                  </p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-item web-development">
-              <img
-                src="https://storage.googleapis.com/danbray.dev/project-previews/brewingco.webp"
-                alt="Web Project 2"
-                class="project-image" />
-              <div class="project-info">
-                <h3>
-                  <a
-                    href="https://nc-brewing-co-preview.netlify.app/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Brewing Company Redesign
-                  </a>
-                </h3>
-                <div class="info-content">
-                  <p>
-                    A modern, immersive website redesign for a craft brewery
-                    featuring dynamic parallax scrolling in the hero section. As
-                    visitors explore the site, content elements transition
-                    smoothly into view through subtle animations triggered by
-                    scrolling. <br /><br />The design showcases the brewery's
-                    craft beer selection with appealing visuals and
-                    descriptions, highlights upcoming events, and includes an
-                    intuitive online ordering system. A streamlined contact form
-                    makes customer communication effortless. <br /><br />The
-                    fully responsive layout ensures a seamless experience across
-                    all devices, with a clean aesthetic that puts the focus on
-                    the brewery's products while creating a satisfying, engaging
-                    scrolling journey that reflects the craft and care of the
-                    brewing process.
-                  </p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="project-item web-development">
-              <img
-                src="https://storage.googleapis.com/danbray.dev/project-previews/bcb.webp"
-                alt="Web Project 3"
-                class="project-image" />
-              <div class="project-info">
-                <h3>
-                  <a
-                    href="https://www.brokenchairbeer.com"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Broken Chair Brewery
-                  </a>
-                </h3>
-                <div class="info-content">
-                  <p>Website remake for a small, family-owned craft brewery.</p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div>
-
-            <!-- Project 6 -->
-            <!-- <div class="project-item web-development">
-              <img
-                src="https://storage.googleapis.com/danbray.dev/project-previews/Leno.webp"
-                alt="Web Project 3"
-                class="project-image" />
-              <div class="project-info">
-                <h3>Leno</h3>
-                <div class="info-content">
-                  <p>
-                    Mock website designed as a landing page for a tech
-                    productivity app assistant.
-                  </p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div> -->
-
-            <!-- Project 7 -->
-            <!-- <div class="project-item web-development">
-              <img
-                src="https://storage.googleapis.com/danbray.dev/project-previews/lumina.webp"
-                alt="Web Project 3"
-                class="project-image" />
-              <div class="project-info">
-                <h3>Lumina</h3>
-                <div class="info-content">
-                  <p>
-                    Photography gallery website with the use of CSS Grid and
-                    Lightbox JavaScript for photo display.
-                  </p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div> -->
-
-            <!-- Project 8 -->
-            <!-- <div class="project-item web-development">
-              <img
-                src="https://storage.googleapis.com/danbray.dev/project-previews/tutor.webp"
-                alt="Web Project 3"
-                class="project-image" />
-              <div class="project-info">
-                <h3>Tutor</h3>
-                <div class="info-content">
-                  <p>Website for tech education platform.</p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div> -->
-
-            <!-- Project 9 -->
-            <!-- <div class="project-item web-development">
-              <img
-                src="https://storage.googleapis.com/danbray.dev/project-previews/hotel.webp"
-                alt="Web Project 3"
-                class="project-image" />
-              <div class="project-info">
-                <h3>Hotel Website</h3>
-                <div class="info-content">
-                  <p>Basic hotel website landing page.</p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div> -->
-
-            <!-- Project 10 -->
-            <!-- <div class="project-item web-development">
-              <img
-                src="https://storage.googleapis.com/danbray.dev/project-previews/bono.webp"
-                alt="Web Project 3"
-                class="project-image" />
-              <div class="project-info">
-                <h3>Bono</h3>
-                <div class="info-content">
-                  <p>Landing / Contact form page for a CMS service.</p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div> -->
-
-            <!-- Design Work Projects -->
-            <div class="project-item design-work">
-              <img
-                src=""
-                alt="Graphic Design Project 3"
-                class="project-image" />
-              <div class="project-info">
-                <h3>Placeholder</h3>
-                <div class="info-content">
-                  <p>Description of project.</p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div>
-
-            <div class="project-item design-work">
-              <img
-                src=""
-                alt="Graphic Design Project 3"
-                class="project-image" />
-              <div class="project-info">
-                <h3>Placeholder</h3>
-                <div class="info-content">
-                  <p>Description of project.</p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div>
-
-            <div class="project-item design-work">
-              <img
-                src=""
-                alt="Graphic Design Project 3"
-                class="project-image" />
-              <div class="project-info">
-                <h3>Placeholder</h3>
-                <div class="info-content">
-                  <p>Description of project.</p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div>
-
-            <div class="project-item design-work">
-              <img
-                src=""
-                alt="Graphic Design Project 3"
-                class="project-image" />
-              <div class="project-info">
-                <h3>Placeholder</h3>
-                <div class="info-content">
-                  <p>Description of project.</p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div>
-
-            <div class="project-item design-work">
-              <img
-                src=""
-                alt="Graphic Design Project 3"
-                class="project-image" />
-              <div class="project-info">
-                <h3>Placeholder</h3>
-                <div class="info-content">
-                  <p>Description of project.</p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div>
-
-            <div class="project-item design-work">
-              <img
-                src=""
-                alt="Graphic Design Project 3"
-                class="project-image" />
-              <div class="project-info">
-                <h3>Placeholder</h3>
-                <div class="info-content">
-                  <p>Description of project.</p>
-                </div>
-                <button class="more-info-btn">More Info</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="skills-section" id="skills">
-      <div class="skills-container">
-        <img
-          src="images/skills-logos/html.png"
-          alt="HTML Logo"
-          class="skill-logo" />
-        <img
-          src="images/skills-logos/css.png"
-          alt="CSS Logo"
-          class="skill-logo" />
-        <img
-          src="images/skills-logos/js.png"
-          alt="JavaScript Logo"
-          class="skill-logo" />
-        <img
-          src="images/skills-logos/bootstrap.png"
-          alt="Bootstrap Logo"
-          class="skill-logo" />
-      </div>
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">My expertise</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Frontend Development -->
+                <div class="skill-category glass-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Frontend Development</h3>
+                    <p>Expertise in HTML, CSS, and JavaScript, along with Bootstrap, ensuring sleek, responsive websites optimized for both desktop and mobile experiences.</p>
+                    <div class="skill-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Bootstrap</span>
+                        <span>Responsive Design</span>
+                    </div>
+                </div>
+
+                <!-- Frameworks & Libraries -->
+                <div class="skill-category glass-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Frameworks & Libraries</h3>
+                    <p>Proficiency in React and the MERN stack, enabling the creation of dynamic and interactive applications.</p>
+                    <div class="skill-tags">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>MongoDB</span>
+                        <span>jQuery</span>
+                    </div>
+                </div>
+
+                <!-- E-commerce & CMS -->
+                <div class="skill-category glass-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-commerce & CMS</h3>
+                    <p>Experienced in building and managing stores on platforms like Shopify, WordPress, and Squarespace, with a strong track record of optimizing for SEO and user experience.</p>
+                    <div class="skill-tags">
+                        <span>Shopify</span>
+                        <span>WordPress</span>
+                        <span>Squarespace</span>
+                        <span>WooCommerce</span>
+                    </div>
+                </div>
+
+                <!-- Version Control & Deployment -->
+                <div class="skill-category glass-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>Version Control & Deployment</h3>
+                    <p>Advanced knowledge of Git and GitHub ensures seamless collaboration and efficient project management. Proficient in deployment via Netlify, Namecheap, and more.</p>
+                    <div class="skill-tags">
+                        <span>Git</span>
+                        <span>GitHub</span>
+                        <span>Netlify</span>
+                        <span>Domain Management</span>
+                    </div>
+                </div>
+
+                <!-- SEO & Marketing -->
+                <div class="skill-category glass-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO & Digital Marketing</h3>
+                    <p>Proven ability to elevate online presence through data-driven social media strategies, search engine optimization, and engaging content creation.</p>
+                    <div class="skill-tags">
+                        <span>SEO</span>
+                        <span>Google Analytics</span>
+                        <span>SEMrush</span>
+                        <span>Content Strategy</span>
+                    </div>
+                </div>
+
+                <!-- Design & UX -->
+                <div class="skill-category glass-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Design & UX</h3>
+                    <p>Adept at blending functionality with aesthetic appeal to deliver websites that are not only visually stunning but also intuitive and user-friendly.</p>
+                    <div class="skill-tags">
+                        <span>UI/UX Design</span>
+                        <span>Responsive Design</span>
+                        <span>Accessibility</span>
+                        <span>Design Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">My work</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="client">Client Work</button>
+                <button class="filter-btn" data-filter="personal">Personal Projects</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: Keystone Web Solutions -->
+                <div class="project-card glass-card" data-category="client">
+                    <div class="project-image">
+                        <img src="https://storage.googleapis.com/danbray.dev/project-previews/keystone-web-solutions-portfolio-1.webp" alt="Keystone Web Solutions">
+                        <div class="project-overlay">
+                            <a href="https://keystonewebsolutions.com" target="_blank" rel="noopener noreferrer" class="btn btn-small">
+                                Visit Site <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>Web Development</span>
+                            <span>Agency</span>
+                        </div>
+                        <h3>Keystone Web Solutions</h3>
+                        <p>Professional web development agency specializing in creating sharp, visually appealing websites that prioritize user-friendly experiences.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Valley Peak Roofing -->
+                <div class="project-card glass-card" data-category="client">
+                    <div class="project-image">
+                        <img src="https://storage.googleapis.com/danbray.dev/project-previews/valley-peak-roofing-portfolio.webp" alt="Valley Peak Roofing">
+                        <div class="project-overlay">
+                            <a href="https://valleypeakroof.com" target="_blank" rel="noopener noreferrer" class="btn btn-small">
+                                Visit Site <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>SEO Focused</span>
+                            <span>Client Site</span>
+                        </div>
+                        <h3>Valley Peak Roofing</h3>
+                        <p>Comprehensive website redesign focused on maximizing SEO performance. Migrated from WordPress to custom-coded architecture with GA4 analytics and SEMrush monitoring.</p>
+                        <div class="project-tech">
+                            <span>Custom Code</span>
+                            <span>SEO</span>
+                            <span>Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Waldman Electric -->
+                <div class="project-card glass-card" data-category="client">
+                    <div class="project-image">
+                        <img src="https://storage.googleapis.com/background-vid/AA.%20Website%20Design%20%26%20Development%20Page/A%20Website%20That%20Actually%20Works%20For%20You/waldman-optimized.webp" alt="Waldman Electric">
+                        <div class="project-overlay">
+                            <a href="https://waldmanelectric.com" target="_blank" rel="noopener noreferrer" class="btn btn-small">
+                                Visit Site <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>Local Business</span>
+                            <span>Redesign</span>
+                        </div>
+                        <h3>Waldman Electric</h3>
+                        <p>Clean, professional website redesign for a trusted local electrician. Migrated from Hibu platform to modern, custom-built solution with improved UX.</p>
+                        <div class="project-tech">
+                            <span>Responsive</span>
+                            <span>Forms</span>
+                            <span>Netlify</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: John's Chimney Service -->
+                <div class="project-card glass-card" data-category="client">
+                    <div class="project-image">
+                        <img src="https://storage.googleapis.com/background-vid/AA.%20Website%20Design%20%26%20Development%20Page/A%20Website%20That%20Actually%20Works%20For%20You/johnschimney-optimized.webp" alt="John's Chimney Service">
+                        <div class="project-overlay">
+                            <a href="https://johnschimneyservicellc.com" target="_blank" rel="noopener noreferrer" class="btn btn-small">
+                                Visit Site <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>Service Business</span>
+                            <span>Mobile-First</span>
+                        </div>
+                        <h3>John's Chimney Service</h3>
+                        <p>Professional chimney service website featuring service details, seasonal promotions, customer testimonials, and easy contact options for chimney sweeping and maintenance.</p>
+                        <div class="project-tech">
+                            <span>Mobile-First</span>
+                            <span>Service Booking</span>
+                            <span>SEO Optimized</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: National Timepiece -->
+                <div class="project-card glass-card" data-category="client">
+                    <div class="project-image">
+                        <img src="https://storage.googleapis.com/background-vid/Portfolio%20Images/national-timepiece.webp" alt="National Timepiece">
+                        <div class="project-overlay">
+                            <a href="https://national-timepiece-preview.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-small">
+                                Visit Site <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>E-commerce</span>
+                            <span>Luxury</span>
+                        </div>
+                        <h3>National Timepiece</h3>
+                        <p>Certified watchmaker website featuring video background hero section, comprehensive repair services showcase, and advanced product catalog with real-time search and sorting for pre-owned luxury watches.</p>
+                        <div class="project-tech">
+                            <span>Video Integration</span>
+                            <span>Advanced Search</span>
+                            <span>Product Catalog</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Fired Up BBQ -->
+                <div class="project-card glass-card" data-category="client">
+                    <div class="project-image">
+                        <img src="https://storage.googleapis.com/background-vid/AA.%20Website%20Design%20%26%20Development%20Page/A%20Website%20That%20Actually%20Works%20For%20You/firedup-optimized.webp" alt="Fired Up BBQ">
+                        <div class="project-overlay">
+                            <a href="https://firedupbbqcatering.com" target="_blank" rel="noopener noreferrer" class="btn btn-small">
+                                Visit Site <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>Catering</span>
+                            <span>Event Booking</span>
+                        </div>
+                        <h3>Fired Up BBQ</h3>
+                        <p>BBQ catering website showcasing menu selections, event packages, photo gallery of smoked meats, and streamlined catering inquiry forms for weddings and corporate events.</p>
+                        <div class="project-tech">
+                            <span>Event Booking</span>
+                            <span>Photo Gallery</span>
+                            <span>Contact Forms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7: Berks County Views -->
+                <div class="project-card glass-card" data-category="personal">
+                    <div class="project-image">
+                        <img src="https://storage.googleapis.com/danbray.dev/project-previews/bcoviews.webp" alt="Berks County Views">
+                        <div class="project-overlay">
+                            <a href="https://bco-views-preview.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-small">
+                                Visit Site <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>Photography</span>
+                            <span>Community</span>
+                        </div>
+                        <h3>Berks County Views</h3>
+                        <p>Photography and community event website with auto-rotating carousel, interactive gallery, and dynamic thumbnail display system.</p>
+                        <div class="project-tech">
+                            <span>Gallery</span>
+                            <span>Carousel</span>
+                            <span>Events</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8: Broken Chair Brewery -->
+                <div class="project-card glass-card" data-category="client">
+                    <div class="project-image">
+                        <img src="https://storage.googleapis.com/background-vid/Portfolio%20Images/BCB-mockup.webp" alt="Broken Chair Brewery">
+                        <div class="project-overlay">
+                            <a href="https://www.brokenchairbeer.com" target="_blank" rel="noopener noreferrer" class="btn btn-small">
+                                Visit Site <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>Client Site</span>
+                            <span>Brewery</span>
+                        </div>
+                        <h3>Broken Chair Brewery</h3>
+                        <p>Website remake for a small, family-owned craft brewery with clean design and smooth navigation.</p>
+                        <div class="project-tech">
+                            <span>Responsive</span>
+                            <span>Clean Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact" data-speed="0.3">
-      <h1 class="mobile-contact-title">GET IN TOUCH</h1>
-      <h1 class="desktop-contact-title">GET <br />IN <br />TOUCH</h1>
-      <div class="contact-form container">
-        <!-- <h2>Get in touch</h2> -->
-        <!-- <div class="heading-border"></div> -->
-        <p>
-          Have a question or inquiry? Leave your information below and I'll get
-          back to you as soon as possible.
-        </p>
-        <form action="https://formspree.io/f/meoqayky" method="POST">
-          <!-- Name -->
-          <input type="text" name="name" placeholder="Name" />
-          <!-- Email -->
-          <input type="email" name="email" placeholder="Email" />
-          <!-- Phone Number Section -->
-          <input type="tel" name="phone" placeholder="Phone Number" />
-          <!-- Message -->
-          <textarea name="message" placeholder="Message"></textarea>
-          <button type="submit" class="btn-blank">Send Message</button>
-        </form>
-      </div>
-    </section>
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Let's connect</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
 
-    <!-- Location Section -->
-    <section class="location">
-      <div class="location-container">
-        <div class="section-header">
-          <h2>West Reading, PA</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="glass-card">
+                        <h3>Let's work together</h3>
+                        <p>I'm always open to collaborating on innovative projects, sharing ideas, or exploring exciting opportunities. Whether you're looking for a dedicated team member or seeking a creative partnership, I'd love to hear from you.</p>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>West Reading, PA</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>d.bray33@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>610-301-9351</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social">
+                            <a href="https://github.com/DBray33" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/stanielbray/" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <div class="glass-card">
+                        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+                            <!-- Hidden fields for Netlify -->
+                            <input type="hidden" name="form-name" value="contact">
+                            <p style="display: none;">
+                                <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                            </p>
+
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Send Message
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="map" class="map"></div>
-      </div>
-    </section>
-
-    <style>
-      /* LOCATION SECTION */
-      .location {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 60vh;
-        padding: 3rem 0;
-        position: relative;
-        overflow: hidden;
-        background-color: #f1e5ca;
-      }
-
-      .location-container {
-        width: 80%;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-
-      .location .map {
-        width: 100%;
-        height: 400px;
-        overflow: hidden;
-        border-radius: 0.25rem;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-      }
-      /* END LOCATION SECTION */
-    </style>
-
-    <script>
-      // Initialize the map when the page loads
-      function initMap() {
-        // West Reading, PA coordinates
-        const westReading = { lat: 40.3336, lng: -75.9456 };
-
-        // Create the map centered on West Reading
-        const map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
-          center: westReading,
-        });
-
-        // Add a marker for West Reading
-        const marker = new google.maps.Marker({
-          position: westReading,
-          map: map,
-          title: 'West Reading, PA',
-        });
-      }
-
-      // Load Google Maps only if not already loaded
-      if (typeof google === 'undefined' || typeof google.maps === 'undefined') {
-        const script = document.createElement('script');
-        script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBAR1It7UAPI8_bo74It5EuvNe0mg3t6Po&callback=initMap`;
-        script.async = true;
-        script.defer = true;
-        document.body.appendChild(script);
-      }
-    </script>
-
-    <!-- Social footer -->
-    <section class="social section">
-      <div class="container">
-        <div class="social-icons">
-          <a
-            href="https://www.linkedin.com/in/stanielbray/"
-            target="_blank"
-            aria-label="Check me out on LinkedIn">
-            <i class="fa-brands fa-linkedin fa-2x"></i>
-          </a>
-          <a
-            href="https://github.com/DBray33"
-            target="_blank"
-            aria-label="Check out my repositories on Github">
-            <i class="fa-brands fa-github fa-2x"></i>
-          </a>
-        </div>
-      </div>
     </section>
 
     <!-- Footer -->
-    <!-- <footer>
-      <div class="footer-content">
-        <p>Contact Information:</p>
-        <p>Phone: 610-301-9351</p>
-        <p>Email: <a href="mailto:d.bray33@gmail.com">d.bray33@gmail.com</a></p>
-      </div>
-    </footer> -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Dan Bray. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/DBray33" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://www.linkedin.com/in/stanielbray/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    <!-- Back to top arrow -->
-    <a href="#" id="back-to-top" title="Back to Top">&uarr;</a>
-
-    <!-- Lightbox gallery effect -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script> -->
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- jQuery.stellar -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.min.js"></script> -->
-
-    <!-- Bootstrap JavaScript Bundle with Popper -->
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"></script> -->
-
-    <!-- Custom JS -->
+    <!-- Scripts -->
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
