@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initCodeCardControls();
     initBackToTop();
+    initProjectModals();
 });
 
 // ====================================
@@ -135,33 +136,44 @@ function initProjectFilter() {
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            // Filter projects
-            let visibleIndex = 0;
+            // First, hide cards that don't match
             projectCards.forEach((card) => {
                 const category = card.getAttribute('data-category');
+                const shouldShow = filter === 'all' || category === filter;
 
-                if (filter === 'all' || category === filter) {
-                    // Show card with stagger effect
-                    card.classList.remove('hidden');
+                if (!shouldShow && !card.classList.contains('hidden')) {
+                    card.style.transition = 'opacity 0.15s ease';
                     card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-
-                    setTimeout(() => {
-                        card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, visibleIndex * 100);
-
-                    visibleIndex++;
-                } else {
-                    // Hide card
-                    card.style.transition = 'opacity 0.3s ease';
-                    card.style.opacity = '0';
-                    setTimeout(() => {
-                        card.classList.add('hidden');
-                    }, 300);
                 }
             });
+
+            // After hide animation completes, show matching cards
+            setTimeout(() => {
+                let visibleIndex = 0;
+                projectCards.forEach((card) => {
+                    const category = card.getAttribute('data-category');
+                    const shouldShow = filter === 'all' || category === filter;
+
+                    if (shouldShow) {
+                        // Show card with stagger effect
+                        card.classList.remove('hidden');
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(10px)';
+
+                        setTimeout(() => {
+                            card.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, visibleIndex * 50);
+
+                        visibleIndex++;
+                    } else {
+                        // Hide card
+                        card.classList.add('hidden');
+                        card.style.opacity = '0';
+                    }
+                });
+            }, 150);
         });
     });
 }
@@ -750,6 +762,67 @@ function initBackToTop() {
             behavior: 'smooth'
         });
     });
+}
+
+// ====================================
+// PROJECT MODALS
+// ====================================
+function initProjectModals() {
+    const modalTriggers = document.querySelectorAll('.project-modal-trigger');
+    const modals = document.querySelectorAll('.project-modal');
+
+    if (!modalTriggers.length) return;
+
+    // Open modal when clicking on project card
+    modalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            // Prevent any default link behavior
+            e.preventDefault();
+
+            const modalId = trigger.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    // Close modal functionality
+    modals.forEach(modal => {
+        // Close button
+        const closeBtn = modal.querySelector('.project-modal-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                closeProjectModal(modal);
+            });
+        }
+
+        // Backdrop click
+        const backdrop = modal.querySelector('.project-modal-backdrop');
+        if (backdrop) {
+            backdrop.addEventListener('click', () => {
+                closeProjectModal(modal);
+            });
+        }
+    });
+
+    // Close modal on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            modals.forEach(modal => {
+                if (!modal.classList.contains('hidden')) {
+                    closeProjectModal(modal);
+                }
+            });
+        }
+    });
+
+    function closeProjectModal(modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
 }
 
 // ====================================

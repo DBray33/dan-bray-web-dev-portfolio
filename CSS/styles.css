@@ -1591,3 +1591,234 @@ a {
         transform: translateY(0);
     }
 }
+
+/* ====================================
+   PROJECT DETAIL MODALS
+   ==================================== */
+.project-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.project-modal.hidden {
+    display: none;
+}
+
+.project-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.project-modal-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalSlideIn 0.4s ease-out;
+    padding: 0;
+}
+
+.project-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.project-modal-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.project-modal-content::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 4px;
+}
+
+.project-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-base);
+    z-index: 10;
+}
+
+.project-modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+.project-modal-header {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.project-modal-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.project-modal-body {
+    padding: 2rem;
+}
+
+.project-modal-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.project-modal-tags span {
+    padding: 0.25rem 0.75rem;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.project-modal-body h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.project-modal-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.project-modal-section {
+    margin-bottom: 2rem;
+}
+
+.project-modal-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.project-modal-section p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.project-modal-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-modal-section li {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+}
+
+.project-modal-section li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-color);
+    border-radius: 50%;
+}
+
+.project-modal-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-modal-tech span {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    transition: var(--transition-base);
+}
+
+.project-modal-tech span:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-primary);
+}
+
+.project-modal-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.project-modal-actions-top {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    padding-top: 0;
+    border-top: none;
+}
+
+/* Project card modal trigger styles */
+.project-modal-trigger {
+    cursor: pointer;
+}
+
+.project-modal-trigger .project-image {
+    cursor: pointer;
+}
+
+.project-overlay-modal {
+    cursor: pointer;
+}
+
+/* Ensure the entire card is clickable for modal triggers */
+.project-modal-trigger .project-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.project-modal-trigger:hover .project-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
